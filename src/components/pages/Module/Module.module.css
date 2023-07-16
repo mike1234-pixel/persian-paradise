@@ -18,6 +18,8 @@
 .input,
 .successInput {
   display: block;
+  width: 300px;
+  margin-right: 20px;
 }
 
 .answer {

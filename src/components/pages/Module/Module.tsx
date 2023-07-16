@@ -3,6 +3,7 @@ import { CourseModule } from "../../../types/Module"
 import styles from "./Module.module.css"
 import { useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
+import { Tick } from "../../common/Tick/Tick"
 
 interface ModuleProps {
   module: CourseModule
@@ -18,6 +19,7 @@ export const Module = ({ module }: ModuleProps) => {
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
   const [showAnswer, setShowAnswer] = useState(false)
   const [showHint, setShowHint] = useState(false)
+  const [moduleComplete, setModuleComplete] = useState(false)
 
   const resetState = (hardReset: boolean) => {
     hardReset
@@ -30,7 +32,11 @@ export const Module = ({ module }: ModuleProps) => {
   }
 
   const handleNextPhrase = () => {
-    if (isAnswerCorrect) {
+    const finished = phrases.length - 1 === currentPhraseIndex
+    if (finished) {
+      setModuleComplete(true)
+    }
+    if (isAnswerCorrect && !finished) {
       resetState(false)
     }
   }
@@ -60,6 +66,13 @@ export const Module = ({ module }: ModuleProps) => {
     resetState(true)
   }, [module])
 
+  if (moduleComplete)
+    return (
+      <Content className={styles.content}>
+        <p>module complete!</p>
+      </Content>
+    )
+
   return (
     <Content className={styles.content}>
       <Title>{module.title}</Title>
@@ -70,7 +83,7 @@ export const Module = ({ module }: ModuleProps) => {
         {currentPhrase.hint && (
           <>
             <Button onClick={() => setShowHint((prevState) => !prevState)}>
-              Show Hint
+              {showHint ? "Hide Hint" : "Show Hint"}
             </Button>
             <div className={showHint ? styles.hint : styles.hidden}>
               {currentPhrase.hint}
@@ -79,7 +92,7 @@ export const Module = ({ module }: ModuleProps) => {
         )}
 
         <Button onClick={() => setShowAnswer((prevState) => !prevState)}>
-          Answer
+          {showAnswer ? "Hide Answer" : "Show Answer"}
         </Button>
         <div className={showAnswer ? styles.answer : styles.hidden}>
           {typeof currentPhrase.fa === "string" ? (
@@ -95,18 +108,23 @@ export const Module = ({ module }: ModuleProps) => {
           <i>{currentPhrase.emoji}</i>
         </div>
 
-        <Form layout='vertical'>
-          <Form.Item label='Answer in Persian' style={{ display: "block" }}>
-            <Input
-              type='text'
-              value={inputValue}
-              onChange={handleInputChange}
-              className={isAnswerCorrect ? styles.successInput : styles.input}
-            />
-          </Form.Item>
-        </Form>
+        <div style={{ display: "flex" }}>
+          <Form layout='vertical'>
+            <Form.Item label='Answer in Persian'>
+              <Input
+                type='text'
+                value={inputValue}
+                onChange={handleInputChange}
+                className={isAnswerCorrect ? styles.successInput : styles.input}
+              />
+            </Form.Item>
+          </Form>
+          {isAnswerCorrect && <Tick />}
+        </div>
         {isAnswerCorrect && (
-          <Button onClick={handleNextPhrase}>Next Phrase</Button>
+          <>
+            <Button onClick={handleNextPhrase}>Next Phrase</Button>
+          </>
         )}
       </div>
     </Content>
