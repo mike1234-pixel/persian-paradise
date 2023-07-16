@@ -1,0 +1,41 @@
+{
+  "title": "Taste",
+  "emoji": "👅",
+  "phrases": [
+    {
+      "en": "taste",
+      "fa": "màzeh",
+      "emoji": "👅"
+    },
+    {
+      "en": "tongue",
+      "fa": "zàban",
+      "emoji": "👅"
+    },
+    {
+      "en": "sour",
+      "fa": "torsh",
+      "emoji": "🍋"
+    },
+    {
+      "en": "sweet",
+      "fa": "shirin",
+      "emoji": "🧁"
+    },
+    {
+      "en": "bitter",
+      "fa": "tàlkh",
+      "emoji": "🍺"
+    },
+    {
+      "en": "spicy",
+      "fa": "tond",
+      "emoji": "🌶"
+    },
+    {
+      "en": "salty",
+      "fa": "shur",
+      "emoji": "🧂"
+    }
+  ]
+}

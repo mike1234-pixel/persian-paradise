@@ -35,6 +35,31 @@
       "emoji": "🇬🇸 🇨🇳 🇺🇸"
     },
     {
+      "en": "city",
+      "fa": "shàhr",
+      "emoji": "🏙"
+    },
+    {
+      "en": "village",
+      "fa": "rusta",
+      "emoji": "🏘"
+    },
+    {
+      "en": "street",
+      "fa": "khiaban",
+      "emoji": "🏘"
+    },
+    {
+      "en": "alley",
+      "fa": "kuche",
+      "emoji": "🏘"
+    },
+    {
+      "en": "square",
+      "fa": "meydan",
+      "emoji": "🏘"
+    },
+    {
       "en": "germany",
       "fa": "alman",
       "emoji": "🇩🇪"
@@ -88,6 +113,26 @@
       "en": "chile",
       "fa": "shili",
       "emoji": "🇨🇱"
+    },
+    {
+      "en": "suitcase",
+      "fa": "chàmedan",
+      "emoji": "🧳"
+    },
+    {
+      "en": "backpack",
+      "fa": "kule",
+      "emoji": "🎒"
+    },
+    {
+      "en": "toothbrush",
+      "fa": "mesvak",
+      "emoji": "🪥"
+    },
+    {
+      "en": "I can't wait!",
+      "fa": "nemitunàm sàbr konàm",
+      "emoji": "😁"
     }
   ]
 }

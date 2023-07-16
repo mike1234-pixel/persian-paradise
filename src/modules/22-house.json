@@ -1,0 +1,60 @@
+{
+  "title": "Home",
+  "emoji": "🚪",
+  "phrases": [
+    {
+      "en": "picture frame",
+      "fa": "tablo",
+      "emoji": "🖼"
+    },
+    {
+      "en": "pot / vase",
+      "fa": "goldan",
+      "emoji": "🏺"
+    },
+    {
+      "en": "chair",
+      "fa": "sàndàli",
+      "emoji": "🪑"
+    },
+    {
+      "en": "table",
+      "fa": "miz",
+      "emoji": "🍽"
+    },
+    {
+      "en": "pillow",
+      "fa": "balesh",
+      "emoji": "🛏"
+    },
+    {
+      "en": "blanket",
+      "fa": "pàtu",
+      "emoji": "🛏"
+    },
+    {
+      "en": "sheet",
+      "fa": "màlafe",
+      "emoji": "🛏"
+    },
+    {
+      "en": "wardrobe",
+      "fa": "komod",
+      "emoji": "🚪"
+    },
+    {
+      "en": "lamp",
+      "fa": "cheragh",
+      "emoji": "🛋"
+    },
+    {
+      "en": "carpet",
+      "fa": "fàrsh"
+    },
+    {
+      "en": "bed",
+      "fa": "tàkht",
+      "emoji": "🛌"
+    }
+  ]
+}

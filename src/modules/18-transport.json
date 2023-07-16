@@ -1,0 +1,73 @@
+{
+  "title": "Transport",
+  "emoji": "🚍",
+  "phrases": [
+    {
+      "en": "taxi",
+      "fa": "taxi",
+      "emoji": "🚕"
+    },
+    {
+      "en": "bus",
+      "fa": "ootooboos",
+      "emoji": "🚌"
+    },
+    {
+      "en": "metro",
+      "fa": "metro",
+      "emoji": "🚝"
+    },
+    {
+      "en": "ship",
+      "fa": "kàshti",
+      "emoji": "🚢"
+    },
+    {
+      "en": "boat",
+      "fa": "ghayegh",
+      "emoji": "🚤"
+    },
+    {
+      "en": "swim",
+      "fa": "shena",
+      "emoji": "🏊‍♂️"
+    },
+    {
+      "en": "plane",
+      "fa": "hàvapeyma",
+      "emoji": "✈️"
+    },
+    {
+      "en": "airport",
+      "fa": "forudgah",
+      "emoji": "🛄"
+    },
+    {
+      "en": "flight / flying",
+      "fa": "pàrvaz",
+      "emoji": "🛄"
+    },
+    {
+      "en": "when is your flight?",
+      "fa": "pàrvazet keye",
+      "hint": "'keye' means 'when'",
+      "emoji": "🕛"
+    },
+    {
+      "en": "where is the airport?",
+      "fa": "forudgah kojast",
+      "hint": "'kojast' means 'where'",
+      "emoji": "🪧"
+    },
+    {
+      "en": "bicycle",
+      "fa": "dochàrke",
+      "emoji": "🚲"
+    },
+    {
+      "en": "car",
+      "fa": "màshin",
+      "emoji": "🚘"
+    }
+  ]
+}

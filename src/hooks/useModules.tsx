@@ -15,6 +15,12 @@ import module14 from "../modules/14-family.json"
 import module15 from "../modules/15-relationships.json"
 import module16 from "../modules/16-emotions.json"
 import module17 from "../modules/17-clothing.json"
+import module18 from "../modules/18-transport.json"
+import module19 from "../modules/19-geography.json"
+import module20 from "../modules/20-education.json"
+import module21 from "../modules/21-kitchen.json"
+import module22 from "../modules/22-house.json"
+import module23 from "../modules/23-taste.json"
 
 export const useModules = () => {
   const modules = [
@@ -35,6 +41,12 @@ export const useModules = () => {
     module15,
     module16,
     module17,
+    module18,
+    module19,
+    module20,
+    module21,
+    module22,
+    module23,
   ]
 
   return { modules }

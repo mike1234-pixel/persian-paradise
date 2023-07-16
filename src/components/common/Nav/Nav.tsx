@@ -24,16 +24,21 @@ export const Nav = () => {
   })
 
   return (
-    <Sider style={{ width: 270, background: "none" }} collapsed={collapsed}>
+    <Sider
+      style={{ width: 270, background: "none", height: "100vh" }}
+      collapsed={collapsed}
+    >
       <Button onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
-      <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
-        mode='inline'
-        items={items}
-      />
+      <div style={{ height: "calc(100vh - 48px)", overflow: "auto" }}>
+        <Menu
+          defaultSelectedKeys={["1"]}
+          defaultOpenKeys={["sub1"]}
+          mode='inline'
+          items={items}
+        />
+      </div>
     </Sider>
   )
 }

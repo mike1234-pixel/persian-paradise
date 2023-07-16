@@ -16,16 +16,22 @@ export const Module = ({ module }: ModuleProps) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [inputValue, setInputValue] = useState("")
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
-  const [showAnswer, setShowAnser] = useState(false)
+  const [showAnswer, setShowAnswer] = useState(false)
   const [showHint, setShowHint] = useState(false)
+
+  const resetState = (hardReset: boolean) => {
+    hardReset
+      ? setCurrentPhraseIndex(0)
+      : setCurrentPhraseIndex((prevIndex) => prevIndex + 1)
+    setInputValue("")
+    setIsAnswerCorrect(false)
+    setShowAnswer(false)
+    setShowHint(false)
+  }
 
   const handleNextPhrase = () => {
     if (isAnswerCorrect) {
-      setInputValue("")
-      setIsAnswerCorrect(false)
-      setCurrentPhraseIndex((prevIndex) => prevIndex + 1)
-      setShowAnser(false)
-      setShowHint(false)
+      resetState(false)
     }
   }
 
@@ -35,7 +41,6 @@ export const Module = ({ module }: ModuleProps) => {
     if (typeof currentPhrase.fa === "string") {
       setIsAnswerCorrect(normalize(inputValue) === normalize(currentPhrase.fa))
     } else {
-      console.log(normalize(inputValue), normalize(currentPhrase.fa.informal))
       setIsAnswerCorrect(
         normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
           normalize(inputValue) === normalize(currentPhrase.fa.informal)
@@ -51,23 +56,31 @@ export const Module = ({ module }: ModuleProps) => {
     checkAnswer()
   }, [inputValue])
 
+  useEffect(() => {
+    resetState(true)
+  }, [module])
+
   return (
     <Content className={styles.content}>
       <Title>{module.title}</Title>
-      {module.subtitle ?? <Title level={3}>{module.subtitle}</Title>}
+      {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
       <div className={styles.phrase}>
         <Title level={5}>{currentPhrase.en}</Title>
 
         {currentPhrase.hint && (
           <>
-            <Button onClick={() => setShowHint(true)}>Show Hint</Button>
+            <Button onClick={() => setShowHint((prevState) => !prevState)}>
+              Show Hint
+            </Button>
             <div className={showHint ? styles.hint : styles.hidden}>
               {currentPhrase.hint}
             </div>
           </>
         )}
 
-        <Button onClick={() => setShowAnser(true)}>Show Answer</Button>
+        <Button onClick={() => setShowAnswer((prevState) => !prevState)}>
+          Answer
+        </Button>
         <div className={showAnswer ? styles.answer : styles.hidden}>
           {typeof currentPhrase.fa === "string" ? (
             <p>{currentPhrase.fa}</p>
@@ -82,15 +95,16 @@ export const Module = ({ module }: ModuleProps) => {
           <i>{currentPhrase.emoji}</i>
         </div>
 
-        <Form.Item label='Answer in Persian'>
-          <Input
-            type='text'
-            value={inputValue}
-            onChange={handleInputChange}
-            className={isAnswerCorrect ? styles.successInput : styles.input}
-          />
-        </Form.Item>
-
+        <Form layout='vertical'>
+          <Form.Item label='Answer in Persian' style={{ display: "block" }}>
+            <Input
+              type='text'
+              value={inputValue}
+              onChange={handleInputChange}
+              className={isAnswerCorrect ? styles.successInput : styles.input}
+            />
+          </Form.Item>
+        </Form>
         {isAnswerCorrect && (
           <Button onClick={handleNextPhrase}>Next Phrase</Button>
         )}

@@ -30,6 +30,37 @@
     {
       "en": "friday",
       "fa": "jomeh"
+    },
+    {
+      "en": "birthday",
+      "fa": "tàvàllod",
+      "emoji": "🎂"
+    },
+    {
+      "en": "happy birthday",
+      "fa": "tàvàllodet mobaràk",
+      "emoji": "🥳"
+    },
+    {
+      "en": "day",
+      "fa": "ruz",
+      "emoji": "🌎"
+    },
+    {
+      "en": "month",
+      "fa": "mah",
+      "hint": "'mah' also means 'moon'",
+      "emoji": "🌕"
+    },
+    {
+      "en": "year",
+      "fa": "sal",
+      "emoji": "🌞"
+    },
+    {
+      "en": "calendar",
+      "fa": "tàghvim",
+      "emoji": "📅"
     }
   ]
 }

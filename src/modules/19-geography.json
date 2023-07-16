@@ -1,0 +1,76 @@
+{
+  "title": "Geography",
+  "emoji": "📍",
+  "phrases": [
+    {
+      "en": "compass",
+      "fa": "ghotb nàma",
+      "emoji": "🧭"
+    },
+    {
+      "en": "north",
+      "fa": "shomal",
+      "emoji": "↑"
+    },
+    {
+      "en": "east",
+      "fa": "shàrgh",
+      "emoji": "→"
+    },
+    {
+      "en": "south",
+      "fa": "jonub",
+      "emoji": "↓"
+    },
+    {
+      "en": "west",
+      "fa": "ghàrb",
+      "emoji": "←"
+    },
+    {
+      "en": "map",
+      "fa": "nàgshe",
+      "emoji": "🗺"
+    },
+    {
+      "en": "world map",
+      "fa": "nàgshe jàhan",
+      "emoji": "🗺"
+    },
+    {
+      "en": "pole",
+      "fa": "ghotb",
+      "emoji": "🧊"
+    },
+    {
+      "en": "america",
+      "fa": "amrika",
+      "emoji": "🌎"
+    },
+    {
+      "en": "europe",
+      "fa": "ooroopa",
+      "emoji": "🌍"
+    },
+    {
+      "en": "africa",
+      "fa": "afrigha",
+      "emoji": "🌍"
+    },
+    {
+      "en": "asia",
+      "fa": "asia",
+      "emoji": "🌏"
+    },
+    {
+      "en": "australia",
+      "fa": "ostoralia",
+      "emoji": "🌏"
+    },
+    {
+      "en": "south pole",
+      "fa": "ghotb jonub",
+      "emoji": "🇦🇶"
+    }
+  ]
+}

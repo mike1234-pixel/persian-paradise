@@ -21,7 +21,13 @@ const Router = () => {
 
       {modules.map((module) => {
         const path = `/${module.title.toLowerCase()}`
-        return <Route path={path} element={<Module module={module} />} />
+        return (
+          <Route
+            path={path}
+            element={<Module module={module} />}
+            key={module.title + "x"}
+          />
+        )
       })}
     </Routes>
   )

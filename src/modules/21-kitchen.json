@@ -1,0 +1,51 @@
+{
+  "title": "Kitchen",
+  "emoji": "🔪",
+  "phrases": [
+    {
+      "en": "kitchen",
+      "fa": "ashpàzkhane",
+      "emoji": "🧑‍🍳"
+    },
+    {
+      "en": "spoon",
+      "fa": "ghashogh",
+      "emoji": "🥄"
+    },
+    {
+      "en": "fork",
+      "fa": "chàngal",
+      "emoji": "🍴"
+    },
+    {
+      "en": "knife",
+      "fa": "chaghu",
+      "emoji": "🔪"
+    },
+    {
+      "en": "pot",
+      "fa": "ghablàme",
+      "emoji": "🫕"
+    },
+    {
+      "en": "pan",
+      "fa": "mahitabe",
+      "emoji": "🍳"
+    },
+    {
+      "en": "fridge",
+      "fa": "yàkchal",
+      "emoji": "❄️"
+    },
+    {
+      "en": "stove",
+      "fa": "gaz",
+      "emoji": "🥘"
+    },
+    {
+      "en": "scissors",
+      "fa": "gheychi",
+      "emoji": "✂️"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "title": "Education",
+  "emoji": "📖",
+  "phrases": [
+    {
+      "en": "education",
+      "fa": "tàhsil",
+      "emoji": "👩‍🏫"
+    },
+    {
+      "en": "kindergarten",
+      "fa": "màhde kudàk",
+      "emoji": "👶"
+    },
+    {
+      "en": "school",
+      "fa": "màhdrese",
+      "emoji": "🏫"
+    },
+    {
+      "en": "university",
+      "fa": "daneshgah",
+      "emoji": "🎓"
+    },
+    {
+      "en": "knowledge / science",
+      "fa": "danesh",
+      "emoji": "🔬"
+    },
+    {
+      "en": "school student",
+      "fa": "danesh amuz",
+      "emoji": "🧒"
+    },
+    {
+      "en": "university student",
+      "fa": "danesh ju",
+      "emoji": "🎓"
+    },
+    {
+      "en": "teacher",
+      "fa": "moallem",
+      "emoji": "🧑‍🏫"
+    },
+    {
+      "en": "principal / manager",
+      "fa": "modir",
+      "emoji": "👵"
+    },
+    {
+      "en": "janitor",
+      "fa": "supur",
+      "emoji": "🧹"
+    },
+    {
+      "en": "book",
+      "fa": "ketab",
+      "emoji": "📖"
+    },
+    {
+      "en": "notebook",
+      "fa": "dàftàr",
+      "emoji": "📒"
+    },
+    {
+      "en": "pencil",
+      "fa": "medad",
+      "emoji": "📝"
+    },
+    {
+      "en": "pen",
+      "fa": "khodkar",
+      "emoji": "🖊"
+    },
+    {
+      "en": "do you have a pen?",
+      "fa": "khodkar dari?",
+      "hint": "'dari' means 'you have?'",
+      "emoji": "🖊"
+    },
+    {
+      "en": "who is the principal?",
+      "fa": "modir kiye?",
+      "hint": "'kiye' means 'who is?'",
+      "emoji": "🧐"
+    },
+    {
+      "en": "the school is open",
+      "fa": "màdrese baze",
+      "hint": "'baze' means 'is open'",
+      "emoji": "😭"
+    },
+    {
+      "en": "the school is closed",
+      "fa": "màdrese tàtile",
+      "hint": "'tàtile' means 'is closed'",
+      "emoji": "😁"
+    }
+  ]
+}
