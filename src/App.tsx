@@ -4,15 +4,17 @@ import { Home } from "./components/pages/Home/Home"
 import { Dashboard } from "./components/pages/Dashboard/Dashboard"
 import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
-import "./App.css"
 import { Layout } from "antd"
-import Sider from "antd/es/layout/Sider"
 import { Content } from "antd/es/layout/layout"
+import { ModuleI } from "./types/Module"
+import "./App.css"
 
 const Router = () => {
   const location = useLocation()
 
   const { modules } = useModules()
+
+  console.log(modules)
 
   return (
     <Routes location={location}>

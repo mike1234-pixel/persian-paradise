@@ -57,6 +57,7 @@
         "informal": "narahti?",
         "formal": "to narahat hasti?"
       },
+      "emoji": "😥",
       "responses": [
         {
           "en": "yes, I am happy",
@@ -74,8 +75,7 @@
           },
           "emoji": "👎 😭"
         }
-      ],
-      "emoji": "😥"
+      ]
     }
   ]
 }

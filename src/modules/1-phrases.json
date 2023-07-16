@@ -110,14 +110,16 @@
         "formal": "to goshne hàsti?"
       },
       "emoji": "🍔",
-      "responses": {
-        "en": "i am hungry",
-        "fa": {
-          "informal": "goshnàme",
-          "formal": "màn goshne hàstàm"
-        },
-        "emoji": "😋"
-      }
+      "responses": [
+        {
+          "en": "i am hungry",
+          "fa": {
+            "informal": "goshnàme",
+            "formal": "màn goshne hàstàm"
+          },
+          "emoji": "😋"
+        }
+      ]
     },
     {
       "en": "are you thirsty?",
@@ -126,14 +128,16 @@
         "formal": "to teshne hàsti?"
       },
       "emoji": "🥤",
-      "responses": {
-        "en": "i am thirsty",
-        "fa": {
-          "informal": "teshnàme",
-          "formal": "màn teshne hàstàm",
+      "responses": [
+        {
+          "en": "i am thirsty",
+          "fa": {
+            "informal": "teshnàme",
+            "formal": "màn teshne hàstàm"
+          },
           "emoji": "🤤"
         }
-      }
+      ]
     },
     {
       "en": "i am drunk",

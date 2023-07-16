@@ -1,0 +1,21 @@
+export interface Registers {
+  informal: string
+  formal: string
+}
+
+export interface Phrase {
+  en: string
+  fa: string | Registers
+  emoji?: string
+  hint?: string
+  responses?: Phrase[]
+}
+
+export interface ModuleI {
+  title: string
+  subtitle?: string
+  emoji?: string
+  phrases: Phrase[]
+}
+
+export type ModulesList = ModuleI[]

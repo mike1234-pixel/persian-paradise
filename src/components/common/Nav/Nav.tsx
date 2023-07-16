@@ -17,7 +17,7 @@ export const Nav = () => {
   const items: MenuProps["items"] = modules.map((module) => {
     return {
       key: module.title,
-      icon: <i>{module.emoji}</i>,
+      icon: <i>{module?.emoji}</i>,
       to: `/${module.title.toLowerCase()}`,
       label: <Link to={`/${module.title.toLowerCase()}`}>{module.title}</Link>,
     }
