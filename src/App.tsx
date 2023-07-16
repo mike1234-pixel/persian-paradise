@@ -6,8 +6,6 @@ import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
 import { Layout } from "antd"
 import { Content } from "antd/es/layout/layout"
-import { ModuleI } from "./types/Module"
-import "./App.css"
 
 const Router = () => {
   const location = useLocation()

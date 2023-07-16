@@ -24,7 +24,7 @@ export const Nav = () => {
   })
 
   return (
-    <Sider style={{ width: 270 }} collapsed={collapsed}>
+    <Sider style={{ width: 270, background: "none" }} collapsed={collapsed}>
       <Button onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>

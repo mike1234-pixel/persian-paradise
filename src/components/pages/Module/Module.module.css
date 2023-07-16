@@ -1,0 +1,29 @@
+.content {
+  padding: 0px 60px;
+}
+
+.emoji > i {
+  font-style: normal;
+  font-size: 100px;
+}
+
+.phrase {
+  font-size: 40px;
+}
+
+.successInput {
+  background: #f6ffed;
+}
+
+.input,
+.successInput {
+  display: block;
+}
+
+.answer {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

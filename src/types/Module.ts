@@ -11,11 +11,11 @@ export interface Phrase {
   responses?: Phrase[]
 }
 
-export interface ModuleI {
+export interface CourseModule {
   title: string
   subtitle?: string
   emoji?: string
   phrases: Phrase[]
 }
 
-export type ModulesList = ModuleI[]
+export type ModulesList = CourseModule[]
