@@ -1,0 +1,59 @@
+{
+  "title": "Weather",
+  "emoji": "🌦",
+  "phrases": [
+    {
+      "en": "warm",
+      "fa": "gàrm",
+      "emoji": "🥵"
+    },
+    {
+      "en": "cold",
+      "fa": "sárd",
+      "emoji": "🥶"
+    },
+    {
+      "en": "rainy",
+      "fa": "barani",
+      "emoji": "☔️"
+    },
+    {
+      "en": "sunny",
+      "fa": "aftabi",
+      "emoji": "🔆"
+    },
+    {
+      "en": "snowy",
+      "fa": "bàrfi",
+      "emoji": "❄️"
+    },
+    {
+      "en": "cloudy",
+      "fa": "àbri",
+      "emoji": "☁️"
+    },
+    {
+      "en": "how is the weather",
+      "fa": "hàva chetoreh",
+      "emoji": "❓",
+      "hint": "to respond, add 'eh' to the end of any of the above to say 'it is'",
+      "responses": [
+        {
+          "en": "it is cloudy",
+          "fa": "àbrieh",
+          "emoji": "☁️"
+        },
+        {
+          "en": "it is rainy",
+          "fa": "baranieh",
+          "emoji": "☁️"
+        },
+        {
+          "en": "it is sunny",
+          "fa": "aftabieh",
+          "emoji": "☁️"
+        }
+      ]
+    }
+  ]
+}

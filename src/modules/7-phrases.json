@@ -1,0 +1,67 @@
+{
+  "title": "Phrases 3",
+  "subtitle": "Useful Words & Phrases",
+  "emoji": "🙊",
+  "phrases": [
+    {
+      "en": "man",
+      "fa": "màrd",
+      "emoji": "👨"
+    },
+    {
+      "en": "woman",
+      "fa": "zàn",
+      "emoji": "👩‍💼"
+    },
+    {
+      "en": "I am Michael",
+      "hint": "add 'hàstàm' to the end of a noun or adjective to say 'I am'",
+      "fa": "Michael hàstàm",
+      "emoji": "🧔🏻"
+    },
+    {
+      "en": "I am a man",
+      "fa": "màrd hàstàm",
+      "emoji": "🙍‍♂️"
+    },
+    {
+      "en": "I am english",
+      "fa": "englisi hàstàm",
+      "emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    },
+    {
+      "en": "I am thirty two years old",
+      "fa": "man si o do saale hàstàm",
+      "hint": "'saal' means year, and 'saale' means years old",
+      "emoji": "🥳"
+    },
+    {
+      "en": "good to know",
+      "fa": "khoobe ke bedoonàm",
+      "emoji": "🙂"
+    },
+    {
+      "en": "what is the time?",
+      "fa": "sa'át chànde?",
+      "hint": "'sa'àt' means watch or clock. You can add the place name between sa'át and chánde to ask what the time is in a particular place. 'Sa'át Irani chánde?'",
+      "emoji": "⏰",
+      "responses": [
+        {
+          "en": "it is eight",
+          "fa": "hàshteh",
+          "emoji": "🕗"
+        }
+      ]
+    },
+    {
+      "en": "money",
+      "fa": "pul",
+      "emoji": "💵"
+    },
+    {
+      "en": "iranian currency",
+      "fa": "tomán",
+      "emoji": "🪙"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Phrases 2",
+  "subtitle": "Asking for Food and Drink",
+  "emoji": "💵",
+  "phrases": [
+    {
+      "en": "I want tea",
+      "fa": "chai mikhàm",
+      "emoji": "🫖 👍"
+    },
+    {
+      "en": "I don't want coffee",
+      "fa": "Ghàve nemikhàm",
+      "hint": "add 'ne' to the beginning of a verb to make it negative",
+      "emoji": "☕️ 👎"
+    },
+    {
+      "en": "I eat banana",
+      "fa": "moz mikhoràm",
+      "emoji": "😋 🍌"
+    },
+    {
+      "en": "I don't eat pineapple",
+      "fa": "ananas nemikhoràm",
+      "emoji": "🍍 😬"
+    },
+    {
+      "en": "I drink beer",
+      "fa": "aab jo minooshàm",
+      "emoji": "😋 🍺"
+    },
+    {
+      "en": "I don't drink milk",
+      "fa": "shir neminooshàm",
+      "emoji": "🥛 😬"
+    },
+    {
+      "en": "I buy bread",
+      "fa": "naan mikhàràm",
+      "emoji": "💵 🍞"
+    },
+    {
+      "en": "I don't buy potato",
+      "fa": "sib zàmini nemikhàràm",
+      "emoji": "🙅‍♀️ 🥔"
+    }
+  ]
+}

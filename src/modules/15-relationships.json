@@ -1,0 +1,42 @@
+{
+  "title": "Relationships",
+  "emoji": "👩‍❤️‍💋‍👨",
+  "phrases": [
+    {
+      "en": "single",
+      "fa": "mojàràd",
+      "emoji": "💁‍♂️"
+    },
+    {
+      "en": "married",
+      "fa": "moteàhel",
+      "emoji": "👩‍❤️‍💋‍👨"
+    },
+    {
+      "en": "wedding",
+      "fa": "àrusi",
+      "emoji": "💒"
+    },
+    {
+      "en": "àrus",
+      "fa": "bride",
+      "emoji": "👰‍♀️"
+    },
+    {
+      "en": "damad",
+      "fa": "groom",
+      "emoji": "🤵‍♂️"
+    },
+    {
+      "en": "are you married?",
+      "fa": "moteaheli?",
+      "hint": "add 'i' at the end of the word to ask a question. 'i' is 'are you' in this context",
+      "emoji": "❓"
+    },
+    {
+      "en": "are you single?",
+      "fa": "mojàràdi?",
+      "emoji": "❓"
+    }
+  ]
+}

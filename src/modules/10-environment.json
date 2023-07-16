@@ -1,0 +1,72 @@
+{
+  "title": "Environment",
+  "emoji": "🗻",
+  "phrases": [
+    {
+      "en": "sun",
+      "fa": "khorshid",
+      "emoji": "🌞"
+    },
+    {
+      "en": "camel",
+      "fa": "shotor",
+      "emoji": "🐪"
+    },
+    {
+      "en": "palm tree",
+      "fa": "nakhl",
+      "emoji": "🌴"
+    },
+    {
+      "en": "crow",
+      "fa": "kàlagh",
+      "emoji": "🦅"
+    },
+    {
+      "en": "sea",
+      "fa": "dàrya",
+      "emoji": "🌊"
+    },
+    {
+      "en": "fish",
+      "fa": "mahi",
+      "emoji": "🐟"
+    },
+    {
+      "en": "mountain",
+      "fa": "kooh",
+      "emoji": "🏔"
+    },
+    {
+      "en": "tree",
+      "fa": "deràkht",
+      "emoji": "🌳"
+    },
+    {
+      "en": "house",
+      "fa": "khane",
+      "emoji": "🏠"
+    },
+    {
+      "en": "forest / jungle",
+      "fa": "jàngàl",
+      "emoji": "🌲 🦌"
+    },
+    {
+      "en": "earth",
+      "fa": "zàmin",
+      "emoji": "🌍"
+    },
+    {
+      "en": "moon",
+      "fa": "mah",
+      "hint": "'mah' also means month",
+      "emoji": "🌖"
+    },
+    {
+      "en": "star",
+      "fa": "setareh",
+      "emoji": "✨"
+    }
+  ]
+}

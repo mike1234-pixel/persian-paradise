@@ -1,0 +1,68 @@
+{
+  "title": "Terms of Endearment",
+  "emoji": "❤️",
+  "phrases": [
+    {
+      "en": "I love you",
+      "fa": "asheghetàm",
+      "emoji": "❤️"
+    },
+    {
+      "en": "my love",
+      "fa": "eshghàm",
+      "emoji": "🥰"
+    },
+    {
+      "en": "my everything",
+      "fa": "joonàm",
+      "emoji": "😘"
+    },
+    {
+      "en": "my dear",
+      "fa": "azizàm",
+      "emoji": "💝"
+    },
+    {
+      "en": "you are the best",
+      "fa": "to behtàrini",
+      "emoji": "🫶"
+    },
+    {
+      "en": "kiss",
+      "fa": "boos",
+      "emoji": "💋"
+    },
+    {
+      "en": "I kiss you",
+      "fa": "miboosàmet",
+      "emoji": "😚"
+    },
+    {
+      "en": "I miss you",
+      "fa": "delam bàrat tàng shode",
+      "hint": "the literal translation is 'my heart is tight for you'",
+      "emoji": "🥲"
+    },
+    {
+      "en": "I feel you",
+      "fa": "mifàhmàmet",
+      "emoji": "🤗"
+    },
+    {
+      "en": "I am eager to see you",
+      "fa": "moshtaghe didànetàm",
+      "hint": "'moshtaghe' means eager",
+      "emoji": "👀"
+    },
+    {
+      "en": "I want you so much",
+      "fa": "kheyli mikhamet",
+      "emoji": "💘"
+    },
+    {
+      "en": "with love",
+      "fa": "ba eshgh",
+      "emoji": "❣️"
+    }
+  ]
+}

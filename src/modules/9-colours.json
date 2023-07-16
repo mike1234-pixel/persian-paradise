@@ -1,0 +1,72 @@
+{
+  "title": "Colours",
+  "emoji": "🌈",
+  "phrases": [
+    {
+      "en": "colour",
+      "fa": "ràng",
+      "emoji": "🎨"
+    },
+    {
+      "en": "colours",
+      "fa": "ràngha",
+      "hint": "to make words plural, you can add 'ha' to the end of them",
+      "emoji": "🎨"
+    },
+    {
+      "en": "red",
+      "fa": "ghermez",
+      "emoji": "🟥"
+    },
+    {
+      "en": "blue",
+      "fa": "abi",
+      "emoji": "🟦"
+    },
+    {
+      "en": "yellow",
+      "fa": "zàrd",
+      "emoji": "🟨"
+    },
+    {
+      "en": "green",
+      "fa": "sàbz",
+      "emoji": "🟩"
+    },
+    {
+      "en": "purple",
+      "fa": "bànàfsh",
+      "emoji": "🟪"
+    },
+    {
+      "en": "brown",
+      "fa": "ghàhvei",
+      "emoji": "🟫"
+    },
+    {
+      "en": "black",
+      "fa": "siah",
+      "emoji": "⬛️"
+    },
+    {
+      "en": "white",
+      "fa": "sefid",
+      "emoji": "⬜️"
+    },
+    {
+      "en": "pink",
+      "fa": "sooràti",
+      "emoji": "🎀"
+    },
+    {
+      "en": "gold",
+      "fa": "tàlaei",
+      "emoji": "🔱"
+    },
+    {
+      "en": "what colour do you like?",
+      "fa": "che ràngi doost dari?",
+      "hint": "'che' and 'chi' mean 'what' in persian. Chi is the informal version."
+    }
+  ]
+}

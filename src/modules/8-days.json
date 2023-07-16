@@ -1,0 +1,35 @@
+{
+  "title": "Days Of The Week",
+  "emoji": "🗓",
+  "phrases": [
+    {
+      "en": "saturday",
+      "fa": "shànbeh"
+    },
+    {
+      "en": "sunday",
+      "fa": "yek-shanbeh",
+      "hint": "every day of the week's name from sunday to thursday is the days of after saturday. e.g. sunday is yek-shanbeh, or 'saturday plus one', monday is 'do-shanbeh' or 'saturday plus two'"
+    },
+    {
+      "en": "monday",
+      "fa": "do-shànbeh"
+    },
+    {
+      "en": "tuesday",
+      "fa": "se-shànbeh"
+    },
+    {
+      "en": "wednesday",
+      "fa": "chahar-shànbeh"
+    },
+    {
+      "en": "thursday",
+      "fa": "panj-shànbeh"
+    },
+    {
+      "en": "friday",
+      "fa": "jomeh"
+    }
+  ]
+}

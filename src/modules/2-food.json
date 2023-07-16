@@ -1,0 +1,101 @@
+{
+  "title": "food",
+  "emoji": "🍔",
+  "phrases": [
+    {
+      "en": "food",
+      "fa": "ghàza",
+      "emoji": "🥘"
+    },
+    {
+      "en": "bread",
+      "fa": "naan",
+      "emoji": "🍞"
+    },
+    {
+      "en": "potato",
+      "fa": "sib zàmini",
+      "emoji": "🥔"
+    },
+    {
+      "en": "pasta",
+      "fa": "pasta",
+      "emoji": "🍝"
+    },
+    {
+      "en": "raw rice",
+      "fa": "bereng",
+      "emoji": "🌾"
+    },
+    {
+      "en": "cooked rice",
+      "fa": "polo",
+      "emoji": "🍚"
+    },
+    {
+      "en": "oil",
+      "fa": "roghàn",
+      "emoji": "🫒"
+    },
+    {
+      "en": "egg",
+      "fa": "tokhm morgh",
+      "emoji": "🍳"
+    },
+    {
+      "en": "mushroom",
+      "fa": "gharch",
+      "emoji": "🍄"
+    },
+    {
+      "en": "pineapple",
+      "fa": "ananas",
+      "emoji": "🍍"
+    },
+    {
+      "en": "grapes",
+      "fa": "àngur",
+      "emoji": "🍇"
+    },
+    {
+      "en": "cherries",
+      "fa": "gilas",
+      "emoji": "🍒"
+    },
+    {
+      "en": "pear",
+      "fa": "golàbi",
+      "emoji": "🍐"
+    },
+    {
+      "en": "banana",
+      "fa": "moz",
+      "emoji": "🍌"
+    },
+    {
+      "en": "apple",
+      "fa": "sib",
+      "emoji": "🍎"
+    },
+    {
+      "en": "orange",
+      "fa": "porte ghal",
+      "emoji": "🍊"
+    },
+    {
+      "en": "lemon / lime",
+      "fa": "limu",
+      "emoji": "🍋 "
+    },
+    {
+      "en": "cucumber",
+      "fa": "khiar",
+      "emoji": "🥒"
+    },
+    {
+      "en": "tomato",
+      "fa": "goje",
+      "emoji": "🍅"
+    }
+  ]
+}

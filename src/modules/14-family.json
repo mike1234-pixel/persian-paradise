@@ -1,0 +1,113 @@
+{
+  "title": "Family",
+  "emoji": "👨‍👩‍👧‍👦",
+  "phrases": [
+    {
+      "en": "family",
+      "fa": "khanevadeh",
+      "emoji": "👨‍👩‍👦"
+    },
+    {
+      "en": "wife",
+      "fa": "zàn",
+      "hint": "'zàn' also means woman",
+      "emoji": "💁‍♀️"
+    },
+    {
+      "en": "husband",
+      "fa": "shohàr",
+      "emoji": "🙋‍♂️"
+    },
+    {
+      "en": "mum",
+      "fa": "maman",
+      "emoji": "👩‍👦"
+    },
+    {
+      "en": "dad",
+      "fa": "baba",
+      "emoji": "👨‍👧"
+    },
+    {
+      "en": "dokhtàr",
+      "fa": "daughter",
+      "emoji": "👧"
+    },
+    {
+      "en": "son",
+      "fa": "pesàr",
+      "emoji": "👦"
+    },
+    {
+      "en": "sister",
+      "fa": "khahàr",
+      "emoji": "👧"
+    },
+    {
+      "en": "brother",
+      "fa": "bàràndàr",
+      "emoji": "👦"
+    },
+    {
+      "en": "how many brothers do you have?",
+      "fa": "chàndta bàràdàr dari?",
+      "hint": "chàndta ... dari means 'how many ... do you have?'",
+      "emoji": "👨‍👩‍👦‍👦",
+      "responses": [
+        {
+          "en": "man do pesar daràm",
+          "fa": "I have two sons",
+          "hint": "daràm means have",
+          "emoji": "👨‍👦‍👦"
+        }
+      ]
+    },
+    {
+      "en": "child",
+      "fa": "bàche",
+      "emoji": "👶"
+    },
+    {
+      "en": "children",
+      "fa": "bàcheha",
+      "hint": "you can add 'ha' to ends of words to make them plural",
+      "emoji": "👶 👦 👧"
+    },
+    {
+      "en": "uncle (dad's brother)",
+      "fa": "àmu",
+      "emoji": "🧔‍♂️"
+    },
+    {
+      "en": "uncle (mum's brother)",
+      "fa": "daei",
+      "emoji": "🧍‍♂️"
+    },
+    {
+      "en": "aunt (dad's sister)",
+      "fa": "àmme",
+      "emoji": "👩‍🌾"
+    },
+    {
+      "en": "aunt (mum's sister)",
+      "fa": "khale",
+      "emoji": "👩‍🦱"
+    },
+    {
+      "en": "grandma",
+      "fa": "maman bozorg",
+      "hint": "bozorg means great or big in Farsi",
+      "emoji": "👵"
+    },
+    {
+      "en": "grandpa",
+      "fa": "baba bozorg",
+      "emoji": "👴"
+    },
+    {
+      "en": "grandchild",
+      "fa": "nàveh",
+      "emoji": "👶"
+    }
+  ]
+}

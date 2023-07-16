@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import { Nav } from "./components/common/Nav/Nav"
+import { Home } from "./components/pages/Home/Home"
+import { Dashboard } from "./components/pages/Dashboard/Dashboard"
+import { Module } from "./components/pages/Module/Module"
+import { useModules } from "./hooks/useModules"
+import "./App.css"
+import { Layout } from "antd"
+import Sider from "antd/es/layout/Sider"
+import { Content } from "antd/es/layout/layout"
 
-function App() {
+const Router = () => {
+  const location = useLocation()
+
+  const { modules } = useModules()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes location={location}>
+      <Route path='/' element={<Home />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+
+      {modules.map((module) => {
+        const path = `/${module.title.toLowerCase()}`
+        return <Route path={path} element={<Module module={module} />} />
+      })}
+    </Routes>
+  )
 }
 
-export default App;
+const App = () => {
+  return (
+    <div>
+      <BrowserRouter>
+        <Layout hasSider>
+          <Nav />
+          <Content>
+            <Router />
+          </Content>
+        </Layout>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+export default App

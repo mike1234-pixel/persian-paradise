@@ -1,0 +1,81 @@
+{
+  "title": "Emotions",
+  "emoji": "🥹",
+  "phrases": [
+    {
+      "en": "emotion",
+      "fa": "ehsas",
+      "emoji": "😄"
+    },
+    {
+      "en": "emotions",
+      "fa": "ehsasat",
+      "hint": "you can add 'at' to the ends of words to make them plural",
+      "emoji": "😄 😢 😦"
+    },
+    {
+      "en": "happy",
+      "fa": "shad",
+      "emoji": "😀"
+    },
+    {
+      "en": "sad",
+      "fa": "narahat",
+      "emoji": "😢"
+    },
+    {
+      "en": "scared",
+      "fa": "tàrsideh",
+      "emoji": "🫣"
+    },
+    {
+      "en": "surprised",
+      "fa": "moteàjeb",
+      "emoji": "😯"
+    },
+    {
+      "en": "angry",
+      "fa": "àsàbani",
+      "emoji": "😡"
+    },
+    {
+      "en": "in love",
+      "fa": "àshegh",
+      "emoji": "😍"
+    },
+    {
+      "en": "i am happy",
+      "fa": {
+        "informal": "shadàm",
+        "formal": "màn shad hàstàm"
+      },
+      "emoji": "😄"
+    },
+    {
+      "en": "are you sad?",
+      "fa": {
+        "informal": "narahti?",
+        "formal": "to narahat hasti?"
+      },
+      "responses": [
+        {
+          "en": "yes, I am happy",
+          "fa": {
+            "informal": "areh, shadàm",
+            "formal": "bàle, màn shad hàstàm"
+          },
+          "emoji": "👍 😄"
+        },
+        {
+          "en": "no, i am not happy",
+          "fa": {
+            "informal": "nàh, shad nistàm",
+            "formal": "kheir, man shad nistàm"
+          },
+          "emoji": "👎 😭"
+        }
+      ],
+      "emoji": "😥"
+    }
+  ]
+}

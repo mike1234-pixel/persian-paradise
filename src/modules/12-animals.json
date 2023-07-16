@@ -1,0 +1,58 @@
+{
+  "title": "Animals",
+  "emoji": "🐥",
+  "phrases": [
+    {
+      "en": "animal",
+      "fa": "heyvan",
+      "emoji": "🐒"
+    },
+    {
+      "en": "animals",
+      "fa": "heyvanha",
+      "hint": "you can add 'ha' to the end of words to make them plural",
+      "emoji": "🐒"
+    },
+    {
+      "en": "dog",
+      "fa": "sàg",
+      "emoji": "🐶"
+    },
+    {
+      "en": "cat",
+      "fa": "gorbeh",
+      "emoji": "😸"
+    },
+    {
+      "en": "sheep",
+      "fa": "goosfand",
+      "emoji": "🐑"
+    },
+    {
+      "en": "cow",
+      "fa": "gav",
+      "emoji": "🐮"
+    },
+    {
+      "en": "chicken",
+      "fa": "morgh",
+      "hint": "'tokhm' means egg, so 'tokhm morgh' means chicken's egg",
+      "emoji": "🐓"
+    },
+    {
+      "en": "pig",
+      "fa": "khook",
+      "emoji": "🐷"
+    },
+    {
+      "en": "bird",
+      "fa": "pàràndeh",
+      "emoji": "🕊"
+    },
+    {
+      "en": "snake",
+      "fa": "maar",
+      "emoji": "🐍"
+    }
+  ]
+}

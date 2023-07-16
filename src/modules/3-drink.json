@@ -1,0 +1,51 @@
+{
+  "title": "Drink",
+  "emoji": "🥤",
+  "phrases": [
+    {
+      "en": "drink",
+      "fa": "nushidàni",
+      "emoji": "🥃"
+    },
+    {
+      "en": "water",
+      "fa": "aab",
+      "emoji": "💧"
+    },
+    {
+      "en": "milk",
+      "fa": "shir",
+      "emoji": "🥛"
+    },
+    {
+      "en": "cola",
+      "fa": "nushabe",
+      "emoji": "🫗"
+    },
+    {
+      "en": "fruit juice",
+      "fa": "aab miveh",
+      "emoji": "🧃"
+    },
+    {
+      "en": "tea",
+      "fa": "chai",
+      "emoji": "🫖"
+    },
+    {
+      "en": "coffee",
+      "fa": "ghàve",
+      "emoji": "☕️"
+    },
+    {
+      "en": "beer",
+      "fa": "aab jo",
+      "emoji": "🍺"
+    },
+    {
+      "en": "wine",
+      "fa": "shàrab",
+      "emoji": "🍷"
+    }
+  ]
+}

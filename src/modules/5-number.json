@@ -1,0 +1,137 @@
+{
+  "title": "Numbers",
+  "emoji": "🔢",
+  "phrases": [
+    {
+      "en": "numbers",
+      "fa": "aadàd",
+      "emoji": "🔢"
+    },
+    {
+      "en": "number",
+      "fa": "àdàd",
+      "emoji": "#️⃣"
+    },
+    {
+      "en": "zero",
+      "fa": "sefr",
+      "emoji": "🄌"
+    },
+    {
+      "en": "one",
+      "fa": "yek",
+      "emoji": "①"
+    },
+    {
+      "en": "two",
+      "fa": "do",
+      "emoji": "②"
+    },
+    {
+      "en": "three",
+      "fa": "se",
+      "emoji": "③"
+    },
+    {
+      "en": "four",
+      "fa": "chahar",
+      "emoji": "④"
+    },
+    {
+      "en": "five",
+      "fa": "pànj",
+      "emoji": "⑤"
+    },
+    {
+      "en": "six",
+      "fa": "shesh",
+      "emoji": "⑥"
+    },
+    {
+      "en": "seven",
+      "fa": "hàft",
+      "emoji": "⑦"
+    },
+    {
+      "en": "eight",
+      "fa": "hàsht",
+      "emoji": "⑧"
+    },
+    {
+      "en": "nine",
+      "fa": "noh",
+      "emoji": "⑨"
+    },
+    {
+      "en": "ten",
+      "fa": "dah",
+      "emoji": "⑩"
+    },
+    {
+      "en": "eleven",
+      "fa": "yazdàh",
+      "emoji": "⑪"
+    },
+    {
+      "en": "twelve",
+      "fa": "dàvazdàh",
+      "emoji": "⑫"
+    },
+    {
+      "en": "thirteen",
+      "fa": "sizdàh",
+      "emoji": "⑬"
+    },
+    {
+      "en": "fourteen",
+      "fa": "chahardàh",
+      "emoji": "⑭"
+    },
+    {
+      "en": "fifteen",
+      "fa": "panzdàh",
+      "emoji": "⑮"
+    },
+    {
+      "en": "sixteen",
+      "fa": "shanzdàh",
+      "emoji": "⑯"
+    },
+    {
+      "en": "seventeen",
+      "fa": "hefdàh",
+      "emoji": "⑰"
+    },
+    {
+      "en": "eighteen",
+      "fa": "hejdàh",
+      "emoji": "⑱"
+    },
+    {
+      "en": "nineteen",
+      "fa": "nuzdàh",
+      "emoji": "⑲"
+    },
+    {
+      "en": "twenty",
+      "fa": "bist",
+      "emoji": "⑳"
+    },
+    {
+      "en": "twenty one",
+      "fa": "bist o yek",
+      "hint": "this translates to 'twenty and one'. You can follow this pattern with all numbers after twenty.",
+      "emoji": "㉑"
+    },
+    {
+      "en": "thirty",
+      "fa": "si",
+      "emoji": "㉚"
+    },
+    {
+      "en": "thirty two",
+      "fa": "si o do",
+      "emoji": "㉜"
+    }
+  ]
+}
