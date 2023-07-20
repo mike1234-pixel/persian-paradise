@@ -4,62 +4,62 @@
   "phrases": [
     {
       "en": "saturday",
-      "fa": "shànbeh"
+      "fa": ["shànbeh"]
     },
     {
       "en": "sunday",
-      "fa": "yek-shànbeh",
+      "fa": ["yek-shànbeh"],
       "hint": "every day of the week's name from sunday to thursday is the days of after saturday. e.g. sunday is yek-shanbeh, or 'saturday plus one', monday is 'do-shanbeh' or 'saturday plus two'"
     },
     {
       "en": "monday",
-      "fa": "do-shànbeh"
+      "fa": ["do-shànbeh"]
     },
     {
       "en": "tuesday",
-      "fa": "se-shànbeh"
+      "fa": ["se-shànbeh"]
     },
     {
       "en": "wednesday",
-      "fa": "chahar-shànbeh"
+      "fa": ["chahar-shànbeh"]
     },
     {
       "en": "thursday",
-      "fa": "panj-shànbeh"
+      "fa": ["panj-shànbeh"]
     },
     {
       "en": "friday",
-      "fa": "jomeh"
+      "fa": ["jomeh"]
     },
     {
       "en": "birthday",
-      "fa": "tàvàllod",
+      "fa": ["tàvàllod"],
       "emoji": "🎂"
     },
     {
       "en": "happy birthday",
-      "fa": "tàvàllodet mobaràk",
+      "fa": ["tàvàllodet mobaràk"],
       "emoji": "🥳"
     },
     {
       "en": "day",
-      "fa": "ruz",
+      "fa": ["ruz"],
       "emoji": "🌎"
     },
     {
       "en": "month",
-      "fa": "mah",
+      "fa": ["mah"],
       "hint": "'mah' also means 'moon'",
       "emoji": "🌕"
     },
     {
       "en": "year",
-      "fa": "sal",
+      "fa": ["sal"],
       "emoji": "🌞"
     },
     {
       "en": "calendar",
-      "fa": "tàghvim",
+      "fa": ["tàghvim"],
       "emoji": "📅"
     }
   ]

@@ -17,65 +17,59 @@
         "informal": "chetori?",
         "formal": "halàt chetor àst?"
       },
-      "emoji": "😃",
-      "responses": [
-        {
-          "en": "I am good, thankyou",
-          "fa": {
-            "informal": "khoobam, merci",
-            "formal": "màn khoob hàstàm, mamnoon"
-          },
-          "emoji": "👍"
-        },
-        {
-          "en": "I am not good",
-          "fa": {
-            "informal": "khoob nistàm",
-            "formal": "man khoob nistàm"
-          },
-          "emoji": "👎"
-        }
-      ]
+      "emoji": "😃"
+    },
+    {
+      "en": "I am good, thankyou",
+      "fa": {
+        "informal": "khoobam, merci",
+        "formal": "màn khoob hàstàm, mamnoon"
+      },
+      "emoji": "👍"
+    },
+    {
+      "en": "I am not good",
+      "fa": {
+        "informal": "khoob nistàm",
+        "formal": "man khoob nistàm"
+      },
+      "emoji": "👎"
     },
     {
       "en": "what's up? / what's the news?",
-      "fa": "che khàbàr?",
-      "emoji": "📰",
-      "responses": [
-        {
-          "en": "no news",
-          "fa": "khàbàri nist",
-          "emoji": "🤷‍♀️"
-        },
-        {
-          "en": "health, all is good",
-          "fa": "sàlamàti",
-          "emoji": "👌"
-        }
-      ]
+      "fa": ["che khàbàr?"],
+      "emoji": "📰"
+    },
+    {
+      "en": "no news",
+      "fa": ["khàbàri nist"],
+      "emoji": "🤷‍♀️"
+    },
+    {
+      "en": "health, all is good",
+      "fa": ["sàlamàti"],
+      "emoji": "👌"
     },
     {
       "en": "all is good?",
-      "fa": "hàmechi khoobe?",
-      "emoji": "😺",
-      "responses": [
-        {
-          "en": "yes, i am good, thankyou",
-          "fa": {
-            "informal": "areh, khoobàm, merci",
-            "formal": "bàle, man khoob hàstàm, mamnoon"
-          },
-          "emoji": "😸"
-        },
-        {
-          "en": "no, i am not good",
-          "fa": {
-            "informal": "nàh, khoob nistam",
-            "formal": "kheir, man khoob nistam"
-          },
-          "emoji": "😿"
-        }
-      ]
+      "fa": ["hàmechi khoobe?"],
+      "emoji": "😺"
+    },
+    {
+      "en": "yes, i am good, thankyou",
+      "fa": {
+        "informal": "areh, khoobàm, merci",
+        "formal": "bàle, man khoob hàstàm, mamnoon"
+      },
+      "emoji": "😸"
+    },
+    {
+      "en": "no, i am not good",
+      "fa": {
+        "informal": "nàh, khoob nistam",
+        "formal": "kheir, man khoob nistam"
+      },
+      "emoji": "😿"
     },
     {
       "en": "are you tired?",
@@ -83,25 +77,23 @@
         "informal": "to khàsti?",
         "formal": "to khàste hàsti?"
       },
-      "emoji": "💤",
-      "responses": [
-        {
-          "en": "I am tired",
-          "fa": {
-            "informal": "khàsteàm",
-            "formal": "màn khàste hàstàm"
-          },
-          "emoji": "🥱"
-        },
-        {
-          "en": "No, am not tired",
-          "fa": {
-            "informal": "nàh, khast nistàm",
-            "formal": "kheir, man khast nistàm"
-          },
-          "emoji": "😃"
-        }
-      ]
+      "emoji": "💤"
+    },
+    {
+      "en": "I am tired",
+      "fa": {
+        "informal": "khàsteàm",
+        "formal": "màn khàste hàstàm"
+      },
+      "emoji": "🥱"
+    },
+    {
+      "en": "No, am not tired",
+      "fa": {
+        "informal": "nàh, khast nistàm",
+        "formal": "kheir, man khast nistàm"
+      },
+      "emoji": "😃"
     },
     {
       "en": "are you hungry?",
@@ -109,17 +101,15 @@
         "informal": "to goshnàmei?",
         "formal": "to goshne hàsti?"
       },
-      "emoji": "🍔",
-      "responses": [
-        {
-          "en": "i am hungry",
-          "fa": {
-            "informal": "goshnàme",
-            "formal": "màn goshne hàstàm"
-          },
-          "emoji": "😋"
-        }
-      ]
+      "emoji": "🍔"
+    },
+    {
+      "en": "i am hungry",
+      "fa": {
+        "informal": "goshnàme",
+        "formal": "màn goshne hàstàm"
+      },
+      "emoji": "😋"
     },
     {
       "en": "are you thirsty?",
@@ -127,26 +117,24 @@
         "informal": "to teshnàmei?",
         "formal": "to teshne hàsti?"
       },
-      "emoji": "🥤",
-      "responses": [
-        {
-          "en": "i am thirsty",
-          "fa": {
-            "informal": "teshnàme",
-            "formal": "màn teshne hàstàm"
-          },
-          "emoji": "🤤"
-        }
-      ]
+      "emoji": "🥤"
+    },
+    {
+      "en": "i am thirsty",
+      "fa": {
+        "informal": "teshnàme",
+        "formal": "màn teshne hàstàm"
+      },
+      "emoji": "🤤"
     },
     {
       "en": "i am drunk",
-      "fa": "màstàm",
+      "fa": ["màstàm"],
       "emoji": "🥴"
     },
     {
       "en": "cheers",
-      "fa": "sàlamàti",
+      "fa": ["sàlamàti"],
       "emoji": "🍻"
     },
     {
@@ -155,48 +143,46 @@
         "informal": "merci",
         "formal": "mamnoon"
       },
-      "emoji": "🙏",
-      "responses": [
-        {
-          "en": "you are welcome",
-          "fa": "khahesh mikonàm",
-          "emoji": "😊"
-        }
-      ]
+      "emoji": "🙏"
+    },
+    {
+      "en": "you are welcome",
+      "fa": ["khahesh mikonàm"],
+      "emoji": "😊"
     },
     {
       "en": "I am sorry / excuse me",
-      "fa": "bebàkhshid",
+      "fa": ["bebàkhshid"],
       "emoji": "😔"
     },
     {
       "en": "good morning",
-      "fa": "sobh bekheir",
+      "fa": ["sobh bekheir"],
       "emoji": "🌅"
     },
     {
       "en": "good afternoon",
-      "fa": "zohr bekheir",
+      "fa": ["zohr bekheir"],
       "emoji": "🌤"
     },
     {
       "en": "good evening",
-      "fa": "àsr bekheir",
+      "fa": ["àsr bekheir"],
       "emoji": "🌆"
     },
     {
       "en": "good night",
-      "fa": "shàb bekheir",
+      "fa": ["shàb bekheir"],
       "emoji": "🌜"
     },
     {
       "en": "goodbye",
-      "fa": "khodàfez",
+      "fa": ["khodàfez"],
       "emoji": "👋"
     },
     {
       "en": "see you soon",
-      "fa": "be zoodi mibinàmet",
+      "fa": ["be zoodi mibinàmet"],
       "emoji": "👀"
     },
     {
@@ -209,70 +195,66 @@
     },
     {
       "en": "what are you doing?",
-      "fa": "chi kaar mikoni?",
+      "fa": ["chi kaar mikoni?"],
       "emoji": "😮"
     },
     {
       "en": "do you speak farsi?",
-      "fa": "farsi bàlàdi?",
-      "emoji": "🗣",
-      "responses": [
-        {
-          "en": "yes",
-          "fa": "areh",
-          "emoji": "👍"
-        },
-        {
-          "en": "no",
-          "fa": "nàh",
-          "emoji": "👎"
-        },
-        {
-          "en": "a little bit",
-          "fa": "ye kàmi",
-          "emoji": "🤙"
-        }
-      ]
+      "fa": ["farsi bàlàdi?"],
+      "emoji": "🗣"
+    },
+    {
+      "en": "yes",
+      "fa": ["areh", "bale"],
+      "emoji": "👍"
+    },
+    {
+      "en": "no",
+      "fa": ["nàh", "kheir"],
+      "emoji": "👎"
+    },
+    {
+      "en": "a little bit",
+      "fa": ["ye kàmi"],
+      "emoji": "🤙"
     },
     {
       "en": "where are you from?",
-      "fa": "àhle kojaei?",
-      "emoji": "🌎",
-      "responses": [
-        {
-          "en": "I am from England",
-          "fa": {
-            "informal": "inglisiàm",
-            "formal": "màn inglisi hàstàm"
-          },
-          "emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
-        }
-      ]
+      "fa": ["àhle kojaei?"],
+      "emoji": "🌎"
+    },
+    {
+      "en": "I am from England",
+      "fa": {
+        "informal": "inglisiàm",
+        "formal": "màn inglisi hàstàm"
+      },
+      "emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     {
       "en": "I know",
-      "fa": "bàlàdàm",
+      "fa": ["bàlàdàm"],
       "emoji": "🧐"
     },
     {
       "en": "i don't know",
-      "fa": "bàlàd nistàm",
+      "fa": ["bàlàd nistàm"],
       "hint": "'nistàm' means 'I am not', add it to the end of sentences, e.g. 'Michael nistàm' means 'I am not Michael'",
       "emoji": "🫤"
     },
     {
       "en": "please",
-      "fa": "lotfàn",
+      "fa": ["lotfàn"],
       "emoji": "🙏"
     },
     {
       "en": "good luck",
-      "fa": "movàfàgh bashid",
+      "fa": ["movàfàgh bashid"],
       "emoji": "🤞"
     },
     {
       "en": "welcome!",
-      "fa": "khosh amàdid!",
+      "fa": ["khosh amàdid!"],
       "emoji": "🤗"
     }
   ]

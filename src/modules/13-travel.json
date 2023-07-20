@@ -4,134 +4,134 @@
   "phrases": [
     {
       "en": "travel / trip",
-      "fa": "sàfàr",
+      "fa": ["sàfàr"],
       "emoji": "🧳"
     },
     {
       "en": "where to go?",
-      "fa": "koja berim?",
+      "fa": ["koja berim?"],
       "emoji": "🤔"
     },
     {
       "en": "where shall we go?",
-      "fa": "koja bayàd berim",
+      "fa": ["koja bayàd berim"],
       "hint": "'bayàd' means should or shall",
       "emoji": "🧐"
     },
     {
       "en": "where to travel?",
-      "fa": "sàfàr koja berim?",
+      "fa": ["sàfàr koja berim?"],
       "emoji": "🤔"
     },
     {
       "en": "country",
-      "fa": "keshvàr",
+      "fa": ["keshvàr"],
       "emoji": "🇬🇸"
     },
     {
       "en": "countries",
-      "fa": "keshvàrha",
+      "fa": ["keshvàrha"],
       "hint": "you can add 'ha' to the ends of words to make them plural",
       "emoji": "🇬🇸 🇨🇳 🇺🇸"
     },
     {
       "en": "city",
-      "fa": "shàhr",
+      "fa": ["shàhr"],
       "emoji": "🏙"
     },
     {
       "en": "village",
-      "fa": "rusta",
+      "fa": ["rusta"],
       "emoji": "🏘"
     },
     {
       "en": "street",
-      "fa": "khiaban",
+      "fa": ["khiaban"],
       "emoji": "🏘"
     },
     {
       "en": "alley",
-      "fa": "kuche",
+      "fa": ["kuche"],
       "emoji": "🏘"
     },
     {
       "en": "square",
-      "fa": "meydan",
+      "fa": ["meydan"],
       "emoji": "🏘"
     },
     {
       "en": "germany",
-      "fa": "alman",
+      "fa": ["alman"],
       "emoji": "🇩🇪"
     },
     {
       "en": "austria",
-      "fa": "otrish",
+      "fa": ["otrish"],
       "emoji": "🇦🇹"
     },
     {
       "en": "poland",
-      "fa": "làhestan",
+      "fa": ["làhestan"],
       "emoji": "🇵🇱"
     },
     {
       "en": "greece",
-      "fa": "yoonan",
+      "fa": ["yoonan"],
       "emoji": "🇬🇷"
     },
     {
       "en": "england",
-      "fa": "engilis or engelestan",
+      "fa": ["engilis", "engelestan"],
       "emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
     {
       "en": "hungary",
-      "fa": "majarestan",
+      "fa": ["majarestan"],
       "emoji": "🇭🇺"
     },
     {
       "en": "india",
-      "fa": "hend",
+      "fa": ["hend"],
       "emoji": "🇮🇳"
     },
     {
       "en": "russia",
-      "fa": "roosiyeh",
+      "fa": ["roosiyeh"],
       "emoji": "🇷🇺"
     },
     {
       "en": "spain",
-      "fa": "espania",
+      "fa": ["espania"],
       "emoji": "🇪🇸"
     },
     {
       "en": "italy",
-      "fa": "italia",
+      "fa": ["italia"],
       "emoji": "🇮🇹"
     },
     {
       "en": "chile",
-      "fa": "shili",
+      "fa": ["shili"],
       "emoji": "🇨🇱"
     },
     {
       "en": "suitcase",
-      "fa": "chàmedan",
+      "fa": ["chàmedan"],
       "emoji": "🧳"
     },
     {
       "en": "backpack",
-      "fa": "kule",
+      "fa": ["kule"],
       "emoji": "🎒"
     },
     {
       "en": "toothbrush",
-      "fa": "mesvak",
+      "fa": ["mesvak"],
       "emoji": "🪥"
     },
     {
       "en": "I can't wait!",
-      "fa": "nemitunàm sàbr konàm",
+      "fa": ["nemitunàm sàbr konàm"],
       "emoji": "😁"
     }
   ]

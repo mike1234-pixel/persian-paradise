@@ -4,37 +4,37 @@
   "phrases": [
     {
       "en": "taste",
-      "fa": "màzeh",
+      "fa": ["màzeh"],
       "emoji": "👅"
     },
     {
       "en": "tongue",
-      "fa": "zàban",
+      "fa": ["zàban"],
       "emoji": "👅"
     },
     {
       "en": "sour",
-      "fa": "torsh",
+      "fa": ["torsh"],
       "emoji": "🍋"
     },
     {
       "en": "sweet",
-      "fa": "shirin",
+      "fa": ["shirin"],
       "emoji": "🧁"
     },
     {
       "en": "bitter",
-      "fa": "tàlkh",
+      "fa": ["tàlkh"],
       "emoji": "🍺"
     },
     {
       "en": "spicy",
-      "fa": "tond",
+      "fa": ["tond"],
       "emoji": "🌶"
     },
     {
       "en": "salty",
-      "fa": "shur",
+      "fa": ["shur"],
       "emoji": "🧂"
     }
   ]

@@ -4,109 +4,126 @@
   "phrases": [
     {
       "en": "family",
-      "fa": "khanevadeh",
+      "fa": ["khanevadeh"],
       "emoji": "👨‍👩‍👦"
     },
     {
       "en": "wife",
-      "fa": "zàn",
+      "fa": ["zàn"],
       "hint": "'zàn' also means woman",
       "emoji": "💁‍♀️"
     },
     {
       "en": "husband",
-      "fa": "shohàr",
+      "fa": ["shohàr"],
       "emoji": "🙋‍♂️"
     },
     {
+      "en": "i am your wife",
+      "fa": ["màn zàn e to hàstàm"],
+      "hint": "in farsi you must add 'e' to words that belong to other words",
+      "emoji": "👰‍♀️"
+    },
+    {
+      "en": "you are my wife",
+      "fa": ["to zàn e màn hàsti"],
+      "hint": "in farsi you must add 'e' to words that belong to other words",
+      "emoji": "👰‍♀️"
+    },
+    {
       "en": "mum",
-      "fa": "maman",
+      "fa": {
+        "formal": "madàr",
+        "informal": "maman"
+      },
       "emoji": "👩‍👦"
     },
     {
       "en": "dad",
-      "fa": "baba",
+      "fa": {
+        "formal": "pedàr",
+        "informal": "baba"
+      },
       "emoji": "👨‍👧"
     },
+
     {
       "en": "daughter",
-      "fa": "dokhtàr",
+      "fa": ["dokhtàr"],
       "emoji": "👧"
     },
     {
       "en": "son",
-      "fa": "pesàr",
+      "fa": ["pesàr"],
       "emoji": "👦"
     },
     {
       "en": "sister",
-      "fa": "khahàr",
+      "fa": ["khahàr"],
       "emoji": "👧"
     },
     {
       "en": "brother",
-      "fa": "bàràndàr",
+      "fa": ["bàradàr"],
       "emoji": "👦"
     },
     {
       "en": "how many brothers do you have?",
-      "fa": "chàndta bàràdàr dari?",
+      "fa": ["chàndta bàràdàr dari?"],
       "hint": "chàndta ... dari means 'how many ... do you have?'",
-      "emoji": "👨‍👩‍👦‍👦",
-      "responses": [
-        {
-          "en": "man do pesar daràm",
-          "fa": "I have two sons",
-          "hint": "daràm means have",
-          "emoji": "👨‍👦‍👦"
-        }
-      ]
+      "emoji": "👨‍👩‍👦‍👦"
+    },
+    {
+      "en": "man do pesar daràm",
+      "fa": ["I have two sons"],
+      "hint": "daràm means have",
+      "emoji": "👨‍👦‍👦"
     },
     {
       "en": "child",
-      "fa": "bàche",
+      "fa": ["bàche"],
       "emoji": "👶"
     },
     {
       "en": "children",
-      "fa": "bàcheha",
+      "fa": ["bàcheha"],
       "hint": "you can add 'ha' to ends of words to make them plural",
       "emoji": "👶 👦 👧"
     },
     {
       "en": "uncle (dad's brother)",
-      "fa": "àmu",
+      "fa": ["àmu"],
       "emoji": "🧔‍♂️"
     },
     {
       "en": "uncle (mum's brother)",
-      "fa": "daei",
+      "fa": ["daei"],
       "emoji": "🧍‍♂️"
     },
     {
       "en": "aunt (dad's sister)",
-      "fa": "àmme",
+      "fa": ["àmme"],
       "emoji": "👩‍🌾"
     },
     {
       "en": "aunt (mum's sister)",
-      "fa": "khale",
+      "fa": ["khale"],
       "emoji": "👩‍🦱"
     },
     {
       "en": "grandma",
-      "fa": "maman bozorg",
+      "fa": ["maman bozorg"],
       "hint": "bozorg means great or big in Farsi",
       "emoji": "👵"
     },
     {
       "en": "grandpa",
-      "fa": "baba bozorg",
+      "fa": ["baba bozorg"],
       "emoji": "👴"
     },
     {
       "en": "grandchild",
-      "fa": "nàveh",
+      "fa": ["nàveh"],
       "emoji": "👶"
     }
   ]

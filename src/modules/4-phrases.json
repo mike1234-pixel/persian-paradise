@@ -5,43 +5,43 @@
   "phrases": [
     {
       "en": "I want tea",
-      "fa": "chai mikhàm",
+      "fa": ["chai mikhàm"],
       "emoji": "🫖 👍"
     },
     {
       "en": "I don't want coffee",
-      "fa": "Ghàve nemikhàm",
+      "fa": ["ghàve nemikhàm"],
       "hint": "add 'ne' to the beginning of a verb to make it negative",
       "emoji": "☕️ 👎"
     },
     {
       "en": "I eat banana",
-      "fa": "moz mikhoràm",
+      "fa": ["moz mikhoràm"],
       "emoji": "😋 🍌"
     },
     {
       "en": "I don't eat pineapple",
-      "fa": "ananas nemikhoràm",
+      "fa": ["ananas nemikhoràm"],
       "emoji": "🍍 😬"
     },
     {
       "en": "I drink beer",
-      "fa": "aab jo minooshàm",
+      "fa": ["aab jo minooshàm"],
       "emoji": "😋 🍺"
     },
     {
       "en": "I don't drink milk",
-      "fa": "shir neminooshàm",
+      "fa": ["shir neminooshàm"],
       "emoji": "🥛 😬"
     },
     {
       "en": "I buy bread",
-      "fa": "naan mikhàràm",
+      "fa": ["naan mikhàràm"],
       "emoji": "💵 🍞"
     },
     {
       "en": "I don't buy potato",
-      "fa": "sib zàmini nemikhàràm",
+      "fa": ["sib zàmini nemikhàràm"],
       "emoji": "🙅‍♀️ 🥔"
     }
   ]

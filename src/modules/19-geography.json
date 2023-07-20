@@ -4,72 +4,77 @@
   "phrases": [
     {
       "en": "compass",
-      "fa": "ghotb nàma",
+      "fa": ["ghotb nàma"],
       "emoji": "🧭"
     },
     {
       "en": "north",
-      "fa": "shomal",
+      "fa": ["shomal"],
       "emoji": "↑"
     },
     {
       "en": "east",
-      "fa": "shàrgh",
+      "fa": ["shàrgh"],
       "emoji": "→"
     },
     {
       "en": "south",
-      "fa": "jonub",
+      "fa": ["jonub"],
       "emoji": "↓"
     },
     {
       "en": "west",
-      "fa": "ghàrb",
+      "fa": ["ghàrb"],
       "emoji": "←"
     },
     {
       "en": "map",
-      "fa": "nàgshe",
+      "fa": ["nàgshe"],
       "emoji": "🗺"
     },
     {
+      "en": "world",
+      "fa": ["jàhan"],
+      "emoji": "🌎"
+    },
+    {
       "en": "world map",
-      "fa": "nàgshe jàhan",
+      "fa": ["nàgshe jàhan"],
       "emoji": "🗺"
     },
     {
       "en": "pole",
-      "fa": "ghotb",
+      "fa": ["ghotb"],
       "emoji": "🧊"
     },
     {
       "en": "america",
-      "fa": "amrika",
+      "fa": ["amrika"],
       "emoji": "🌎"
     },
     {
       "en": "europe",
-      "fa": "ooroopa",
+      "fa": ["ooroopa"],
       "emoji": "🌍"
     },
     {
       "en": "africa",
-      "fa": "afrigha",
+      "fa": ["afrigha"],
       "emoji": "🌍"
     },
     {
       "en": "asia",
-      "fa": "asia",
+      "fa": ["asia"],
       "emoji": "🌏"
     },
     {
       "en": "australia",
-      "fa": "ostoralia",
+      "fa": ["ostoralia"],
       "emoji": "🌏"
     },
     {
       "en": "south pole",
-      "fa": "ghotb jonub",
+      "fa": ["ghotb jonub"],
       "emoji": "🇦🇶"
     }
   ]

@@ -6,13 +6,15 @@ import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
 import { Layout } from "antd"
 import { Content } from "antd/es/layout/layout"
+import { urlify } from "./utils/urlify"
+import { TopNav } from "./components/common/TopNav/TopNav"
+import { ConfettiAnimationContextProvider } from "./context/ConfettiAnimationContext"
+import { ConfettiEffect } from "./components/common/Confetti/Confetti"
 
 const Router = () => {
   const location = useLocation()
 
   const { modules } = useModules()
-
-  console.log(modules)
 
   return (
     <Routes location={location}>
@@ -20,12 +22,12 @@ const Router = () => {
       <Route path='/dashboard' element={<Dashboard />} />
 
       {modules.map((module) => {
-        const path = `/${module.title.toLowerCase()}`
+        const path = `/${urlify(module.title)}`
         return (
           <Route
             path={path}
             element={<Module module={module} />}
-            key={module.title + "x"}
+            key={module.title}
           />
         )
       })}
@@ -36,14 +38,18 @@ const Router = () => {
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Layout hasSider>
-          <Nav />
-          <Content>
-            <Router />
-          </Content>
-        </Layout>
-      </BrowserRouter>
+      <ConfettiAnimationContextProvider>
+        <BrowserRouter>
+          <Layout hasSider>
+            <ConfettiEffect />
+            <Nav />
+            <Content>
+              <TopNav />
+              <Router />
+            </Content>
+          </Layout>
+        </BrowserRouter>
+      </ConfettiAnimationContextProvider>
     </div>
   )
 }

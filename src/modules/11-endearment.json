@@ -4,69 +4,69 @@
   "phrases": [
     {
       "en": "I love you",
-      "fa": "asheghetàm",
+      "fa": ["asheghetàm"],
       "emoji": "❤️"
     },
     {
       "en": "my love",
-      "fa": "eshghàm",
+      "fa": ["eshghàm"],
       "emoji": "🥰"
     },
     {
       "en": "my everything",
-      "fa": "joonàm",
+      "fa": ["joonàm"],
       "emoji": "😘"
     },
     {
       "en": "my dear",
-      "fa": "azizàm",
+      "fa": ["azizàm"],
       "emoji": "💝"
     },
     {
       "en": "you are the best",
-      "fa": "to behtàrini",
+      "fa": ["to behtàrini"],
       "emoji": "🫶"
     },
     {
       "en": "kiss",
-      "fa": "boos",
+      "fa": ["boos"],
       "emoji": "💋"
     },
     {
       "en": "I kiss you",
-      "fa": "miboosàmet",
+      "fa": ["miboosàmet"],
       "emoji": "😚"
     },
     {
       "en": "I miss you",
-      "fa": "delam bàrat tàng shode",
+      "fa": ["delam bàrat tàng shode"],
       "hint": "the literal translation is 'my heart is tight for you'",
       "emoji": "🥲"
     },
     {
       "en": "I feel you",
-      "fa": "mifàhmàmet",
+      "fa": ["mifàhmàmet"],
       "emoji": "🤗"
     },
     {
       "en": "I am eager to see you",
-      "fa": "moshtaghe didànetàm",
+      "fa": ["moshtaghe didànetàm"],
       "hint": "'moshtaghe' means eager",
       "emoji": "👀"
     },
     {
       "en": "I want you so much",
-      "fa": "kheyli mikhamet",
+      "fa": ["kheyli mikhamet"],
       "emoji": "💘"
     },
     {
       "en": "with love",
-      "fa": "ba eshgh",
+      "fa": ["ba eshgh"],
       "emoji": "❣️"
     },
     {
       "en": "you are my world",
-      "fa": "to jàhan e mani",
+      "fa": ["to jàhan e mani"],
       "emoji": "🌍"
     }
   ]

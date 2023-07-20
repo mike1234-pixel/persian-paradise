@@ -1,0 +1,70 @@
+{
+  "title": "Pronouns",
+  "emoji": "🐱",
+  "phrases": [
+    {
+      "en": "I, me, my",
+      "fa": ["màn"]
+    },
+    {
+      "en": "you, your, yours",
+      "fa": {
+        "informal": "to",
+        "formal": "shoma"
+      }
+    },
+    {
+      "en": "he, she, his, hers",
+      "fa": ["oo"]
+    },
+    {
+      "en": "we, us, ours",
+      "fa": ["ma"]
+    },
+    {
+      "en": "they, them, theirs",
+      "fa": ["anha"]
+    },
+    {
+      "en": "I am drinking beer",
+      "fa": ["màn aab jo minooshàm"]
+    },
+    {
+      "en": "You are drinking beer",
+      "fa": {
+        "informal": "to aab jo minoshee",
+        "formal": "shoma aab jo minosheed"
+      }
+    },
+    {
+      "en": "She is drinking beer",
+      "fa": ["oo aab jo minooshàd"]
+    },
+    {
+      "en": "We are drinking beer",
+      "fa": ["ma aab jo minoosheem"]
+    },
+    {
+      "en": "They are drinking beer",
+      "fa": ["anha aab jo minooshànd"]
+    },
+    {
+      "en": "this",
+      "fa": ["een"]
+    },
+    {
+      "en": "that",
+      "fa": ["aan"]
+    },
+    {
+      "en": "these",
+      "fa": ["eenha"],
+      "hint": "adding 'ha' to the ends of words makes them plural"
+    },
+    {
+      "en": "those",
+      "fa": ["aanha"],
+      "hint": "adding 'ha' to the ends of words makes them plural"
+    }
+  ]
+}

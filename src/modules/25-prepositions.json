@@ -1,0 +1,111 @@
+{
+  "title": "Prepositions",
+  "emoji": "👆",
+  "phrases": [
+    {
+      "en": "from",
+      "fa": ["àz"]
+    },
+    {
+      "en": "to",
+      "fa": ["beh"]
+    },
+    {
+      "en": "until",
+      "fa": ["taa"]
+    },
+    {
+      "en": "here",
+      "fa": ["eenja"]
+    },
+    {
+      "en": "there",
+      "fa": ["aanja"]
+    },
+    {
+      "en": "from here to there",
+      "fa": ["àz eenja beh aanja"]
+    },
+    {
+      "en": "up / above",
+      "fa": ["bala"],
+      "emoji": "👆"
+    },
+    {
+      "en": "down / below",
+      "fa": ["paeen"],
+      "emoji": "👇"
+    },
+    {
+      "en": "left",
+      "fa": ["chàp"],
+      "emoji": "👈"
+    },
+    {
+      "en": "right",
+      "fa": ["rast"],
+      "emoji": "👉"
+    },
+    {
+      "en": "over / on",
+      "fa": ["rooye"]
+    },
+    {
+      "en": "under",
+      "fa": ["zire"]
+    },
+    {
+      "en": "the pen is off the table",
+      "fa": ["khodkar rooye miz nist"],
+      "hint": "say 'not on'"
+    },
+    {
+      "en": "in",
+      "fa": ["dàr"]
+    },
+    {
+      "en": "out",
+      "fa": ["biroon"]
+    },
+    {
+      "en": "after",
+      "fa": ["bàad"],
+      "emoji": "⬅️"
+    },
+    {
+      "en": "before",
+      "fa": ["ghàbl"],
+      "emoji": "➡️"
+    },
+    {
+      "en": "next",
+      "fa": ["bàadi"],
+      "emoji": "⏭"
+    },
+    {
+      "en": "previous",
+      "fa": ["ghàbli"],
+      "emoji": "⏮"
+    },
+    {
+      "en": "between",
+      "fa": ["beyne"]
+    },
+    {
+      "en": "from",
+      "fa": ["àz"]
+    },
+    {
+      "en": "to",
+      "fa": ["beh"]
+    },
+    {
+      "en": "at",
+      "fa": ["dàr"]
+    },
+    {
+      "en": "around",
+      "fa": ["àtraaf"]
+    }
+  ]
+}

@@ -4,68 +4,68 @@
   "phrases": [
     {
       "en": "colour",
-      "fa": "ràng",
+      "fa": ["ràng"],
       "emoji": "🎨"
     },
     {
       "en": "colours",
-      "fa": "ràngha",
+      "fa": ["ràngha"],
       "hint": "to make words plural, you can add 'ha' to the end of them",
       "emoji": "🎨"
     },
     {
       "en": "red",
-      "fa": "ghermez",
+      "fa": ["ghermez"],
       "emoji": "🟥"
     },
     {
       "en": "blue",
-      "fa": "abi",
+      "fa": ["abi"],
       "emoji": "🟦"
     },
     {
       "en": "yellow",
-      "fa": "zàrd",
+      "fa": ["zàrd"],
       "emoji": "🟨"
     },
     {
       "en": "green",
-      "fa": "sàbz",
+      "fa": ["sàbz"],
       "emoji": "🟩"
     },
     {
       "en": "purple",
-      "fa": "bànàfsh",
+      "fa": ["bànàfsh"],
       "emoji": "🟪"
     },
     {
       "en": "brown",
-      "fa": "ghàhvei",
+      "fa": ["ghàhvei"],
       "emoji": "🟫"
     },
     {
       "en": "black",
-      "fa": "siah",
+      "fa": ["siah"],
       "emoji": "⬛️"
     },
     {
       "en": "white",
-      "fa": "sefid",
+      "fa": ["sefid"],
       "emoji": "⬜️"
     },
     {
       "en": "pink",
-      "fa": "sooràti",
+      "fa": ["sooràti"],
       "emoji": "🎀"
     },
     {
       "en": "gold",
-      "fa": "tàlaei",
+      "fa": ["tàlaei"],
       "emoji": "🔱"
     },
     {
       "en": "what colour do you like?",
-      "fa": "che ràngi doost dari?",
+      "fa": ["che ràngi doost dari?"],
       "hint": "'che' and 'chi' mean 'what' in persian. Chi is the informal version."
     }
   ]

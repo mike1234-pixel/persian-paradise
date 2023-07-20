@@ -1,18 +1,24 @@
 import { Typography, Layout, Input, Form, Button } from "antd"
 import { CourseModule } from "../../../types/Module"
-import styles from "./Module.module.css"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
 import { Tick } from "../../common/Tick/Tick"
+import styles from "./Module.module.css"
+import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
 
 interface ModuleProps {
   module: CourseModule
 }
 
+// TODO:
+// - make responsive
+
 export const Module = ({ module }: ModuleProps) => {
   const { phrases } = module
   const { Title } = Typography
   const { Content } = Layout
+
+  const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [inputValue, setInputValue] = useState("")
@@ -34,6 +40,7 @@ export const Module = ({ module }: ModuleProps) => {
   const handleNextPhrase = () => {
     const finished = phrases.length - 1 === currentPhraseIndex
     if (finished) {
+      releaseTheConfetti()
       setModuleComplete(true)
     }
     if (isAnswerCorrect && !finished) {
@@ -44,8 +51,10 @@ export const Module = ({ module }: ModuleProps) => {
   const currentPhrase = phrases[currentPhraseIndex]
 
   const checkAnswer = () => {
-    if (typeof currentPhrase.fa === "string") {
-      setIsAnswerCorrect(normalize(inputValue) === normalize(currentPhrase.fa))
+    if (Array.isArray(currentPhrase.fa)) {
+      currentPhrase.fa.map((phrase) => {
+        setIsAnswerCorrect(normalize(inputValue) === normalize(phrase))
+      })
     } else {
       setIsAnswerCorrect(
         normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
@@ -95,8 +104,10 @@ export const Module = ({ module }: ModuleProps) => {
           {showAnswer ? "Hide Answer" : "Show Answer"}
         </Button>
         <div className={showAnswer ? styles.answer : styles.hidden}>
-          {typeof currentPhrase.fa === "string" ? (
-            <p>{currentPhrase.fa}</p>
+          {Array.isArray(currentPhrase.fa) ? (
+            currentPhrase.fa.map((phrase) => {
+              return <p>{phrase}</p>
+            })
           ) : (
             <>
               <p>Formal: {currentPhrase.fa.formal}</p>
@@ -130,3 +141,6 @@ export const Module = ({ module }: ModuleProps) => {
     </Content>
   )
 }
+
+// TODO: add back button
+// use the user's localstorage as a db to keep track of completed modules.

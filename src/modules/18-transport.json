@@ -4,69 +4,69 @@
   "phrases": [
     {
       "en": "taxi",
-      "fa": "taxi",
+      "fa": ["taxi"],
       "emoji": "🚕"
     },
     {
       "en": "bus",
-      "fa": "ootooboos",
+      "fa": ["ootooboos"],
       "emoji": "🚌"
     },
     {
       "en": "metro",
-      "fa": "metro",
+      "fa": ["metro"],
       "emoji": "🚝"
     },
     {
       "en": "ship",
-      "fa": "kàshti",
+      "fa": ["kàshti"],
       "emoji": "🚢"
     },
     {
       "en": "boat",
-      "fa": "ghayegh",
+      "fa": ["ghayegh"],
       "emoji": "🚤"
     },
     {
       "en": "swim",
-      "fa": "shena",
+      "fa": ["shena"],
       "emoji": "🏊‍♂️"
     },
     {
       "en": "plane",
-      "fa": "hàvapeyma",
+      "fa": ["hàvapeyma"],
       "emoji": "✈️"
     },
     {
       "en": "airport",
-      "fa": "forudgah",
+      "fa": ["forudgah"],
       "emoji": "🛄"
     },
     {
       "en": "flight / flying",
-      "fa": "pàrvaz",
+      "fa": ["pàrvaz"],
       "emoji": "🛄"
     },
     {
       "en": "when is your flight?",
-      "fa": "pàrvazet keye",
+      "fa": ["pàrvazet keye"],
       "hint": "'keye' means 'when'",
       "emoji": "🕛"
     },
     {
       "en": "where is the airport?",
-      "fa": "forudgah kojast",
+      "fa": ["forudgah kojast"],
       "hint": "'kojast' means 'where'",
       "emoji": "🪧"
     },
     {
       "en": "bicycle",
-      "fa": "dochàrke",
+      "fa": ["dochàrke"],
       "emoji": "🚲"
     },
     {
       "en": "car",
-      "fa": "màshin",
+      "fa": ["màshin"],
       "emoji": "🚘"
     }
   ]

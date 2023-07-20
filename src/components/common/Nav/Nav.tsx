@@ -1,12 +1,14 @@
 import { useState } from "react"
-import { Button, Menu, MenuProps } from "antd"
+import { Button, Menu, MenuProps, Layout } from "antd"
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import { useModules } from "../../../hooks/useModules"
-import Sider from "antd/es/layout/Sider"
+import { urlify } from "../../../utils/urlify"
 
 export const Nav = () => {
   const { modules } = useModules()
+
+  const { Sider } = Layout
 
   const [collapsed, setCollapsed] = useState(false)
 
@@ -18,8 +20,8 @@ export const Nav = () => {
     return {
       key: module.title,
       icon: <i>{module?.emoji}</i>,
-      to: `/${module.title.toLowerCase()}`,
-      label: <Link to={`/${module.title.toLowerCase()}`}>{module.title}</Link>,
+      to: `/${urlify(module.title)}`,
+      label: <Link to={`/${urlify(module.title)}`}>{module.title}</Link>,
     }
   })
 

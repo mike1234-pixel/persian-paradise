@@ -4,47 +4,47 @@
   "phrases": [
     {
       "en": "drink",
-      "fa": "nushidàni",
+      "fa": ["nushidàni"],
       "emoji": "🥃"
     },
     {
       "en": "water",
-      "fa": "aab",
+      "fa": ["aab"],
       "emoji": "💧"
     },
     {
       "en": "milk",
-      "fa": "shir",
+      "fa": ["shir"],
       "emoji": "🥛"
     },
     {
       "en": "cola",
-      "fa": "nushabe",
+      "fa": ["nushabe"],
       "emoji": "🫗"
     },
     {
       "en": "fruit juice",
-      "fa": "aab miveh",
+      "fa": ["aab miveh"],
       "emoji": "🧃"
     },
     {
       "en": "tea",
-      "fa": "chai",
+      "fa": ["chai"],
       "emoji": "🫖"
     },
     {
       "en": "coffee",
-      "fa": "ghàve",
+      "fa": ["ghàve"],
       "emoji": "☕️"
     },
     {
       "en": "beer",
-      "fa": "aab jo",
+      "fa": ["aab jo"],
       "emoji": "🍺"
     },
     {
       "en": "wine",
-      "fa": "shàrab",
+      "fa": ["shàrab"],
       "emoji": "🍷"
     }
   ]

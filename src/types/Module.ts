@@ -5,10 +5,9 @@ export interface Registers {
 
 export interface Phrase {
   en: string
-  fa: string | Registers
+  fa: string[] | Registers
   emoji?: string
   hint?: string
-  responses?: Phrase[]
 }
 
 export interface CourseModule {

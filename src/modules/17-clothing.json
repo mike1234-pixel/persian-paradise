@@ -4,66 +4,63 @@
   "phrases": [
     {
       "en": "clothing",
-      "fa": "lebas",
+      "fa": ["lebas"],
       "emoji": "👔"
     },
     {
       "en": "trousers",
-      "fa": "shàlvar",
+      "fa": ["shàlvar"],
       "emoji": "👖"
     },
     {
       "en": "shorts",
-      "fa": "shàlvaràk",
+      "fa": ["shàlvaràk"],
       "emoji": "🩳"
     },
     {
       "en": "underwear",
-      "fa": "short",
+      "fa": ["short"],
       "emoji": "🩲"
     },
     {
       "en": "t-shirt",
-      "fa": "t-shirt",
+      "fa": ["t-shirt"],
       "emoji": "👕"
     },
     {
       "en": "dress / shirt",
-      "fa": "pirahàn",
+      "fa": ["pirahàn"],
       "emoji": "👗 👔"
     },
     {
       "en": "bag / wallet / purse",
-      "fa": "kif",
+      "fa": ["kif"],
       "emoji": "👜"
     },
     {
       "en": "shows",
-      "fa": "kàfsh",
+      "fa": ["kàfsh"],
       "emoji": "👠 👞"
     },
     {
       "en": "shopping mall",
-      "fa": "màrkhàz khàrid",
+      "fa": ["màrkhàz khàrid"],
       "emoji": "🏢"
     },
     {
       "en": "what will you wear?",
-      "fa": {
-        "informal": "chi mipushi?",
-        "formal": "che mipushi?"
-      },
+      "fa": ["chi mipushi?", "che mipushi?"],
       "hint": "che and chi mean what, and are respectively formal / informal",
       "emoji": "❓"
     },
     {
       "en": "naked",
-      "fa": "lokht",
+      "fa": ["lokht"],
       "emoji": "🤭"
     },
     {
       "en": "change, let's go! (literally, 'please wear clothing')",
-      "fa": "lotfàn lebas bepush",
+      "fa": ["lotfàn lebas bepush"],
       "emoji": "🙏"
     }
   ]

@@ -4,68 +4,68 @@
   "phrases": [
     {
       "en": "sun",
-      "fa": "khorshid",
+      "fa": ["khorshid"],
       "emoji": "🌞"
     },
     {
       "en": "camel",
-      "fa": "shotor",
+      "fa": ["shotor"],
       "emoji": "🐪"
     },
     {
       "en": "palm tree",
-      "fa": "nakhl",
+      "fa": ["nakhl"],
       "emoji": "🌴"
     },
     {
       "en": "crow",
-      "fa": "kàlagh",
+      "fa": ["kàlagh"],
       "emoji": "🦅"
     },
     {
       "en": "sea",
-      "fa": "dàrya",
+      "fa": ["dàrya"],
       "emoji": "🌊"
     },
     {
       "en": "fish",
-      "fa": "mahi",
+      "fa": ["mahi"],
       "emoji": "🐟"
     },
     {
       "en": "mountain",
-      "fa": "kooh",
+      "fa": ["kooh"],
       "emoji": "🏔"
     },
     {
       "en": "tree",
-      "fa": "deràkht",
+      "fa": ["deràkht"],
       "emoji": "🌳"
     },
     {
       "en": "house",
-      "fa": "khane",
+      "fa": ["khane"],
       "emoji": "🏠"
     },
     {
       "en": "forest / jungle",
-      "fa": "jàngàl",
+      "fa": ["jàngàl"],
       "emoji": "🌲 🦌"
     },
     {
       "en": "earth",
-      "fa": "zàmin",
+      "fa": ["zàmin"],
       "emoji": "🌍"
     },
     {
       "en": "moon",
-      "fa": "mah",
+      "fa": ["mah"],
       "hint": "'mah' also means month",
       "emoji": "🌖"
     },
     {
       "en": "star",
-      "fa": "setareh",
+      "fa": ["setareh"],
       "emoji": "✨"
     }
   ]

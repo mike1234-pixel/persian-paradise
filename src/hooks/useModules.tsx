@@ -19,8 +19,10 @@ import module18 from "../modules/18-transport.json"
 import module19 from "../modules/19-geography.json"
 import module20 from "../modules/20-education.json"
 import module21 from "../modules/21-kitchen.json"
-import module22 from "../modules/22-house.json"
+import module22 from "../modules/22-home.json"
 import module23 from "../modules/23-taste.json"
+import module24 from "../modules/24-pronouns.json"
+import module25 from "../modules/25-prepositions.json"
 
 export const useModules = () => {
   const modules = [
@@ -47,6 +49,8 @@ export const useModules = () => {
     module21,
     module22,
     module23,
+    module24,
+    module25,
   ]
 
   return { modules }

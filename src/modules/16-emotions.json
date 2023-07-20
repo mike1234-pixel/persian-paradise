@@ -4,43 +4,43 @@
   "phrases": [
     {
       "en": "emotion",
-      "fa": "ehsas",
+      "fa": ["ehsas"],
       "emoji": "😄"
     },
     {
       "en": "emotions",
-      "fa": "ehsasat",
+      "fa": ["ehsasat"],
       "hint": "you can add 'at' to the ends of words to make them plural",
       "emoji": "😄 😢 😦"
     },
     {
       "en": "happy",
-      "fa": "shad",
+      "fa": ["shad"],
       "emoji": "😀"
     },
     {
       "en": "sad",
-      "fa": "narahat",
+      "fa": ["narahat"],
       "emoji": "😢"
     },
     {
       "en": "scared",
-      "fa": "tàrsideh",
+      "fa": ["tàrsideh"],
       "emoji": "🫣"
     },
     {
       "en": "surprised",
-      "fa": "moteàjeb",
+      "fa": ["moteàjeb"],
       "emoji": "😯"
     },
     {
       "en": "angry",
-      "fa": "àsàbani",
+      "fa": ["àsàbani"],
       "emoji": "😡"
     },
     {
       "en": "in love",
-      "fa": "àshegh",
+      "fa": ["àshegh"],
       "emoji": "😍"
     },
     {
@@ -57,25 +57,23 @@
         "informal": "narahti?",
         "formal": "to narahat hasti?"
       },
-      "emoji": "😥",
-      "responses": [
-        {
-          "en": "yes, I am happy",
-          "fa": {
-            "informal": "areh, shadàm",
-            "formal": "bàle, màn shad hàstàm"
-          },
-          "emoji": "👍 😄"
-        },
-        {
-          "en": "no, i am not happy",
-          "fa": {
-            "informal": "nàh, shad nistàm",
-            "formal": "kheir, man shad nistàm"
-          },
-          "emoji": "👎 😭"
-        }
-      ]
+      "emoji": "😥"
+    },
+    {
+      "en": "yes, I am happy",
+      "fa": {
+        "informal": "areh, shadàm",
+        "formal": "bàle, màn shad hàstàm"
+      },
+      "emoji": "👍 😄"
+    },
+    {
+      "en": "no, i am not happy",
+      "fa": {
+        "informal": "nàh, shad nistàm",
+        "formal": "kheir, man shad nistàm"
+      },
+      "emoji": "👎 😭"
     }
   ]
 }
