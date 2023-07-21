@@ -4,7 +4,7 @@ import { Home } from "./components/pages/Home/Home"
 import { Dashboard } from "./components/pages/Dashboard/Dashboard"
 import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
-import { Layout } from "antd"
+import { ConfigProvider, Layout } from "antd"
 import { Content } from "antd/es/layout/layout"
 import { urlify } from "./utils/urlify"
 import { TopNav } from "./components/common/TopNav/TopNav"
@@ -38,18 +38,27 @@ const Router = () => {
 const App = () => {
   return (
     <div>
-      <ConfettiAnimationContextProvider>
-        <BrowserRouter>
-          <Layout hasSider>
-            <ConfettiEffect />
-            <Nav />
-            <Content>
-              <TopNav />
-              <Router />
-            </Content>
-          </Layout>
-        </BrowserRouter>
-      </ConfettiAnimationContextProvider>
+      <ConfigProvider
+        theme={{
+          token: {
+            fontFamily: "Plus Jakarta Sans",
+          },
+        }}
+      >
+        <ConfettiAnimationContextProvider>
+          <BrowserRouter>
+            <Layout hasSider>
+              <ConfettiEffect />
+              <Nav />
+
+              <Content>
+                <TopNav />
+                <Router />
+              </Content>
+            </Layout>
+          </BrowserRouter>
+        </ConfettiAnimationContextProvider>
+      </ConfigProvider>
     </div>
   )
 }

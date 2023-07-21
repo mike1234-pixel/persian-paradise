@@ -2,9 +2,9 @@ import { Typography, Layout, Input, Form, Button } from "antd"
 import { CourseModule } from "../../../types/Module"
 import { useContext, useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
-import { Tick } from "../../common/Tick/Tick"
-import styles from "./Module.module.css"
+import { CheckCircleTwoTone, QuestionCircleTwoTone } from "@ant-design/icons"
 import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
+import styles from "./Module.module.css"
 
 interface ModuleProps {
   module: CourseModule
@@ -12,6 +12,8 @@ interface ModuleProps {
 
 // TODO:
 // - make responsive
+// - when relocating, reset the state
+// - add progress in local storage
 
 export const Module = ({ module }: ModuleProps) => {
   const { phrases } = module
@@ -87,7 +89,10 @@ export const Module = ({ module }: ModuleProps) => {
       <Title>{module.title}</Title>
       {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
       <div className={styles.phrase}>
-        <Title level={5}>{currentPhrase.en}</Title>
+        <div className={styles.phraseEnglish}>
+          <p>{currentPhrase.en}</p>
+          <i>{currentPhrase.emoji}</i>
+        </div>
 
         {currentPhrase.hint && (
           <>
@@ -99,45 +104,54 @@ export const Module = ({ module }: ModuleProps) => {
             </div>
           </>
         )}
-
-        <Button onClick={() => setShowAnswer((prevState) => !prevState)}>
-          {showAnswer ? "Hide Answer" : "Show Answer"}
-        </Button>
-        <div className={showAnswer ? styles.answer : styles.hidden}>
-          {Array.isArray(currentPhrase.fa) ? (
-            currentPhrase.fa.map((phrase) => {
-              return <p>{phrase}</p>
+        <div>
+          <Form
+            layout='vertical'
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+            }}
+          >
+            <Form.Item label='Answer in Persian' style={{ marginBottom: 0 }}>
+              <Input
+                type='text'
+                value={inputValue}
+                onChange={handleInputChange}
+                className={isAnswerCorrect ? styles.successInput : styles.input}
+                suffix={
+                  isAnswerCorrect ? (
+                    <CheckCircleTwoTone twoToneColor='#52c41a' />
+                  ) : (
+                    <QuestionCircleTwoTone twoToneColor='#52c41a' />
+                  )
+                }
+              />
+            </Form.Item>
+            {isAnswerCorrect && (
+              <Button onClick={handleNextPhrase}>Next Phrase</Button>
+            )}
+          </Form>
+        </div>
+      </div>
+      <Button
+        onClick={() => setShowAnswer((prevState) => !prevState)}
+        className={styles.toggleAnswerButton}
+      >
+        {showAnswer ? (
+          Array.isArray(currentPhrase.fa) ? (
+            currentPhrase.fa.map((phrase, i) => {
+              return <p key={i}>{phrase}</p>
             })
           ) : (
             <>
               <p>Formal: {currentPhrase.fa.formal}</p>
               <p>Informal: {currentPhrase.fa.informal}</p>
             </>
-          )}
-        </div>
-        <div className={styles.emoji}>
-          <i>{currentPhrase.emoji}</i>
-        </div>
-
-        <div style={{ display: "flex" }}>
-          <Form layout='vertical'>
-            <Form.Item label='Answer in Persian'>
-              <Input
-                type='text'
-                value={inputValue}
-                onChange={handleInputChange}
-                className={isAnswerCorrect ? styles.successInput : styles.input}
-              />
-            </Form.Item>
-          </Form>
-          {isAnswerCorrect && <Tick />}
-        </div>
-        {isAnswerCorrect && (
-          <>
-            <Button onClick={handleNextPhrase}>Next Phrase</Button>
-          </>
+          )
+        ) : (
+          "Show Answer"
         )}
-      </div>
+      </Button>
     </Content>
   )
 }

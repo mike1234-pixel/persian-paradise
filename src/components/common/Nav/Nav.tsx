@@ -27,12 +27,26 @@ export const Nav = () => {
 
   return (
     <Sider
-      style={{ width: 270, background: "none", height: "100vh" }}
+      style={{
+        width: 270,
+        background: "none",
+        height: "100vh",
+        backgroundColor: "#fff",
+      }}
       collapsed={collapsed}
     >
-      <Button onClick={toggleCollapsed} style={{ marginBottom: 16 }}>
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          padding: "7px 0 7px 15px",
+        }}
+      >
+        <Button onClick={toggleCollapsed} type='text'>
+          {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        </Button>
+      </div>
       <div style={{ height: "calc(100vh - 48px)", overflow: "auto" }}>
         <Menu
           defaultSelectedKeys={["1"]}

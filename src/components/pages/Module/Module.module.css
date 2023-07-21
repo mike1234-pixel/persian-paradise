@@ -1,23 +1,48 @@
 .content {
-  padding: 0px 60px;
-}
-
-.emoji > i {
-  font-style: normal;
-  font-size: 100px;
+  padding: 60px;
 }
 
 .phrase {
   font-size: 40px;
 }
 
-.successInput {
+.phraseEnglish {
+  display: flex;
+  align-items: center;
+}
+
+.phraseEnglish > p {
+  color: var(--text-gradient-fallback);
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.phraseEnglish > i {
+  font-style: normal;
+  font-size: 60px;
+}
+
+.toggleAnswerButton {
+  margin: 30px 0;
+}
+
+.successInput,
+.successInput > input {
   background: #f6ffed;
+  color: #52c41a;
+}
+
+.input > input,
+.successInput > input {
+  font-weight: 600;
 }
 
 .input,
 .successInput {
-  display: block;
   width: 300px;
   margin-right: 20px;
 }

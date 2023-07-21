@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}

@@ -4,6 +4,10 @@ import { useState } from "react"
 
 const items: MenuProps["items"] = [
   {
+    key: "home",
+    label: <Link to={`/`}>Home</Link>,
+  },
+  {
     key: "dashboard",
     label: <Link to={`/dashboard`}>Dashboard</Link>,
   },
@@ -22,6 +26,7 @@ export const TopNav = () => {
       selectedKeys={[current]}
       mode='horizontal'
       items={items}
+      style={{ position: "fixed", width: "100%" }}
     />
   )
 }
