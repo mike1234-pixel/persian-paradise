@@ -12,7 +12,7 @@ export const Home = () => {
           A platform designed to make learning Persian a delightful experience.
         </p>
         <Link to='/dashboard'>
-          <Button>Start Learning</Button>
+          <Button size='large'>Start Learning</Button>
         </Link>
       </div>
     </div>

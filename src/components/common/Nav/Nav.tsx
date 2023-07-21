@@ -4,13 +4,14 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
 import { Link } from "react-router-dom"
 import { useModules } from "../../../hooks/useModules"
 import { urlify } from "../../../utils/urlify"
+import styles from "./SideNav.module.css"
 
 export const Nav = () => {
   const { modules } = useModules()
 
   const { Sider } = Layout
 
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed)
@@ -43,7 +44,11 @@ export const Nav = () => {
           padding: "7px 0 7px 15px",
         }}
       >
-        <Button onClick={toggleCollapsed} type='text'>
+        <Button
+          onClick={toggleCollapsed}
+          type='text'
+          className={styles.collapseButton}
+        >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>

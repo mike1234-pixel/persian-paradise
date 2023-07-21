@@ -1,0 +1,13 @@
+.root {
+  padding: 80px 60px 60px;
+  background-image: url("../../../assets/complete-bg.jpg");
+  background-color: rgba(99, 97, 235, 0.8);
+  background-blend-mode: color-dodge;
+  background-size: cover;
+  height: 100%;
+}
+
+.emoji {
+  font-size: 100px;
+  font-style: normal;
+}

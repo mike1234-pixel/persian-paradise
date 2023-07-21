@@ -1,10 +1,12 @@
-import { Typography, Layout, Input, Form, Button } from "antd"
+import { Typography, Layout, Input, Form, Button, Collapse } from "antd"
 import { CourseModule } from "../../../types/Module"
 import { useContext, useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from "@ant-design/icons"
 import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
+import { Flip } from "react-reveal"
 import styles from "./Module.module.css"
+import { Complete } from "../Complete/Complete"
 
 interface ModuleProps {
   module: CourseModule
@@ -13,21 +15,21 @@ interface ModuleProps {
 // TODO:
 // - make responsive
 // - when relocating, reset the state
-// - add progress in local storage
+// - add back button
 
 export const Module = ({ module }: ModuleProps) => {
   const { phrases } = module
   const { Title } = Typography
   const { Content } = Layout
+  const { Panel } = Collapse
 
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const [inputValue, setInputValue] = useState("")
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
-  const [showAnswer, setShowAnswer] = useState(false)
-  const [showHint, setShowHint] = useState(false)
   const [moduleComplete, setModuleComplete] = useState(false)
+  const [animationKey, setAnimationKey] = useState<number>(0)
 
   const resetState = (hardReset: boolean) => {
     hardReset
@@ -35,8 +37,7 @@ export const Module = ({ module }: ModuleProps) => {
       : setCurrentPhraseIndex((prevIndex) => prevIndex + 1)
     setInputValue("")
     setIsAnswerCorrect(false)
-    setShowAnswer(false)
-    setShowHint(false)
+    setAnimationKey((prevKey) => prevKey + 1)
   }
 
   const handleNextPhrase = () => {
@@ -52,72 +53,54 @@ export const Module = ({ module }: ModuleProps) => {
 
   const currentPhrase = phrases[currentPhraseIndex]
 
-  const checkAnswer = () => {
-    if (Array.isArray(currentPhrase.fa)) {
-      currentPhrase.fa.map((phrase) => {
-        setIsAnswerCorrect(normalize(inputValue) === normalize(phrase))
-      })
-    } else {
-      setIsAnswerCorrect(
-        normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
-          normalize(inputValue) === normalize(currentPhrase.fa.informal)
-      )
-    }
-  }
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
   useEffect(() => {
+    const checkAnswer = () => {
+      if (Array.isArray(currentPhrase.fa)) {
+        currentPhrase.fa.map((phrase) => {
+          return setIsAnswerCorrect(normalize(inputValue) === normalize(phrase))
+        })
+      } else {
+        setIsAnswerCorrect(
+          normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
+            normalize(inputValue) === normalize(currentPhrase.fa.informal)
+        )
+      }
+    }
+
     checkAnswer()
-  }, [inputValue])
+  }, [inputValue, currentPhrase.fa])
 
   useEffect(() => {
     resetState(true)
   }, [module])
 
-  if (moduleComplete)
-    return (
-      <Content className={styles.content}>
-        <p>module complete!</p>
-      </Content>
-    )
+  if (moduleComplete) return <Complete />
 
   return (
-    <Content className={styles.content}>
+    <Content className={styles.root}>
       <Title>{module.title}</Title>
       {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
       <div className={styles.phrase}>
         <div className={styles.phraseEnglish}>
-          <p>{currentPhrase.en}</p>
+          <Flip key={animationKey} left cascade>
+            {currentPhrase.en}
+          </Flip>
           <i>{currentPhrase.emoji}</i>
         </div>
-
-        {currentPhrase.hint && (
-          <>
-            <Button onClick={() => setShowHint((prevState) => !prevState)}>
-              {showHint ? "Hide Hint" : "Show Hint"}
-            </Button>
-            <div className={showHint ? styles.hint : styles.hidden}>
-              {currentPhrase.hint}
-            </div>
-          </>
-        )}
         <div>
-          <Form
-            layout='vertical'
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-            }}
-          >
-            <Form.Item label='Answer in Persian' style={{ marginBottom: 0 }}>
+          <Form layout='vertical' className={styles.form}>
+            <Form.Item style={{ marginBottom: 0 }}>
               <Input
                 type='text'
                 value={inputValue}
                 onChange={handleInputChange}
                 className={isAnswerCorrect ? styles.successInput : styles.input}
+                size='large'
+                placeholder='Answer in Persian'
                 suffix={
                   isAnswerCorrect ? (
                     <CheckCircleTwoTone twoToneColor='#52c41a' />
@@ -128,33 +111,36 @@ export const Module = ({ module }: ModuleProps) => {
               />
             </Form.Item>
             {isAnswerCorrect && (
-              <Button onClick={handleNextPhrase}>Next Phrase</Button>
+              <Button onClick={handleNextPhrase} size='large'>
+                Next Phrase 👉
+              </Button>
             )}
           </Form>
         </div>
       </div>
-      <Button
-        onClick={() => setShowAnswer((prevState) => !prevState)}
-        className={styles.toggleAnswerButton}
-      >
-        {showAnswer ? (
-          Array.isArray(currentPhrase.fa) ? (
+      <Collapse style={{ marginTop: 30, maxWidth: 300 }}>
+        {currentPhrase.hint && (
+          <Panel header='Show Hint 🙊' key='2'>
+            <p>{currentPhrase.hint}</p>
+          </Panel>
+        )}
+        <Panel header='Show Answer 🙉' key='1'>
+          {Array.isArray(currentPhrase.fa) ? (
             currentPhrase.fa.map((phrase, i) => {
-              return <p key={i}>{phrase}</p>
+              return <p key={i}>{phrase} 🙈</p>
             })
           ) : (
             <>
-              <p>Formal: {currentPhrase.fa.formal}</p>
-              <p>Informal: {currentPhrase.fa.informal}</p>
+              <span style={{ marginRight: 20 }}>
+                Formal: {currentPhrase.fa.formal}
+              </span>
+              <span>Informal: {currentPhrase.fa.informal}</span>
+              🙈
             </>
-          )
-        ) : (
-          "Show Answer"
-        )}
-      </Button>
+          )}
+        </Panel>
+      </Collapse>
+      ;
     </Content>
   )
 }
-
-// TODO: add back button
-// use the user's localstorage as a db to keep track of completed modules.
