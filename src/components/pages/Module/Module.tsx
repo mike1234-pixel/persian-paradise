@@ -24,6 +24,8 @@ interface ModuleProps {
 // TODO:
 // - make responsive
 // - when relocating, reset the state
+// - add next module button to complete screen
+// - bug - when you complete a module and select another module, it errors out
 
 export const Module = ({ module }: ModuleProps) => {
   const { phrases } = module
@@ -42,8 +44,6 @@ export const Module = ({ module }: ModuleProps) => {
   const [animationKey, setAnimationKey] = useState<number>(0)
   const [progressPercent, setProgressPercent] = useState<number>(0)
 
-  const totalPhrases = phrases.length
-
   const resetState = (hardReset: boolean) => {
     hardReset
       ? setCurrentPhraseIndex(0)
@@ -55,14 +55,15 @@ export const Module = ({ module }: ModuleProps) => {
   }
 
   const handleNextPhrase = () => {
-    const finished = totalPhrases - 1 === currentPhraseIndex
+    const finished = phrases.length - 1 === currentPhraseIndex
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)
-      const newProgressPercent = ((currentPhraseIndex + 1) / totalPhrases) * 100
+      const newProgressPercent =
+        ((currentPhraseIndex + 1) / phrases.length) * 100
       setProgressPercent(newProgressPercent)
     }
   }
@@ -76,6 +77,9 @@ export const Module = ({ module }: ModuleProps) => {
   const goBack = () => {
     if (currentPhraseIndex !== 0) {
       setCurrentPhraseIndex((prevIndex) => prevIndex - 1)
+      const newProgressPercent =
+        ((currentPhraseIndex - 1) / phrases.length) * 100
+      setProgressPercent(newProgressPercent)
     }
   }
 
@@ -123,6 +127,7 @@ export const Module = ({ module }: ModuleProps) => {
           </Flip>
           <i>{currentPhrase.emoji}</i>
         </div>
+
         <div>
           <Form layout='vertical' className={styles.form}>
             <Form.Item style={{ marginBottom: 0 }}>
