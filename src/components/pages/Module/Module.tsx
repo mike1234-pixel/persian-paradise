@@ -1,12 +1,21 @@
-import { Typography, Layout, Input, Form, Button, Collapse } from "antd"
+import {
+  Typography,
+  Layout,
+  Input,
+  Form,
+  Button,
+  Collapse,
+  Progress,
+} from "antd"
 import { CourseModule } from "../../../types/Module"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useMemo, useState } from "react"
 import { normalize } from "../../../utils/normalize"
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from "@ant-design/icons"
 import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
 import { Flip } from "react-reveal"
 import styles from "./Module.module.css"
 import { Complete } from "../Complete/Complete"
+import pass from "../../../assets/audio/pass.mp3"
 
 interface ModuleProps {
   module: CourseModule
@@ -15,7 +24,6 @@ interface ModuleProps {
 // TODO:
 // - make responsive
 // - when relocating, reset the state
-// - add back button
 
 export const Module = ({ module }: ModuleProps) => {
   const { phrases } = module
@@ -25,29 +33,37 @@ export const Module = ({ module }: ModuleProps) => {
 
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
-  const [inputValue, setInputValue] = useState("")
+  const passSFX = useMemo(() => new Audio(pass), [])
+
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0)
+  const [inputValue, setInputValue] = useState<string>("")
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
   const [moduleComplete, setModuleComplete] = useState(false)
   const [animationKey, setAnimationKey] = useState<number>(0)
+  const [progressPercent, setProgressPercent] = useState<number>(0)
+
+  const totalPhrases = phrases.length
 
   const resetState = (hardReset: boolean) => {
     hardReset
       ? setCurrentPhraseIndex(0)
       : setCurrentPhraseIndex((prevIndex) => prevIndex + 1)
+    hardReset && setProgressPercent(0)
     setInputValue("")
     setIsAnswerCorrect(false)
     setAnimationKey((prevKey) => prevKey + 1)
   }
 
   const handleNextPhrase = () => {
-    const finished = phrases.length - 1 === currentPhraseIndex
+    const finished = totalPhrases - 1 === currentPhraseIndex
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)
+      const newProgressPercent = ((currentPhraseIndex + 1) / totalPhrases) * 100
+      setProgressPercent(newProgressPercent)
     }
   }
 
@@ -55,6 +71,12 @@ export const Module = ({ module }: ModuleProps) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
+  }
+
+  const goBack = () => {
+    if (currentPhraseIndex !== 0) {
+      setCurrentPhraseIndex((prevIndex) => prevIndex - 1)
+    }
   }
 
   useEffect(() => {
@@ -78,10 +100,20 @@ export const Module = ({ module }: ModuleProps) => {
     resetState(true)
   }, [module])
 
+  useEffect(() => {
+    if (isAnswerCorrect) {
+      passSFX.play()
+    }
+  }, [isAnswerCorrect, passSFX])
+
   if (moduleComplete) return <Complete />
 
   return (
     <Content className={styles.root}>
+      <Progress
+        percent={progressPercent}
+        strokeColor={{ "0%": "#108ee9", "100%": "#87d068" }}
+      />
       <Title>{module.title}</Title>
       {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
       <div className={styles.phrase}>
@@ -121,13 +153,13 @@ export const Module = ({ module }: ModuleProps) => {
       <Collapse style={{ marginTop: 30, maxWidth: 300 }}>
         {currentPhrase.hint && (
           <Panel header='Show Hint 🙊' key='2'>
-            <p>{currentPhrase.hint}</p>
+            <span>{currentPhrase.hint}</span>
           </Panel>
         )}
         <Panel header='Show Answer 🙉' key='1'>
           {Array.isArray(currentPhrase.fa) ? (
             currentPhrase.fa.map((phrase, i) => {
-              return <p key={i}>{phrase} 🙈</p>
+              return <span key={i}>{phrase} 🙈</span>
             })
           ) : (
             <>
@@ -140,7 +172,11 @@ export const Module = ({ module }: ModuleProps) => {
           )}
         </Panel>
       </Collapse>
-      ;
+      {currentPhraseIndex !== 0 && (
+        <Button onClick={goBack} size='large' style={{ marginTop: 30 }}>
+          Go Back 👈
+        </Button>
+      )}
     </Content>
   )
 }
