@@ -62,8 +62,9 @@ export const Module = ({ module }: ModuleProps) => {
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)
-      const newProgressPercent =
+      const newProgressPercent = Math.ceil(
         ((currentPhraseIndex + 1) / phrases.length) * 100
+      )
       setProgressPercent(newProgressPercent)
     }
   }
@@ -77,8 +78,9 @@ export const Module = ({ module }: ModuleProps) => {
   const goBack = () => {
     if (currentPhraseIndex !== 0) {
       setCurrentPhraseIndex((prevIndex) => prevIndex - 1)
-      const newProgressPercent =
+      const newProgressPercent = Math.ceil(
         ((currentPhraseIndex - 1) / phrases.length) * 100
+      )
       setProgressPercent(newProgressPercent)
     }
   }
