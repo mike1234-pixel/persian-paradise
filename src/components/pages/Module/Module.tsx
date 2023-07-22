@@ -148,6 +148,7 @@ export const Module = ({ module }: ModuleProps) => {
                 className={isAnswerCorrect ? styles.successInput : styles.input}
                 size='large'
                 placeholder='Answer in Persian'
+                spellCheck={false}
                 suffix={
                   isAnswerCorrect ? (
                     <CheckCircleTwoTone twoToneColor='#52c41a' />

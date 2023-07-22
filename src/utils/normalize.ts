@@ -4,7 +4,7 @@ export const normalize = (string: string) => {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/à/g, "a")
     .replace("?", "")
-    .replace(",", "")
+    .replace(/,/g, "")
     .replace("!", "")
     .toLowerCase()
 }
