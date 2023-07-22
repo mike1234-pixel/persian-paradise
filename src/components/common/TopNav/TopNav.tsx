@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { MenuProps, Menu } from "antd"
 import { useState } from "react"
+import styles from "./TopNav.module.css"
 
 const items: MenuProps["items"] = [
   {
@@ -26,7 +27,7 @@ export const TopNav = () => {
       selectedKeys={[current]}
       mode='horizontal'
       items={items}
-      style={{ position: "fixed", width: "100%" }}
+      className={styles.root}
     />
   )
 }

@@ -13,9 +13,9 @@ import { normalize } from "../../../utils/normalize"
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from "@ant-design/icons"
 import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
 import { Flip } from "react-reveal"
-import styles from "./Module.module.css"
 import { Complete } from "../Complete/Complete"
-import pass from "../../../assets/audio/pass.mp3"
+import { useLocation } from "react-router-dom"
+import styles from "./Module.module.css"
 
 interface ModuleProps {
   module: CourseModule
@@ -35,7 +35,12 @@ export const Module = ({ module }: ModuleProps) => {
 
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
-  const passSFX = useMemo(() => new Audio(pass), [])
+  const passSFX = useMemo(
+    () =>
+      new Audio("https://persian-paradise.s3.eu-west-2.amazonaws.com/pass.mp3"),
+    []
+  )
+  const location = useLocation()
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0)
   const [inputValue, setInputValue] = useState<string>("")
@@ -49,6 +54,7 @@ export const Module = ({ module }: ModuleProps) => {
       ? setCurrentPhraseIndex(0)
       : setCurrentPhraseIndex((prevIndex) => prevIndex + 1)
     hardReset && setProgressPercent(0)
+    hardReset && setModuleComplete(false)
     setInputValue("")
     setIsAnswerCorrect(false)
     setAnimationKey((prevKey) => prevKey + 1)
@@ -111,6 +117,10 @@ export const Module = ({ module }: ModuleProps) => {
       passSFX.play()
     }
   }, [isAnswerCorrect, passSFX])
+
+  useEffect(() => {
+    resetState(true)
+  }, [location])
 
   if (moduleComplete) return <Complete />
 
