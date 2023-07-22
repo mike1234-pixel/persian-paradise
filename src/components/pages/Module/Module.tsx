@@ -92,6 +92,7 @@ export const Module = ({ module }: ModuleProps) => {
         ((currentPhraseIndex - 1) / phrases.length) * 100
       )
       setProgressPercent(newProgressPercent)
+      setInputValue("")
     }
   }
 

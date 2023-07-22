@@ -46,6 +46,56 @@
       "en": "scissors",
       "fa": ["gheychi"],
       "emoji": "✂️"
+    },
+    {
+      "en": "plate",
+      "fa": ["boshghab"],
+      "emoji": "🍽"
+    },
+    {
+      "en": "glass",
+      "fa": ["leevan"],
+      "emoji": "🫗"
+    },
+    {
+      "en": "glass of water",
+      "fa": ["leevan e aab"],
+      "emoji": "💦"
+    },
+    {
+      "en": "white plate",
+      "fa": ["boshghab e sefid"],
+      "emoji": "💦"
+    },
+    {
+      "en": "tray",
+      "fa": ["sini"],
+      "emoji": "🍛"
+    },
+    {
+      "en": "cup",
+      "fa": ["fenjaan"],
+      "emoji": "☕️"
+    },
+    {
+      "en": "a cup of coffee",
+      "fa": ["yek fenjaan e ghahve"],
+      "emoji": "☕️"
+    },
+    {
+      "en": "oven",
+      "fa": ["fer"],
+      "emoji": "🍪"
+    },
+    {
+      "en": "microwave",
+      "fa": ["makrofer"],
+      "emoji": "⏲"
+    },
+    {
+      "en": "chef",
+      "fa": ["ashpàz"],
+      "emoji": "🧑‍🍳"
     }
   ]
 }
