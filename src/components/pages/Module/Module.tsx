@@ -8,7 +8,7 @@ import {
   Progress,
 } from "antd"
 import { CourseModule } from "../../../types/Module"
-import { useContext, useEffect, useMemo, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from "@ant-design/icons"
 import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationContext"
@@ -35,11 +35,13 @@ export const Module = ({ module }: ModuleProps) => {
 
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
-  const passSFX = useMemo(
-    () =>
-      new Audio("https://persian-paradise.s3.eu-west-2.amazonaws.com/pass.mp3"),
-    []
+  const passSFX = new Audio(
+    "https://persian-paradise.s3.eu-west-2.amazonaws.com/pass.mp3"
   )
+  const successSFX = new Audio(
+    "https://persian-paradise.s3.eu-west-2.amazonaws.com/success.mp3"
+  )
+
   const location = useLocation()
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0)
@@ -65,6 +67,7 @@ export const Module = ({ module }: ModuleProps) => {
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
+      successSFX.play()
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)
@@ -72,6 +75,7 @@ export const Module = ({ module }: ModuleProps) => {
         ((currentPhraseIndex + 1) / phrases.length) * 100
       )
       setProgressPercent(newProgressPercent)
+      passSFX.play()
     }
   }
 
@@ -111,12 +115,6 @@ export const Module = ({ module }: ModuleProps) => {
   useEffect(() => {
     resetState(true)
   }, [module])
-
-  useEffect(() => {
-    if (isAnswerCorrect) {
-      passSFX.play()
-    }
-  }, [isAnswerCorrect, passSFX])
 
   useEffect(() => {
     resetState(true)
