@@ -61,6 +61,36 @@
       "en": "calendar",
       "fa": ["tàghvim"],
       "emoji": "📅"
+    },
+    {
+      "en": "tonight",
+      "fa": ["emshab"],
+      "emoji": "🌙"
+    },
+    {
+      "en": "today",
+      "fa": ["emruz"],
+      "emoji": "🌤"
+    },
+    {
+      "en": "yesterday",
+      "fa": ["diruz"],
+      "emoji": "🌤"
+    },
+    {
+      "en": "last night",
+      "fa": ["dishab"],
+      "emoji": "🌙"
+    },
+    {
+      "en": "tomorrow",
+      "fa": ["fárdaa"],
+      "emoji": "🌤"
+    },
+    {
+      "en": "tomorrow night",
+      "fa": ["fárdaa shab"],
+      "emoji": "🌙"
     }
   ]
 }

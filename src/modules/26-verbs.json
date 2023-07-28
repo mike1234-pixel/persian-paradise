@@ -1,0 +1,105 @@
+{
+  "title": "Verbs",
+  "emoji": "🎬",
+  "phrases": [
+    {
+      "en": "sit",
+      "fa": ["neshàstàn"],
+      "emoji": "🪑"
+    },
+    {
+      "en": "dance",
+      "fa": ["ràghs"],
+      "emoji": "🕺"
+    },
+    {
+      "en": "create",
+      "fa": ["sakhtàn"],
+      "emoji": "🖌"
+    },
+    {
+      "en": "destroy / delete",
+      "fa": ["nabud kàrdàn"],
+      "emoji": "💣"
+    },
+    {
+      "en": "win",
+      "fa": ["bordàn"],
+      "emoji": "🏆"
+    },
+    {
+      "en": "update",
+      "fa": ["be rooz kardan"],
+      "emoji": "📝"
+    },
+    {
+      "en": "enjoy",
+      "fa": ["lezàt bordàn"],
+      "emoji": "🪩"
+    },
+    {
+      "en": "ride",
+      "fa": ["sàvari"],
+      "emoji": "🎠"
+    },
+    {
+      "en": "drive",
+      "fa": ["ranàndegi"],
+      "emoji": "🏎"
+    },
+    {
+      "en": "go",
+      "fa": ["ràtfàn"],
+      "emoji": "🏁"
+    },
+    {
+      "en": "speed up",
+      "fa": ["soraat"],
+      "emoji": "🏎"
+    },
+    {
+      "en": "slow down",
+      "fa": ["aram"],
+      "emoji": "🏎"
+    },
+    {
+      "en": "run",
+      "fa": ["dàvidàn"],
+      "emoji": "🏃‍♂️"
+    },
+    {
+      "en": "walk",
+      "fa": ["rah raftàn"],
+      "emoji": "🚶‍♂️"
+    },
+    {
+      "en": "jump",
+      "fa": ["pàridàn"]
+    },
+    {
+      "en": "climb",
+      "fa": ["bala ràftàn"],
+      "emoji": "🧗"
+    },
+    {
+      "en": "resist",
+      "fa": ["moghavemàt"],
+      "emoji": "😾"
+    },
+    {
+      "en": "insist",
+      "fa": ["esrar"],
+      "emoji": "🙂"
+    },
+    {
+      "en": "hold",
+      "fa": ["negàh dashtan"],
+      "emoji": "👜"
+    },
+    {
+      "en": "hug",
+      "fa": ["bàghàl"],
+      "emoji": "🤗"
+    }
+  ]
+}

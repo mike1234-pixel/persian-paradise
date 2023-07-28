@@ -1,5 +1,5 @@
 {
-  "title": "Phrases 2",
+  "title": "Verbs 1",
   "subtitle": "Asking for Food and Drink",
   "emoji": "💵",
   "phrases": [
@@ -43,6 +43,16 @@
       "en": "I don't buy potato",
       "fa": ["sib zàmini nemikhàràm"],
       "emoji": "🙅‍♀️ 🥔"
+    },
+    {
+      "en": "I wear trousers",
+      "fa": ["shàlvar mipoosham"],
+      "emoji": "👖"
+    },
+    {
+      "en": "I don't wear shorts",
+      "fa": ["shàlvaràk nemipoosham"],
+      "emoji": "🩳"
     }
   ]
 }

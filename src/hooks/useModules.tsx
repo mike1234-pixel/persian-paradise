@@ -1,7 +1,7 @@
 import module1 from "../modules/1-phrases.json"
 import module2 from "../modules/2-food.json"
 import module3 from "../modules/3-drink.json"
-import module4 from "../modules/4-phrases.json"
+import module4 from "../modules/4-verbs.json"
 import module5 from "../modules/5-number.json"
 import module6 from "../modules/6-weather.json"
 import module7 from "../modules/7-phrases.json"
@@ -23,6 +23,8 @@ import module22 from "../modules/22-home.json"
 import module23 from "../modules/23-taste.json"
 import module24 from "../modules/24-pronouns.json"
 import module25 from "../modules/25-prepositions.json"
+import module26 from "../modules/26-verbs.json"
+import module27 from "../modules/27-sentences.json"
 
 export const useModules = () => {
   const modules = [
@@ -51,6 +53,8 @@ export const useModules = () => {
     module23,
     module24,
     module25,
+    module26,
+    module27,
   ]
 
   return { modules }

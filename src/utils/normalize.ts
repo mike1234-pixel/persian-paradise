@@ -5,6 +5,8 @@ export const normalize = (string: string) => {
     .replace(/à/g, "a")
     .replace("?", "")
     .replace(/,/g, "")
+    .replace(/./g, "")
+    .replace(/'/g, "")
     .replace("!", "")
     .toLowerCase()
 }

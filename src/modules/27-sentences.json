@@ -1,0 +1,97 @@
+{
+  "title": "Sentences",
+  "emoji": "📝",
+  "phrases": [
+    {
+      "en": "He is 32 years old.",
+      "fa": ["oo si o do saale ast"]
+    },
+    {
+      "en": "From here to there is 2 meters.",
+      "fa": ["az eenja beh aanja do meter ast"]
+    },
+    {
+      "en": "Your spoon is on the yellow table.",
+      "fa": ["to ghashogh rooye miz e zard ast"]
+    },
+    {
+      "en": "My bag is red.",
+      "fa": ["kif e man ghermez ast"]
+    },
+    {
+      "en": "My husband is 28 years old.",
+      "fa": ["shohar e man bist o hasht saale ast"]
+    },
+    {
+      "en": "Our food is bread and chicken.",
+      "fa": ["ghaza e ma naan o morgh ast"]
+    },
+    {
+      "en": "The blue glass is on the table.",
+      "fa": ["leevan e abi rooye miz ast"]
+    },
+    {
+      "en": "His shirt is white and red.",
+      "fa": ["pirahan e oo sefid o ghermez ast"]
+    },
+    {
+      "en": "Their father is 39 years old.",
+      "fa": ["baba e anha si o noh saale ast"]
+    },
+    {
+      "en": "From budapest to Sheffield is 36 km.",
+      "fa": ["az budapest beh Sheffield si o shesh km ast"]
+    },
+    {
+      "en": "Is your black blanket on the bed?",
+      "fa": ["patu e siah e to rooye takht ast"]
+    },
+    {
+      "en": "No, my blanket is not black, it's white.",
+      "fa": ["nah, patu e man siah nist, sefid ast"]
+    },
+    {
+      "en": "I am English and my mum is Iranian.",
+      "fa": ["man englisi hastam va maman e man irani ast"]
+    },
+    {
+      "en": "My bed is red and I am white.",
+      "fa": ["takht e man ghermez ast va man sefid hastam"]
+    },
+    {
+      "en": "I eat rice and mushroom and chicken at 2 o'clock.",
+      "fa": ["man saat e do bereng va gharch va morgh mikhoram"],
+      "hint": "the verb always goes at the end of the sentence"
+    },
+    {
+      "en": "My blue chair is on the table and table is white.",
+      "fa": ["sandali e abi e man rooye miz ast va miz sefid ast"]
+    },
+    {
+      "en": "I am white and my wife is pink.",
+      "fa": ["man sefid hastam va zan e man soorati ast"]
+    },
+    {
+      "en": "My trouser is yellow and Im not wearing it.",
+      "fa": ["shalvar e man zard ast va man nemipoosham"]
+    },
+    {
+      "en": "My dad is on the fridge. He is red.",
+      "fa": ["baba e man rooye yahkchal ast. Oo ghermez ast"]
+    },
+    {
+      "en": "My mum is under the bed. Her bed is black.",
+      "fa": ["maman e man zire takht ast. Takht e oo siah ast"]
+    },
+    {
+      "en": "Excuse me! Where is the airport taxi? My flight is at 8 o'clock.",
+      "fa": [
+        "bebakhshid! taxi e forudgah kojast? parvaz e man sa'at e hasht ast"
+      ]
+    },
+    {
+      "en": "I eat rice and mushroom and chicken at 2 o'clock.",
+      "fa": ["man sa'at e do bereng va gharch va morgh mikhoram"]
+    }
+  ]
+}
