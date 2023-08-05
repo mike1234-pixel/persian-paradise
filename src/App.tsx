@@ -10,18 +10,22 @@ import { urlify } from "./utils/urlify"
 import { TopNav } from "./components/common/TopNav/TopNav"
 import { ConfettiAnimationContextProvider } from "./context/ConfettiAnimationContext"
 import { ConfettiEffect } from "./components/common/Confetti/Confetti"
+import { QueryClient, QueryClientProvider } from "react-query"
+import { Loading } from "./components/pages/Loading/Loading"
 
 const Router = () => {
   const location = useLocation()
 
-  const { modules } = useModules()
+  const { modules, isLoading } = useModules()
+
+  if (isLoading) return <Loading />
 
   return (
     <Routes location={location}>
       <Route path='/' element={<Home />} />
       <Route path='/dashboard' element={<Dashboard />} />
 
-      {modules.map((module) => {
+      {modules?.map((module) => {
         const path = `/${urlify(module.title)}`
         return (
           <Route
@@ -36,8 +40,10 @@ const Router = () => {
 }
 
 const App = () => {
+  const queryClient = new QueryClient()
+
   return (
-    <div>
+    <QueryClientProvider client={queryClient}>
       <ConfigProvider
         theme={{
           token: {
@@ -59,7 +65,7 @@ const App = () => {
           </BrowserRouter>
         </ConfettiAnimationContextProvider>
       </ConfigProvider>
-    </div>
+    </QueryClientProvider>
   )
 }
 

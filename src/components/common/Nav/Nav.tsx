@@ -17,14 +17,16 @@ export const Nav = () => {
     setCollapsed(!collapsed)
   }
 
-  const items: MenuProps["items"] = modules.map((module) => {
-    return {
-      key: module.title,
-      icon: <i>{module?.emoji}</i>,
-      to: `/${urlify(module.title)}`,
-      label: <Link to={`/${urlify(module.title)}`}>{module.title}</Link>,
-    }
-  })
+  const items: MenuProps["items"] = modules
+    ? modules.map((module) => {
+        return {
+          key: module.title,
+          icon: <i>{module?.emoji}</i>,
+          to: `/${urlify(module.title)}`,
+          label: <Link to={`/${urlify(module.title)}`}>{module.title}</Link>,
+        }
+      })
+    : []
 
   return (
     <Sider
