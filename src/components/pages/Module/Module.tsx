@@ -23,7 +23,7 @@ interface ModuleProps {
 
 // TODO:
 // - add next module button to complete screen
-// - bug - when you complete a module and select another module, it errors out - this may have something to do with the sound or confetti
+// - bug - when you complete a module and select another module, it errors out - commenting out the success sound effect stops the error
 
 // ADD INFORMATION PAGES THAT CONTAIN EXPLANATIONS
 
@@ -67,7 +67,7 @@ export const Module = ({ module }: ModuleProps) => {
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
-      successSFX.play()
+      // successSFX.play()
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)

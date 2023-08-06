@@ -12,11 +12,14 @@ import { ConfettiAnimationContextProvider } from "./context/ConfettiAnimationCon
 import { ConfettiEffect } from "./components/common/Confetti/Confetti"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { Loading } from "./components/pages/Loading/Loading"
+import { Error } from "./components/pages/Error/Error"
 
 const Router = () => {
   const location = useLocation()
 
-  const { modules, isLoading } = useModules()
+  const { modules, isLoading, error } = useModules()
+
+  if (error) return <Error error={error} />
 
   if (isLoading) return <Loading />
 
