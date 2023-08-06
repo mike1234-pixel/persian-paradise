@@ -13,6 +13,7 @@ import { ConfettiEffect } from "./components/common/Confetti/Confetti"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { Loading } from "./components/pages/Loading/Loading"
 import { Error } from "./components/pages/Error/Error"
+import { NotFound404 } from "./components/pages/NotFound404/NotFound404"
 
 const Router = () => {
   const location = useLocation()
@@ -38,6 +39,7 @@ const Router = () => {
           />
         )
       })}
+      <Route path='*' element={<NotFound404 />} />
     </Routes>
   )
 }

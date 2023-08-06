@@ -1,4 +1,5 @@
 import { Typography } from "antd"
+import { Content } from "antd/es/layout/layout"
 import styles from "./Loading.module.css"
 
 export const Loading = () => {
@@ -14,9 +15,11 @@ export const Loading = () => {
   ))
 
   return (
-    <div className={styles.wrapper}>
-      {bubbles}
-      <Typography.Title level={1}>loading...</Typography.Title>
-    </div>
+    <Content>
+      <div className={styles.wrapper}>
+        {bubbles}
+        <Typography.Title level={1}>loading...</Typography.Title>
+      </div>
+    </Content>
   )
 }
