@@ -20,12 +20,6 @@ interface ModuleProps {
   errorLoadingModule: Error | null
 }
 
-// TODO:
-// - railway hobby plan signup
-// - make it responsive and more useable on mobile - do a general responsiveness check
-// - reset the pagination when closing the glossary modal
-// - update the phrases with the notes below
-
 export const Module = ({
   module,
   moduleLoading,
@@ -203,27 +197,3 @@ export const Module = ({
     </Content>
   )
 }
-
-// shalvar mipoosham - for sentences like this add 'man shalvar mipoosham' as an option
-
-// man aab jo doost daràm - i like beer
-
-// Man ab jo doost nàdaràm - I do not like beer
-// daram - i have
-// nedoram - i dont have
-
-// i like him - màn oo ra doost daràm
-// ra - the reason of something
-
-// che/chi - what
-// chera - why (for what reason)
-
-// man to ra doost daram - i like you
-
-// man sagha ra doost daram - i like dogs
-
-// need to add 'ra' to all the sentence with transitive verbs i.e those with an object
-// e.g. man aab jo ra minoosham
-// - ra acts as the
-// i am drinking the beer
-// without it is correct also - i am drinking beer
