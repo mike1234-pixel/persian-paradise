@@ -6,6 +6,7 @@ import {
   Button,
   Collapse,
   Progress,
+  Tag,
 } from "antd"
 import { CourseModule } from "../../../types/Module"
 import { useContext, useEffect, useState } from "react"
@@ -108,9 +109,10 @@ export const Module = ({
   useEffect(() => {
     const checkAnswer = () => {
       if (Array.isArray(currentPhrase.fa)) {
-        currentPhrase.fa.map((phrase) => {
-          return setIsAnswerCorrect(normalize(inputValue) === normalize(phrase))
-        })
+        const anyMatch = currentPhrase.fa.some(
+          (phrase) => normalize(inputValue) === normalize(phrase)
+        )
+        setIsAnswerCorrect(anyMatch)
       } else {
         setIsAnswerCorrect(
           normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
@@ -197,11 +199,13 @@ export const Module = ({
                 })
               ) : (
                 <>
-                  <span style={{ marginRight: 20 }}>
-                    Formal: {currentPhrase.fa.formal}
-                  </span>
-                  <span>Informal: {currentPhrase.fa.informal}</span>
-                  🙈
+                  <div style={{ marginBottom: 15 }}>
+                    <Tag color='purple'>Informal</Tag>{" "}
+                    {currentPhrase.fa.informal}
+                  </div>
+                  <div>
+                    <Tag color='blue'>Formal</Tag> {currentPhrase.fa.formal}
+                  </div>
                 </>
               )}
             </Panel>

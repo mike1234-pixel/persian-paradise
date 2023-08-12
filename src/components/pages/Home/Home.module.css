@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 46px);
   background-image: url("../../../assets/images/bg.jpg");
   background-color: rgba(99, 97, 235, 0.8);
   background-blend-mode: color-dodge;
