@@ -8,7 +8,9 @@ export const Home = () => {
     <div className={styles.root}>
       <div className={styles.text}>
         <MainTitle />
-        <p>A simple entry point into learning Farsi for English speakers.</p>
+        <p className={styles.subText}>
+          A simple entry point into learning Farsi for English speakers
+        </p>
         <Link to='/guide'>
           <Button size='large'>Start Learning</Button>
         </Link>

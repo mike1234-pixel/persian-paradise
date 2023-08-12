@@ -16,10 +16,11 @@ import { ConfettiAnimationContext } from "../../../context/ConfettiAnimationCont
 import { Flip } from "react-reveal"
 import { Complete } from "../Complete/Complete"
 import { useLocation } from "react-router-dom"
-import styles from "./Module.module.css"
 import { GlossaryModal } from "../../common/GlossaryModal/GlossaryModal"
 import { Loading } from "../Loading/Loading"
 import { Error } from "../Error/Error"
+import { CaretRightOutlined } from "@ant-design/icons"
+import styles from "./Module.module.css"
 
 interface ModuleProps {
   module: CourseModule | undefined
@@ -28,8 +29,9 @@ interface ModuleProps {
 }
 
 // TODO:
+// - make the top nav active links blue
 // - add next module button to complete screen
-// - make it responsive and more useable on mobile
+// - make it responsive and more useable on mobile e.g. changing the animation of the test text on smaller screens, and do a general responsiveness check
 // - reset the pagination when closing the glossary modal
 // - close the show answer accordions when clicking next
 // - add README to API and client repos
@@ -190,7 +192,12 @@ export const Module = ({
               </Form>
             </div>
           </div>
-          <Collapse style={{ marginTop: 30, maxWidth: 300 }}>
+          <Collapse
+            style={{ marginTop: 30, maxWidth: 300 }}
+            expandIcon={({ isActive }) => (
+              <CaretRightOutlined rotate={isActive ? 90 : 0} />
+            )}
+          >
             {currentPhrase.hint && (
               <Panel header='Show Hint 🙊' key='2'>
                 <span>{currentPhrase.hint}</span>

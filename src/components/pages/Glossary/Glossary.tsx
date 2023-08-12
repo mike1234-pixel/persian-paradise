@@ -3,8 +3,9 @@ import { Content } from "antd/es/layout/layout"
 import { ModulesList } from "../../../types/Module"
 import { Loading } from "../Loading/Loading"
 import { Error } from "../Error/Error"
-import styles from "./Glossary.module.css"
 import { GlossaryTable } from "../../common/GlossaryTable/GlossaryTable"
+import { CaretRightOutlined } from "@ant-design/icons"
+import styles from "./Glossary.module.css"
 
 const { Panel } = Collapse
 
@@ -24,10 +25,16 @@ export const Glossary = ({
   return (
     <Content className={styles.root}>
       <Typography.Title>Glossary</Typography.Title>
-      <Collapse accordion>
+      <Collapse
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
+        accordion
+      >
         {modules?.map((module, index) => (
           <Panel
             key={index}
+            style={{ overflowX: "scroll" }}
             header={
               <Typography.Title
                 level={5}

@@ -1,5 +1,6 @@
 import { Typography } from "antd"
 import { Content } from "antd/es/layout/layout"
+import { Link } from "react-router-dom"
 import styles from "./Guide.module.css"
 
 export const Guide = () => {
@@ -27,8 +28,11 @@ export const Guide = () => {
       </p>
       <p>
         It's recommended to rote learn the words for each module using the{" "}
-        <b>glossary</b> first. There is also a <b>glossary button </b> in each
-        module's test for reference in the bottom right of the screen.
+        <b>
+          <Link to='/glossary'>glossary</Link>
+        </b>{" "}
+        first. There is also a <b>glossary button </b> in each module's test for
+        reference in the bottom right of the screen.
       </p>
 
       <p>

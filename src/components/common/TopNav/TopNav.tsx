@@ -1,37 +1,52 @@
 import { Link } from "react-router-dom"
-import { MenuProps, Menu } from "antd"
-import { useState } from "react"
+import { Menu } from "antd"
+import { useLocation } from "react-router-dom"
+import React, { useState, useEffect } from "react"
 import styles from "./TopNav.module.css"
 
-const items: MenuProps["items"] = [
-  {
-    key: "home",
-    label: <Link to={`/`}>Home</Link>,
-  },
+const items = [
   {
     key: "guide",
-    label: <Link to={`/guide`}>User Guide</Link>,
+    label: "User Guide",
+    to: "/guide",
   },
   {
     key: "glossary",
-    label: <Link to={`/glossary`}>Glossary</Link>,
+    label: "Glossary",
+    to: "/glossary",
   },
 ]
 
 export const TopNav = () => {
-  const [current, setCurrent] = useState("mail")
+  const [current, setCurrent] = useState("")
+  const location = useLocation()
 
-  const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e)
+  useEffect(() => {
+    const isOnMenuPage = items.some((item) =>
+      location.pathname.startsWith(item.to)
+    )
+    setCurrent(isOnMenuPage ? location.pathname.replace("/", "") : "")
+  }, [location])
+
+  const onClick = (e: any) => {
     setCurrent(e.key)
   }
+
   return (
     <Menu
       onClick={onClick}
       selectedKeys={[current]}
       mode='horizontal'
-      items={items}
       className={styles.root}
-    />
+    >
+      {items.map((item) => (
+        <Menu.Item
+          key={item.key}
+          className={current === item.key ? styles["active-link"] : ""}
+        >
+          <Link to={item.to}>{item.label}</Link>
+        </Menu.Item>
+      ))}
+    </Menu>
   )
 }

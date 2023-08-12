@@ -33,7 +33,6 @@ export const Nav = () => {
       style={{
         width: 270,
         background: "none",
-        height: "100vh",
         backgroundColor: "#fff",
       }}
       collapsed={collapsed}
