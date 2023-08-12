@@ -1,13 +1,4 @@
-import {
-  Typography,
-  Layout,
-  Input,
-  Form,
-  Button,
-  Collapse,
-  Progress,
-  Tag,
-} from "antd"
+import { Typography, Layout, Input, Form, Button, Progress } from "antd"
 import { CourseModule } from "../../../types/Module"
 import { useContext, useEffect, useState } from "react"
 import { normalize } from "../../../utils/normalize"
@@ -19,7 +10,7 @@ import { useLocation } from "react-router-dom"
 import { GlossaryModal } from "../../common/GlossaryModal/GlossaryModal"
 import { Loading } from "../Loading/Loading"
 import { Error } from "../Error/Error"
-import { CaretRightOutlined } from "@ant-design/icons"
+import { Answers } from "../../common/Answers/Answers"
 import styles from "./Module.module.css"
 
 interface ModuleProps {
@@ -32,7 +23,6 @@ interface ModuleProps {
 // - railway hobby plan signup
 // - make it responsive and more useable on mobile e.g. changing the animation of the test text on smaller screens, and do a general responsiveness check
 // - reset the pagination when closing the glossary modal
-// - add README to API and client repos
 // - update the phrases with the notes below
 
 export const Module = ({
@@ -43,7 +33,6 @@ export const Module = ({
   const { phrases } = module ?? { phrases: [] }
   const { Title } = Typography
   const { Content } = Layout
-  const { Panel } = Collapse
 
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext)
 
@@ -190,37 +179,11 @@ export const Module = ({
               </Form>
             </div>
           </div>
-          <Collapse
-            style={{ marginTop: 30, maxWidth: 300 }}
-            expandIcon={({ isActive }) => (
-              <CaretRightOutlined rotate={isActive ? 90 : 0} />
-            )}
-            activeKey={activeCollapseKeys}
-            onChange={(keys) => setActiveCollapseKeys(keys as string[])}
-          >
-            {currentPhrase.hint && (
-              <Panel header='Show Hint 🙊' key='2'>
-                <span>{currentPhrase.hint}</span>
-              </Panel>
-            )}
-            <Panel header='Show Answer 🙉' key='1'>
-              {Array.isArray(currentPhrase?.fa) ? (
-                currentPhrase.fa.map((phrase, i) => {
-                  return <span key={i}>{phrase} 🙈</span>
-                })
-              ) : (
-                <>
-                  <div style={{ marginBottom: 15 }}>
-                    <Tag color='purple'>Informal</Tag>{" "}
-                    {currentPhrase.fa.informal}
-                  </div>
-                  <div>
-                    <Tag color='blue'>Formal</Tag> {currentPhrase.fa.formal}
-                  </div>
-                </>
-              )}
-            </Panel>
-          </Collapse>
+          <Answers
+            phrase={currentPhrase}
+            activeCollapseKeys={activeCollapseKeys}
+            setActiveCollapseKeys={setActiveCollapseKeys}
+          />
           {currentPhraseIndex !== 0 && (
             <Button onClick={goBack} size='large' style={{ marginTop: 30 }}>
               Go Back 👈

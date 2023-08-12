@@ -2,6 +2,10 @@
 
 This a Farsi language learning application aimed at English speakers.
 
+## Get Started
+
+Clone the repository and run `yarn install`
+
 ## Run the application
 
 To run the application in development mode, run:

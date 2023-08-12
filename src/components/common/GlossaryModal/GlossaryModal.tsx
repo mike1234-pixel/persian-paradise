@@ -1,4 +1,4 @@
-import { Modal, Button, FloatButton, Table, Typography, Tag } from "antd"
+import { Modal, Button, FloatButton, Typography } from "antd"
 import { useState } from "react"
 import { Phrase } from "../../../types/Module"
 import { GlossaryTable } from "../GlossaryTable/GlossaryTable"

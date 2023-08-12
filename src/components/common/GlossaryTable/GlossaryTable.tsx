@@ -1,6 +1,5 @@
 import { Table, Tag } from "antd"
 import { Phrase } from "../../../types/Module"
-import styles from "./GlossaryTable.module.css"
 
 interface GlossaryTableProps {
   phrases: Phrase[] | undefined

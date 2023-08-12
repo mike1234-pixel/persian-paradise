@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { Nav } from "./components/common/Nav/Nav"
 import { Home } from "./components/pages/Home/Home"
-import { Guide } from "./components/pages/Dashboard/Guide"
+import { Guide } from "./components/pages/Guide/Guide"
 import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
 import { ConfigProvider, Layout } from "antd"
