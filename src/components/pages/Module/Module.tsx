@@ -32,7 +32,6 @@ interface ModuleProps {
 // - railway hobby plan signup
 // - make it responsive and more useable on mobile e.g. changing the animation of the test text on smaller screens, and do a general responsiveness check
 // - reset the pagination when closing the glossary modal
-// - close the show answer accordions when clicking next
 // - add README to API and client repos
 // - update the phrases with the notes below
 
@@ -63,6 +62,7 @@ export const Module = ({
   const [moduleComplete, setModuleComplete] = useState(false)
   const [animationKey, setAnimationKey] = useState<number>(0)
   const [progressPercent, setProgressPercent] = useState<number>(0)
+  const [activeCollapseKeys, setActiveCollapseKeys] = useState<string[]>([])
 
   const resetState = (hardReset: boolean) => {
     hardReset
@@ -89,6 +89,7 @@ export const Module = ({
       )
       setProgressPercent(newProgressPercent)
       passSFX.play()
+      setActiveCollapseKeys([])
     }
   }
 
@@ -194,6 +195,8 @@ export const Module = ({
             expandIcon={({ isActive }) => (
               <CaretRightOutlined rotate={isActive ? 90 : 0} />
             )}
+            activeKey={activeCollapseKeys}
+            onChange={(keys) => setActiveCollapseKeys(keys as string[])}
           >
             {currentPhrase.hint && (
               <Panel header='Show Hint 🙊' key='2'>
