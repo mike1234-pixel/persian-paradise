@@ -17,9 +17,13 @@ import { Complete } from "../Complete/Complete"
 import { useLocation } from "react-router-dom"
 import styles from "./Module.module.css"
 import { GlossaryModal } from "../../common/GlossaryModal/GlossaryModal"
+import { Loading } from "../Loading/Loading"
+import { Error } from "../Error/Error"
 
 interface ModuleProps {
-  module: CourseModule
+  module: CourseModule | undefined
+  moduleLoading: boolean
+  errorLoadingModule: Error | null
 }
 
 // TODO:
@@ -28,8 +32,12 @@ interface ModuleProps {
 
 // ADD INFORMATION PAGES THAT CONTAIN EXPLANATIONS
 
-export const Module = ({ module }: ModuleProps) => {
-  const { phrases } = module
+export const Module = ({
+  module,
+  moduleLoading,
+  errorLoadingModule,
+}: ModuleProps) => {
+  const { phrases } = module ?? { phrases: [] }
   const { Title } = Typography
   const { Content } = Layout
   const { Panel } = Collapse
@@ -124,78 +132,88 @@ export const Module = ({ module }: ModuleProps) => {
 
   if (moduleComplete) return <Complete />
 
+  if (errorLoadingModule) return <Error error={errorLoadingModule} />
+
+  if (moduleLoading) return <Loading />
+
   return (
     <Content className={styles.root}>
-      <Progress
-        percent={progressPercent}
-        strokeColor={{ "0%": "#108ee9", "100%": "#87d068" }}
-      />
-      <Title>{module.title}</Title>
-      {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
-      <div className={styles.phrase}>
-        <div className={styles.phraseEnglish}>
-          <Flip key={animationKey} left cascade>
-            {currentPhrase.en}
-          </Flip>
-          <i>{currentPhrase.emoji}</i>
-        </div>
+      {module && (
+        <>
+          <Progress
+            percent={progressPercent}
+            strokeColor={{ "0%": "#108ee9", "100%": "#87d068" }}
+          />
+          <Title>{module.title}</Title>
+          {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
+          <div className={styles.phrase}>
+            <div className={styles.phraseEnglish}>
+              <Flip key={animationKey} left cascade>
+                {currentPhrase.en}
+              </Flip>
+              <i>{currentPhrase.emoji}</i>
+            </div>
 
-        <div>
-          <Form layout='vertical' className={styles.form}>
-            <Form.Item style={{ marginBottom: 0 }}>
-              <Input
-                type='text'
-                value={inputValue}
-                onChange={handleInputChange}
-                className={isAnswerCorrect ? styles.successInput : styles.input}
-                size='large'
-                placeholder='Answer in Persian'
-                spellCheck={false}
-                suffix={
-                  isAnswerCorrect ? (
-                    <CheckCircleTwoTone twoToneColor='#52c41a' />
-                  ) : (
-                    <QuestionCircleTwoTone twoToneColor='#52c41a' />
-                  )
-                }
-              />
-            </Form.Item>
-            {isAnswerCorrect && (
-              <Button onClick={handleNextPhrase} size='large'>
-                Next Phrase 👉
-              </Button>
+            <div>
+              <Form layout='vertical' className={styles.form}>
+                <Form.Item style={{ marginBottom: 0 }}>
+                  <Input
+                    type='text'
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    className={
+                      isAnswerCorrect ? styles.successInput : styles.input
+                    }
+                    size='large'
+                    placeholder='Answer in Persian'
+                    spellCheck={false}
+                    suffix={
+                      isAnswerCorrect ? (
+                        <CheckCircleTwoTone twoToneColor='#52c41a' />
+                      ) : (
+                        <QuestionCircleTwoTone twoToneColor='#52c41a' />
+                      )
+                    }
+                  />
+                </Form.Item>
+                {isAnswerCorrect && (
+                  <Button onClick={handleNextPhrase} size='large'>
+                    Next Phrase 👉
+                  </Button>
+                )}
+              </Form>
+            </div>
+          </div>
+          <Collapse style={{ marginTop: 30, maxWidth: 300 }}>
+            {currentPhrase.hint && (
+              <Panel header='Show Hint 🙊' key='2'>
+                <span>{currentPhrase.hint}</span>
+              </Panel>
             )}
-          </Form>
-        </div>
-      </div>
-      <Collapse style={{ marginTop: 30, maxWidth: 300 }}>
-        {currentPhrase.hint && (
-          <Panel header='Show Hint 🙊' key='2'>
-            <span>{currentPhrase.hint}</span>
-          </Panel>
-        )}
-        <Panel header='Show Answer 🙉' key='1'>
-          {Array.isArray(currentPhrase?.fa) ? (
-            currentPhrase.fa.map((phrase, i) => {
-              return <span key={i}>{phrase} 🙈</span>
-            })
-          ) : (
-            <>
-              <span style={{ marginRight: 20 }}>
-                Formal: {currentPhrase.fa.formal}
-              </span>
-              <span>Informal: {currentPhrase.fa.informal}</span>
-              🙈
-            </>
+            <Panel header='Show Answer 🙉' key='1'>
+              {Array.isArray(currentPhrase?.fa) ? (
+                currentPhrase.fa.map((phrase, i) => {
+                  return <span key={i}>{phrase} 🙈</span>
+                })
+              ) : (
+                <>
+                  <span style={{ marginRight: 20 }}>
+                    Formal: {currentPhrase.fa.formal}
+                  </span>
+                  <span>Informal: {currentPhrase.fa.informal}</span>
+                  🙈
+                </>
+              )}
+            </Panel>
+          </Collapse>
+          {currentPhraseIndex !== 0 && (
+            <Button onClick={goBack} size='large' style={{ marginTop: 30 }}>
+              Go Back 👈
+            </Button>
           )}
-        </Panel>
-      </Collapse>
-      {currentPhraseIndex !== 0 && (
-        <Button onClick={goBack} size='large' style={{ marginTop: 30 }}>
-          Go Back 👈
-        </Button>
+          <GlossaryModal phrases={phrases} />
+        </>
       )}
-      <GlossaryModal phrases={phrases} />
     </Content>
   )
 }

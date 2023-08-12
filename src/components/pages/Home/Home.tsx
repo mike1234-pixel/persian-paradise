@@ -8,10 +8,8 @@ export const Home = () => {
     <div className={styles.root}>
       <div className={styles.text}>
         <MainTitle />
-        <p>
-          A platform designed to make learning Persian a delightful experience.
-        </p>
-        <Link to='/dashboard'>
+        <p>A simple entry point into learning Farsi for English speakers.</p>
+        <Link to='/guide'>
           <Button size='large'>Start Learning</Button>
         </Link>
       </div>

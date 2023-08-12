@@ -14,6 +14,7 @@ import { QueryClient, QueryClientProvider } from "react-query"
 import { Loading } from "./components/pages/Loading/Loading"
 import { Error } from "./components/pages/Error/Error"
 import { NotFound404 } from "./components/pages/NotFound404/NotFound404"
+import { Glossary } from "./components/pages/Glossary/Glossary"
 
 const Router = () => {
   const location = useLocation()
@@ -28,13 +29,29 @@ const Router = () => {
     <Routes location={location}>
       <Route path='/' element={<Home />} />
       <Route path='/guide' element={<Guide />} />
+      <Route
+        path='/glossary'
+        element={
+          <Glossary
+            modules={modules}
+            modulesLoading={isLoading}
+            errorLoadingModules={error}
+          />
+        }
+      />
 
       {modules?.map((module) => {
         const path = `/${urlify(module.title)}`
         return (
           <Route
             path={path}
-            element={<Module module={module} />}
+            element={
+              <Module
+                module={module}
+                moduleLoading={isLoading}
+                errorLoadingModule={error}
+              />
+            }
             key={module.title}
           />
         )

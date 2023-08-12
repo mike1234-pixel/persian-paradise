@@ -10,7 +10,11 @@ const items: MenuProps["items"] = [
   },
   {
     key: "guide",
-    label: <Link to={`/guide`}>Guide</Link>,
+    label: <Link to={`/guide`}>User Guide</Link>,
+  },
+  {
+    key: "glossary",
+    label: <Link to={`/glossary`}>Glossary</Link>,
   },
 ]
 

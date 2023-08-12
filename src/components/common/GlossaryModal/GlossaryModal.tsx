@@ -4,20 +4,22 @@ import { Phrase } from "../../../types/Module"
 import styles from "./GlossaryModal.module.css"
 
 interface GlossaryModalProps {
-  phrases: Phrase[]
+  phrases: Phrase[] | undefined
 }
 
 export const GlossaryModal = ({ phrases }: GlossaryModalProps) => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
 
-  const dataSource = phrases.map((phrase, i) => {
-    return {
-      key: i,
-      en: phrase.en,
-      fa: phrase.fa,
-      emoji: phrase.emoji,
-    }
-  })
+  const dataSource =
+    phrases &&
+    phrases.map((phrase, i) => {
+      return {
+        key: i,
+        en: phrase.en,
+        fa: phrase.fa,
+        emoji: phrase.emoji,
+      }
+    })
 
   const columns = [
     {
