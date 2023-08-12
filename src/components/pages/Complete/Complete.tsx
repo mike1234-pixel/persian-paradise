@@ -1,11 +1,14 @@
 import { Phrase, Char } from "animatedtxt"
 import { Content } from "antd/es/layout/layout"
+import { useScreenResize } from "../../../hooks/useScreenResize"
 import styles from "./Complete.module.css"
 
 export const Complete = () => {
+  const { isSmallScreen } = useScreenResize()
+
   return (
     <Content className={styles.root}>
-      <Phrase size={40}>
+      <Phrase size={isSmallScreen ? 20 : 40}>
         <Char char='M' duration={1} color='#89CFF0' delay={0.2} />
         <Char char='O' duration={3} color='#6495ED' />
         <Char char='D' duration={2} delay={0.4} color='#87CEFA' />
@@ -14,7 +17,7 @@ export const Complete = () => {
         <Char char='E' duration={2} color='#89CFF0' />
       </Phrase>
 
-      <Phrase size={60}>
+      <Phrase size={isSmallScreen ? 30 : 60}>
         <Char char='C' duration={1} color='#FF844D' />
         <Char char='O' duration={3} color='#E65C00' />
         <Char char='M' duration={2} color='#CC5200' />
