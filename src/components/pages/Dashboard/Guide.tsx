@@ -28,7 +28,7 @@ export const Guide = () => {
       <p>
         It's recommended to rote learn the words for each module using the{" "}
         <b>glossary</b> first. There is also a <b>glossary button </b> in each
-        module's test for reference.
+        module's test for reference in the bottom right of the screen.
       </p>
 
       <p>
