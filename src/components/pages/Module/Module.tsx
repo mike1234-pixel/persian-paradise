@@ -16,6 +16,7 @@ import { Flip } from "react-reveal"
 import { Complete } from "../Complete/Complete"
 import { useLocation } from "react-router-dom"
 import styles from "./Module.module.css"
+import { GlossaryModal } from "../../common/GlossaryModal/GlossaryModal"
 
 interface ModuleProps {
   module: CourseModule
@@ -67,7 +68,7 @@ export const Module = ({ module }: ModuleProps) => {
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
-      // successSFX.play()
+      successSFX.play()
     }
     if (isAnswerCorrect && !finished) {
       resetState(false)
@@ -194,6 +195,7 @@ export const Module = ({ module }: ModuleProps) => {
           Go Back 👈
         </Button>
       )}
+      <GlossaryModal phrases={phrases} />
     </Content>
   )
 }

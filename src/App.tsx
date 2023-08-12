@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { Nav } from "./components/common/Nav/Nav"
 import { Home } from "./components/pages/Home/Home"
-import { Dashboard } from "./components/pages/Dashboard/Dashboard"
+import { Guide } from "./components/pages/Dashboard/Guide"
 import { Module } from "./components/pages/Module/Module"
 import { useModules } from "./hooks/useModules"
 import { ConfigProvider, Layout } from "antd"
@@ -27,7 +27,7 @@ const Router = () => {
   return (
     <Routes location={location}>
       <Route path='/' element={<Home />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/guide' element={<Guide />} />
 
       {modules?.map((module) => {
         const path = `/${urlify(module.title)}`
@@ -61,7 +61,6 @@ const App = () => {
             <Layout hasSider>
               <ConfettiEffect />
               <Nav />
-
               <Content>
                 <TopNav />
                 <Router />

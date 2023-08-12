@@ -12,7 +12,7 @@
     },
     {
       "en": "Your spoon is on the yellow table.",
-      "fa": ["to ghashogh rooye miz e zard ast"]
+      "fa": ["ghashogh e to rooye miz e zard ast"]
     },
     {
       "en": "My bag is red.",
@@ -60,7 +60,7 @@
     },
     {
       "en": "I eat rice and mushroom and chicken at 2 o'clock.",
-      "fa": ["man saat e do bereng va gharch va morgh mikhoram"],
+      "fa": ["man saat e do polo va gharch va morgh mikhoram"],
       "hint": "the verb always goes at the end of the sentence"
     },
     {

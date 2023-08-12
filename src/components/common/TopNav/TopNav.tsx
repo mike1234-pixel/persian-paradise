@@ -9,8 +9,8 @@ const items: MenuProps["items"] = [
     label: <Link to={`/`}>Home</Link>,
   },
   {
-    key: "dashboard",
-    label: <Link to={`/dashboard`}>Dashboard</Link>,
+    key: "guide",
+    label: <Link to={`/guide`}>Guide</Link>,
   },
 ]
 
