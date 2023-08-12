@@ -2,7 +2,7 @@
 
 This a Farsi language learning application aimed at English speakers.
 
-## Get Started
+## Get Started
 
 Clone the repository and run `yarn install`
 
