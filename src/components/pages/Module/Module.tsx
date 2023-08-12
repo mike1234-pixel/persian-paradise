@@ -22,7 +22,7 @@ interface ModuleProps {
 
 // TODO:
 // - railway hobby plan signup
-// - make it responsive and more useable on mobile e.g. changing the animation of the test text on smaller screens, and do a general responsiveness check
+// - make it responsive and more useable on mobile - do a general responsiveness check
 // - reset the pagination when closing the glossary modal
 // - update the phrases with the notes below
 

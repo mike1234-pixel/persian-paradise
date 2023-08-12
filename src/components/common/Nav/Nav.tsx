@@ -53,7 +53,7 @@ export const Nav = () => {
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>
-      <div style={{ height: "100vh", overflow: "auto" }}>
+      <div style={{ maxHeight: "calc(100vh - 48px)", overflow: "auto" }}>
         <Menu
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}

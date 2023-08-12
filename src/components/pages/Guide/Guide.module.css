@@ -1,5 +1,7 @@
 .root {
   padding: 0 30px;
+  max-height: calc(100vh - 48px);
+  overflow: auto;
 }
 
 .text {
