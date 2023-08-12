@@ -73,7 +73,11 @@ export const GlossaryModal = ({ phrases }: GlossaryModalProps) => {
         />
         ;
       </Modal>
-      <FloatButton tooltip='glossary' onClick={() => setModalIsOpen(true)} />
+      <FloatButton
+        tooltip='glossary'
+        onClick={() => setModalIsOpen(true)}
+        badge={{ count: phrases?.length, overflowCount: 999 }}
+      />
     </>
   )
 }

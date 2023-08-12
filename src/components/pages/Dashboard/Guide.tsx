@@ -27,10 +27,13 @@ export const Guide = () => {
       </p>
       <p>
         It's recommended to rote learn the words for each module using the{" "}
-        <b>glossary</b> first. There is also a{" "}
-        <b>glossary button [PHOTO OF BUTTON]</b> in each module's test for
-        reference. Once you have familiarised yourself with the words in the
-        glossary, you can test your knowledge using the tests in each module.
+        <b>glossary</b> first. There is also a <b>glossary button </b> in each
+        module's test for reference.
+      </p>
+
+      <p>
+        Once you have familiarised yourself with the words in the glossary, you
+        can test your knowledge using the tests in each module.
       </p>
       <p>
         Each module is displayed in the navigation on the left of the screen.

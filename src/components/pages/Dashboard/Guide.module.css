@@ -1,3 +1,9 @@
 .root {
   padding: 0 30px;
 }
+
+.glossaryButton {
+  height: 60px;
+  width: 70px;
+  border-radius: 50%;
+}

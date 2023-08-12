@@ -1,3 +1,9 @@
 .root {
-  min-width: 1000px;
+  overflow-x: scroll;
+}
+
+@media (min-width: 1100px) {
+  .root {
+    min-width: 1000px;
+  }
 }
