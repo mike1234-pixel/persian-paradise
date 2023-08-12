@@ -29,14 +29,11 @@ interface ModuleProps {
 }
 
 // TODO:
-// - make the top nav active links blue
-// - add next module button to complete screen
+// - railway hobby plan signup
 // - make it responsive and more useable on mobile e.g. changing the animation of the test text on smaller screens, and do a general responsiveness check
 // - reset the pagination when closing the glossary modal
 // - close the show answer accordions when clicking next
 // - add README to API and client repos
-// - finish the guide page
-// - bug - when you complete a module and select another module, it errors out - commenting out the success sound effect stops the error
 // - update the phrases with the notes below
 
 export const Module = ({
