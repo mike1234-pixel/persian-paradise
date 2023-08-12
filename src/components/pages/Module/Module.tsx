@@ -11,6 +11,7 @@ import { GlossaryModal } from "../../common/GlossaryModal/GlossaryModal"
 import { Loading } from "../Loading/Loading"
 import { Error } from "../Error/Error"
 import { Answers } from "../../common/Answers/Answers"
+import { useScreenResize } from "../../../hooks/useScreenResize"
 import styles from "./Module.module.css"
 
 interface ModuleProps {
@@ -44,6 +45,8 @@ export const Module = ({
   )
 
   const location = useLocation()
+
+  const { isSmallScreen } = useScreenResize()
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0)
   const [inputValue, setInputValue] = useState<string>("")
@@ -143,9 +146,14 @@ export const Module = ({
           {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
           <div className={styles.phrase}>
             <div className={styles.phraseEnglish}>
-              <Flip key={animationKey} left cascade>
-                {currentPhrase.en}
-              </Flip>
+              {isSmallScreen ? (
+                <span>{currentPhrase.en}</span>
+              ) : (
+                <Flip key={animationKey} left cascade>
+                  {currentPhrase.en}
+                </Flip>
+              )}
+
               <i>{currentPhrase.emoji}</i>
             </div>
 

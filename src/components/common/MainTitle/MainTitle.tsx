@@ -1,24 +1,9 @@
 import { Phrase, Char } from "animatedtxt"
-import { useState, useEffect } from "react"
+import { useScreenResize } from "../../../hooks/useScreenResize"
 import styles from "./MainTitle.module.css"
 
 export const MainTitle = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      const isSmall = window.innerWidth < 767
-      setIsSmallScreen(isSmall)
-    }
-
-    window.addEventListener("resize", handleResize)
-
-    handleResize()
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
+  const { isSmallScreen } = useScreenResize()
 
   return (
     <div className={styles.root}>
