@@ -14,7 +14,7 @@ To run the application in development mode, run:
 
 ## Libraries & Tools
 
-This app uses the following:
+This app uses:
 
 - React
 - TypeScript
@@ -24,6 +24,12 @@ This app uses the following:
 - React Router
 
 as well as some additional animation libraries which can be found in the `package.json`
+
+## Workflow & CI/CD
+
+`husky` pre-commit hooks run `prettier` and `eslint`.
+
+Scripts are also available to prettify code and lint code. See `package.json`.
 
 ## API
 
