@@ -197,3 +197,17 @@ export const Module = ({
     </Content>
   )
 }
+
+// Pashmam - shocked (pasm = hair, am = my) (pronounced pashmarm)
+// àmma or vàli - but
+// Man inja neshasteam = I am sitting here
+// to inja neshaste’ ee= you are sitting here
+
+// man hamishe scrabble ra mibaram - i always win scrabble
+// to hamishe scrabble ra mibari - you always win scrabble
+
+// Man hamishe scrabble ra mibazam - i always lose scrabble
+// To hamishe scrabble ra mibazi - you always lose scrabble
+
+// man be majarestan safar mikonam - I am travelling to Hungary
+// To be majarestan safar mikoni - You are travelling to Hungary
