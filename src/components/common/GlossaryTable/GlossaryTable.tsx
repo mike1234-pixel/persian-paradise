@@ -1,5 +1,5 @@
 import { Table, Tag } from 'antd'
-import { type Phrase } from '../../../types/Module'
+import { type Phrase } from 'persian-paradise-shared-types'
 
 interface GlossaryTableProps {
   phrases: Phrase[] | undefined

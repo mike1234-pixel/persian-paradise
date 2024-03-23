@@ -1,5 +1,5 @@
 import { Typography, Layout, Input, Form, Button, Progress } from 'antd'
-import { type CourseModule } from '../../../types/Module'
+import { type CourseModule } from 'persian-paradise-shared-types'
 import { useContext, useEffect, useState } from 'react'
 import { normalize } from '../../../utils/normalize'
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from '@ant-design/icons'

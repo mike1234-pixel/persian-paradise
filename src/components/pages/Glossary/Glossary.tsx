@@ -1,6 +1,6 @@
 import { Typography, Collapse } from 'antd'
 import { Content } from 'antd/es/layout/layout'
-import { type ModulesList } from '../../../types/Module'
+import { type ModulesList } from 'persian-paradise-shared-types'
 import { Loading } from '../Loading/Loading'
 import { Error } from '../Error/Error'
 import { GlossaryTable } from '../../common/GlossaryTable/GlossaryTable'

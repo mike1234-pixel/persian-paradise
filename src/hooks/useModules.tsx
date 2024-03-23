@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { type ModulesList } from '../types/Module'
+import { type ModulesList } from 'persian-paradise-shared-types'
 
 export const useModules = () => {
   const apiUrl =

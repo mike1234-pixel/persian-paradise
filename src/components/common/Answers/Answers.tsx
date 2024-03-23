@@ -1,7 +1,7 @@
 import { Collapse, Tag } from 'antd'
 import { CaretRightOutlined } from '@ant-design/icons'
 import { type Dispatch, type SetStateAction } from 'react'
-import { type Phrase } from '../../../types/Module'
+import { type Phrase } from 'persian-paradise-shared-types'
 
 interface AnswersProps {
   phrase: Phrase

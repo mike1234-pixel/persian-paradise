@@ -34,3 +34,7 @@ Scripts are also available to prettify code and lint code. See `package.json`.
 ## API
 
 Course modules are got from the [Persian Paradise API](https://github.com/mike1234-pixel/persian-paradise-api).
+
+## Shared Types
+
+Shared types are stored in [Persian Paradise App](https://www.npmjs.com/package/persian-paradise-shared-types).

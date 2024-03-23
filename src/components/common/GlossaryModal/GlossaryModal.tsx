@@ -1,6 +1,6 @@
 import { Modal, Button, FloatButton, Typography } from 'antd'
 import { useState } from 'react'
-import { type Phrase } from '../../../types/Module'
+import { type Phrase } from 'persian-paradise-shared-types'
 import { GlossaryTable } from '../GlossaryTable/GlossaryTable'
 import styles from './GlossaryModal.module.css'
 
