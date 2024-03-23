@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "echo 'Running pre-commit hook' && lint-staged"
     }
   },
   "lint-staged": {
