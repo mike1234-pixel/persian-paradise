@@ -16,8 +16,6 @@ import { Error } from './components/pages/Error/Error'
 import { NotFound404 } from './components/pages/NotFound404/NotFound404'
 import { Glossary } from './components/pages/Glossary/Glossary'
 
-// test change
-
 const Router = () => {
   const location = useLocation()
 

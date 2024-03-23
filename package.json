@@ -10,8 +10,7 @@
     "@types/node": "^16.18.38",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "animatedtxt": "^1.3.1",
-    "antd": "^5.7.0",
+    "antd": "^5.15.3",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
@@ -19,14 +18,17 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
+    "typescript": "*",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix",
+    "pretty": "prettier --write .",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -34,8 +36,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
       "prettier --write"
     ]
   },
@@ -58,9 +60,15 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-prettier": "^5.1.3",
-    "husky": "^9.0.11",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
   }
