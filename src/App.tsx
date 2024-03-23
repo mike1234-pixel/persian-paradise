@@ -1,20 +1,22 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
-import { Nav } from "./components/common/Nav/Nav"
-import { Home } from "./components/pages/Home/Home"
-import { Guide } from "./components/pages/Guide/Guide"
-import { Module } from "./components/pages/Module/Module"
-import { useModules } from "./hooks/useModules"
-import { ConfigProvider, Layout } from "antd"
-import { Content } from "antd/es/layout/layout"
-import { urlify } from "./utils/urlify"
-import { TopNav } from "./components/common/TopNav/TopNav"
-import { ConfettiAnimationContextProvider } from "./context/ConfettiAnimationContext"
-import { ConfettiEffect } from "./components/common/Confetti/Confetti"
-import { QueryClient, QueryClientProvider } from "react-query"
-import { Loading } from "./components/pages/Loading/Loading"
-import { Error } from "./components/pages/Error/Error"
-import { NotFound404 } from "./components/pages/NotFound404/NotFound404"
-import { Glossary } from "./components/pages/Glossary/Glossary"
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { Nav } from './components/common/Nav/Nav'
+import { Home } from './components/pages/Home/Home'
+import { Guide } from './components/pages/Guide/Guide'
+import { Module } from './components/pages/Module/Module'
+import { useModules } from './hooks/useModules'
+import { ConfigProvider, Layout } from 'antd'
+import { Content } from 'antd/es/layout/layout'
+import { urlify } from './utils/urlify'
+import { TopNav } from './components/common/TopNav/TopNav'
+import { ConfettiAnimationContextProvider } from './context/ConfettiAnimationContext'
+import { ConfettiEffect } from './components/common/Confetti/Confetti'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Loading } from './components/pages/Loading/Loading'
+import { Error } from './components/pages/Error/Error'
+import { NotFound404 } from './components/pages/NotFound404/NotFound404'
+import { Glossary } from './components/pages/Glossary/Glossary'
+
+// test change
 
 const Router = () => {
   const location = useLocation()
@@ -27,10 +29,10 @@ const Router = () => {
 
   return (
     <Routes location={location}>
-      <Route path='/' element={<Home />} />
-      <Route path='/guide' element={<Guide />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/guide" element={<Guide />} />
       <Route
-        path='/glossary'
+        path="/glossary"
         element={
           <Glossary
             modules={modules}
@@ -56,7 +58,7 @@ const Router = () => {
           />
         )
       })}
-      <Route path='*' element={<NotFound404 />} />
+      <Route path="*" element={<NotFound404 />} />
     </Routes>
   )
 }
@@ -69,8 +71,8 @@ const App = () => {
       <ConfigProvider
         theme={{
           token: {
-            fontFamily: "Plus Jakarta Sans",
-          },
+            fontFamily: 'Plus Jakarta Sans'
+          }
         }}
       >
         <ConfettiAnimationContextProvider>
