@@ -29,6 +29,8 @@ export const Module = ({
   const { Title } = Typography;
   const { Content } = Layout;
 
+  //.
+
   const { releaseTheConfetti } = useContext(ConfettiAnimationContext);
 
   const passSFX = new Audio(
