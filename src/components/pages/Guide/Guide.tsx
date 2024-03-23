@@ -1,7 +1,8 @@
-import { Typography } from "antd"
-import { Content } from "antd/es/layout/layout"
-import { Link } from "react-router-dom"
-import styles from "./Guide.module.css"
+/* eslint-disable react/no-unescaped-entities */
+import { Typography } from 'antd'
+import { Content } from 'antd/es/layout/layout'
+import { Link } from 'react-router-dom'
+import styles from './Guide.module.css'
 
 export const Guide = () => {
   return (
@@ -30,10 +31,10 @@ export const Guide = () => {
           conversational Farsi.
         </p>
         <p>
-          It's recommended to rote learn the words for each module using the{" "}
+          It's recommended to rote learn the words for each module using the{' '}
           <b>
-            <Link to='/glossary'>glossary</Link>
-          </b>{" "}
+            <Link to="/glossary">glossary</Link>
+          </b>{' '}
           first. There is also a <b>glossary button </b> in each module's test
           for reference in the bottom right of the screen.
         </p>
@@ -52,11 +53,11 @@ export const Guide = () => {
           Pronunciation 🗣
         </Typography.Title>
         <p>
-          If you see an accented <b>à</b>, pronounce this like the English{" "}
+          If you see an accented <b>à</b>, pronounce this like the English{' '}
           <b>'a'</b>
         </p>
         <p>
-          If you see an unaccented <b>a</b>, prounounce this like the English{" "}
+          If you see an unaccented <b>a</b>, prounounce this like the English{' '}
           <b>'ar'</b>
         </p>
       </div>

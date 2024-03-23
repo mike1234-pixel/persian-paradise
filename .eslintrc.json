@@ -21,6 +21,8 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "react/react-in-jsx-scope": "off",
     "multiline-ternary": "off",
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/triple-slash-reference": "off"
   }
 }

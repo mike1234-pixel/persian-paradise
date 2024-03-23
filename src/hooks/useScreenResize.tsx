@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export const useScreenResize = () => {
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false)
@@ -9,12 +9,12 @@ export const useScreenResize = () => {
       setIsSmallScreen(isSmall)
     }
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
 
     handleResize()
 
     return () => {
-      window.removeEventListener("resize", handleResize)
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 

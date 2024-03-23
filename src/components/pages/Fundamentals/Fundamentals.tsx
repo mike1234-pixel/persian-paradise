@@ -1,6 +1,6 @@
-import { Typography } from "antd"
-import { Content } from "antd/es/layout/layout"
-import styles from "./Fundamentals.module.css"
+import { Typography } from 'antd'
+import { Content } from 'antd/es/layout/layout'
+import styles from './Fundamentals.module.css'
 
 export const Fundamentals = () => {
   return (

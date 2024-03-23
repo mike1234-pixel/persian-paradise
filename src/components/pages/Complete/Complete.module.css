@@ -1,6 +1,6 @@
 .root {
   padding: 80px 60px 60px;
-  background-image: url("../../../assets/images/complete-bg.jpg");
+  background-image: url('../../../assets/images/complete-bg.jpg');
   background-color: rgba(99, 97, 235, 0.8);
   background-blend-mode: color-dodge;
   background-size: cover;

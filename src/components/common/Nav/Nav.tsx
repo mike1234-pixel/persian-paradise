@@ -1,10 +1,10 @@
-import { useState } from "react"
-import { Button, Menu, MenuProps, Layout } from "antd"
-import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons"
-import { Link } from "react-router-dom"
-import { useModules } from "../../../hooks/useModules"
-import { urlify } from "../../../utils/urlify"
-import styles from "./SideNav.module.css"
+import { useState } from 'react'
+import { Button, Menu, type MenuProps, Layout } from 'antd'
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
+import { Link } from 'react-router-dom'
+import { useModules } from '../../../hooks/useModules'
+import { urlify } from '../../../utils/urlify'
+import styles from './SideNav.module.css'
 
 export const Nav = () => {
   const { modules } = useModules()
@@ -17,13 +17,13 @@ export const Nav = () => {
     setCollapsed(!collapsed)
   }
 
-  const items: MenuProps["items"] = modules
+  const items: MenuProps['items'] = modules
     ? modules.map((module) => {
         return {
           key: module.title,
           icon: <i>{module?.emoji}</i>,
           to: `/${urlify(module.title)}`,
-          label: <Link to={`/${urlify(module.title)}`}>{module.title}</Link>,
+          label: <Link to={`/${urlify(module.title)}`}>{module.title}</Link>
         }
       })
     : []
@@ -32,32 +32,32 @@ export const Nav = () => {
     <Sider
       style={{
         width: 270,
-        background: "none",
-        backgroundColor: "#fff",
+        background: 'none',
+        backgroundColor: '#fff'
       }}
       collapsed={collapsed}
     >
       <div
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          padding: "7px 0 7px 15px",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          padding: '7px 0 7px 15px'
         }}
       >
         <Button
           onClick={toggleCollapsed}
-          type='text'
+          type="text"
           className={styles.collapseButton}
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
       </div>
-      <div style={{ maxHeight: "calc(100vh - 48px)", overflow: "auto" }}>
+      <div style={{ maxHeight: 'calc(100vh - 48px)', overflow: 'auto' }}>
         <Menu
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode='inline'
+          defaultSelectedKeys={['1']}
+          defaultOpenKeys={['sub1']}
+          mode="inline"
           items={items}
         />
       </div>

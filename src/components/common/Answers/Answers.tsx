@@ -1,7 +1,7 @@
-import { Collapse, Tag } from "antd"
-import { CaretRightOutlined } from "@ant-design/icons"
-import { Dispatch, SetStateAction } from "react"
-import { Phrase } from "../../../types/Module"
+import { Collapse, Tag } from 'antd'
+import { CaretRightOutlined } from '@ant-design/icons'
+import { type Dispatch, type SetStateAction } from 'react'
+import { type Phrase } from '../../../types/Module'
 
 interface AnswersProps {
   phrase: Phrase
@@ -12,7 +12,7 @@ interface AnswersProps {
 export const Answers = ({
   phrase,
   activeCollapseKeys,
-  setActiveCollapseKeys,
+  setActiveCollapseKeys
 }: AnswersProps) => {
   const { Panel } = Collapse
 
@@ -23,14 +23,16 @@ export const Answers = ({
         <CaretRightOutlined rotate={isActive ? 90 : 0} />
       )}
       activeKey={activeCollapseKeys}
-      onChange={(keys) => setActiveCollapseKeys(keys as string[])}
+      onChange={(keys) => {
+        setActiveCollapseKeys(keys as string[])
+      }}
     >
       {phrase.hint && (
-        <Panel header='Show Hint 🙊' key='2'>
+        <Panel header="Show Hint 🙊" key="2">
           <span>{phrase.hint}</span>
         </Panel>
       )}
-      <Panel header='Show Answer 🙉' key='1'>
+      <Panel header="Show Answer 🙉" key="1">
         {Array.isArray(phrase?.fa) ? (
           phrase.fa.map((phrase, i) => {
             return <span key={i}>{phrase} 🙈</span>
@@ -38,10 +40,10 @@ export const Answers = ({
         ) : (
           <>
             <div style={{ marginBottom: 15 }}>
-              <Tag color='purple'>Informal</Tag> {phrase.fa.informal}
+              <Tag color="purple">Informal</Tag> {phrase.fa.informal}
             </div>
             <div>
-              <Tag color='blue'>Formal</Tag> {phrase.fa.formal}
+              <Tag color="blue">Formal</Tag> {phrase.fa.formal}
             </div>
           </>
         )}

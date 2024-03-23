@@ -1,10 +1,10 @@
 import {
   createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react"
+  type Dispatch,
+  type ReactNode,
+  type SetStateAction,
+  useState
+} from 'react'
 
 interface ConfettiAnimationI {
   renderConfetti: boolean
@@ -17,11 +17,11 @@ export const ConfettiAnimationContext = createContext<ConfettiAnimationI>({
   renderConfetti: false,
   releaseTheConfetti: () => {},
   confettiPieces: 150,
-  setConfettiPieces: () => {},
+  setConfettiPieces: () => {}
 })
 
 export const ConfettiAnimationContextProvider = ({
-  children,
+  children
 }: {
   children: ReactNode | ReactNode[]
 }) => {
@@ -47,7 +47,7 @@ export const ConfettiAnimationContextProvider = ({
         renderConfetti,
         releaseTheConfetti,
         confettiPieces,
-        setConfettiPieces,
+        setConfettiPieces
       }}
     >
       {children}

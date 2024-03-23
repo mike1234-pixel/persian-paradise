@@ -1,6 +1,6 @@
-import { Typography } from "antd"
-import { Content } from "antd/es/layout/layout"
-import styles from "./Loading.module.css"
+import { Typography } from 'antd'
+import { Content } from 'antd/es/layout/layout'
+import styles from './Loading.module.css'
 
 export const Loading = () => {
   const numBubbles = 10
@@ -8,7 +8,7 @@ export const Loading = () => {
     <span
       key={index}
       className={styles.bubbleContainer}
-      style={{ "--i": index + 1 } as React.CSSProperties}
+      style={{ '--i': index + 1 } as React.CSSProperties}
     >
       <span className={styles.bubble}></span>
     </span>
