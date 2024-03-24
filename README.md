@@ -23,7 +23,7 @@ This app uses:
 - CSS Modules
 - React Router
 
-as well as some additional animation libraries which can be found in the `package.json`
+as well as some additional animation libraries which can be found in `package.json`
 
 ## Workflow & CI/CD
 
@@ -32,6 +32,12 @@ as well as some additional animation libraries which can be found in the `packag
 Scripts are also available to prettify code and lint code. See `package.json`.
 
 Github Actions runs tests after pushing code to `main` branch.
+
+## Tests
+
+run `yarn test` to run tests.
+
+For coverage reports, run `yarn test:coverage`. Coverage thresholds are set at 80% and can be found in `package.json`.
 
 ## API
 
