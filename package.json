@@ -26,10 +26,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!@codemirror)/'",
+    "test:coverage": "yarn test -- --coverage --watchAll",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
     "prepare": "husky install"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
   },
   "husky": {
     "hooks": {
