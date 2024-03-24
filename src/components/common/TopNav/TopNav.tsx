@@ -6,12 +6,12 @@ import styles from './TopNav.module.css'
 const items = [
   {
     key: 'guide',
-    label: 'User Guide',
+    label: <Link to="/guide">Guide</Link>,
     to: '/guide'
   },
   {
     key: 'glossary',
-    label: 'Glossary',
+    label: <Link to="/glossary">Glossary</Link>,
     to: '/glossary'
   }
 ]
@@ -37,15 +37,7 @@ export const TopNav = () => {
       selectedKeys={[current]}
       mode="horizontal"
       className={styles.root}
-    >
-      {items.map((item) => (
-        <Menu.Item
-          key={item.key}
-          className={current === item.key ? styles['active-link'] : ''}
-        >
-          <Link to={item.to}>{item.label}</Link>
-        </Menu.Item>
-      ))}
-    </Menu>
+      items={items}
+    />
   )
 }
