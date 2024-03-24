@@ -27,9 +27,11 @@ as well as some additional animation libraries which can be found in the `packag
 
 ## Workflow & CI/CD
 
-`husky` pre-commit hooks run `prettier` and `eslint`.
+`husky` pre-commit hooks run `prettier` and `eslint`, as well as tests.
 
 Scripts are also available to prettify code and lint code. See `package.json`.
+
+Github Actions runs tests after pushing code to `main` branch.
 
 ## API
 
