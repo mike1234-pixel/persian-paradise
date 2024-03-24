@@ -7,8 +7,6 @@ import { GlossaryTable } from '../../common/GlossaryTable/GlossaryTable'
 import { CaretRightOutlined } from '@ant-design/icons'
 import styles from './Glossary.module.css'
 
-const { Panel } = Collapse
-
 interface GlossaryProps {
   modules: ModulesList | undefined
   modulesLoading: boolean
@@ -30,22 +28,14 @@ export const Glossary = ({
           <CaretRightOutlined rotate={isActive ? 90 : 0} />
         )}
         accordion
-      >
-        {modules?.map((module, index) => (
-          <Panel
-            key={index}
-            style={{ overflowX: 'scroll' }}
-            header={
-              <Typography.Title
-                level={5}
-                style={{ display: 'inline-block', margin: 0 }}
-              >{`${module.title} ${module.emoji}`}</Typography.Title>
-            }
-          >
-            <GlossaryTable phrases={module.phrases} />
-          </Panel>
-        ))}
-      </Collapse>
+        items={modules?.map((module, index) => {
+          return {
+            key: index,
+            label: `${module.title} ${module.emoji}`,
+            children: <GlossaryTable phrases={module.phrases} />
+          }
+        })}
+      />
     </Content>
   )
 }
