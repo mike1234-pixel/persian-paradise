@@ -2,6 +2,20 @@ import { render, screen } from '@testing-library/react'
 import { Glossary } from './Glossary'
 
 describe('<Glossary />', () => {
+  test('renders loading screen', async () => {
+    const modules = undefined
+
+    render(
+      <Glossary
+        modules={modules}
+        modulesLoading={true}
+        errorLoadingModules={null}
+      />
+    )
+
+    expect(screen.getByText('loading...')).toBeInTheDocument()
+  })
+
   test('renders glossary with modules', async () => {
     const modules = [
       {
