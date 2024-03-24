@@ -2,6 +2,26 @@ import { render, screen } from '@testing-library/react'
 import { Glossary } from './Glossary'
 
 describe('<Glossary />', () => {
+  test('renders error screen', async () => {
+    const errorMessage = 'This is an error message'
+    const error: Error = {
+      message: errorMessage,
+      name: 'TestError'
+    }
+
+    const modules = undefined
+
+    render(
+      <Glossary
+        modules={modules}
+        modulesLoading={false}
+        errorLoadingModules={error}
+      />
+    )
+
+    expect(screen.getByText(errorMessage)).toBeInTheDocument()
+  })
+
   test('renders loading screen', async () => {
     const modules = undefined
 
