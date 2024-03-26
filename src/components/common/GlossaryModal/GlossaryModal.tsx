@@ -33,6 +33,7 @@ export const GlossaryModal = ({ phrases }: GlossaryModalProps) => {
         <GlossaryTable phrases={phrases} />
       </Modal>
       <FloatButton
+        data-testid="glossary-modal-float-button"
         tooltip="glossary"
         onClick={() => {
           setModalIsOpen(true)
