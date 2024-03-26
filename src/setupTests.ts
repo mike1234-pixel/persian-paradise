@@ -9,3 +9,13 @@ global.HTMLCanvasElement.prototype.getContext = () => {
     clearRect: jest.fn()
   } as any
 }
+
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {}
+    }
+  }
