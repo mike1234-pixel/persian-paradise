@@ -40,7 +40,10 @@
         "lines": 80,
         "statements": 80
       }
-    }
+    },
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/reportWebVitals.ts"
+    ]
   },
   "husky": {
     "hooks": {
