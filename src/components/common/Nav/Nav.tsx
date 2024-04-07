@@ -36,6 +36,7 @@ export const Nav = () => {
         backgroundColor: '#fff'
       }}
       collapsed={collapsed}
+      data-testid="sidebar"
     >
       <div
         style={{
@@ -49,6 +50,7 @@ export const Nav = () => {
           onClick={toggleCollapsed}
           type="text"
           className={styles.collapseButton}
+          data-testid="collapseButton"
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
