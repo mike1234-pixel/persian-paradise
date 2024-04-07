@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { TopNav } from './TopNav'
 
@@ -20,22 +20,26 @@ describe('TopNav', () => {
     jest.clearAllMocks()
   })
 
-  it('renders menu items correctly', () => {
-    const { getByText } = render(
-      <MemoryRouter initialEntries={['/guide']}>
-        <TopNav />
-      </MemoryRouter>
+  it('renders menu items correctly', async () => {
+    const { getByText } = await act(async () =>
+      render(
+        <MemoryRouter initialEntries={['/guide']}>
+          <TopNav />
+        </MemoryRouter>
+      )
     )
 
     expect(getByText('Guide')).toBeInTheDocument()
     expect(getByText('Glossary')).toBeInTheDocument()
   })
 
-  it('updates current state on menu item click', () => {
-    const { getByText } = render(
-      <MemoryRouter initialEntries={['/guide']}>
-        <TopNav />
-      </MemoryRouter>
+  it('updates current state on menu item click', async () => {
+    const { getByText } = await act(async () =>
+      render(
+        <MemoryRouter initialEntries={['/guide']}>
+          <TopNav />
+        </MemoryRouter>
+      )
     )
 
     const glossaryLink = getByText('Glossary')
