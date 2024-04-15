@@ -14,7 +14,34 @@ export const Answers = ({
   activeCollapseKeys,
   setActiveCollapseKeys
 }: AnswersProps) => {
-  const { Panel } = Collapse
+  const items = [
+    {
+      label: 'Show Answer 🙉',
+      key: '1',
+      children: Array.isArray(phrase?.fa) ? (
+        phrase.fa.map((phrase, i) => {
+          return <span key={i}>{phrase} 🙈</span>
+        })
+      ) : (
+        <>
+          <div style={{ marginBottom: 15 }}>
+            <Tag color="purple">Informal</Tag> {phrase.fa.informal}
+          </div>
+          <div>
+            <Tag color="blue">Formal</Tag> {phrase.fa.formal}
+          </div>
+        </>
+      )
+    }
+  ]
+
+  if (phrase.hint) {
+    items.unshift({
+      label: 'Show Hint 🙊',
+      key: '2',
+      children: <span>{phrase.hint}</span>
+    })
+  }
 
   return (
     <Collapse
@@ -26,28 +53,7 @@ export const Answers = ({
       onChange={(keys) => {
         setActiveCollapseKeys(keys as string[])
       }}
-    >
-      {phrase.hint && (
-        <Panel header="Show Hint 🙊" key="2">
-          <span>{phrase.hint}</span>
-        </Panel>
-      )}
-      <Panel header="Show Answer 🙉" key="1">
-        {Array.isArray(phrase?.fa) ? (
-          phrase.fa.map((phrase, i) => {
-            return <span key={i}>{phrase} 🙈</span>
-          })
-        ) : (
-          <>
-            <div style={{ marginBottom: 15 }}>
-              <Tag color="purple">Informal</Tag> {phrase.fa.informal}
-            </div>
-            <div>
-              <Tag color="blue">Formal</Tag> {phrase.fa.formal}
-            </div>
-          </>
-        )}
-      </Panel>
-    </Collapse>
+      items={items}
+    />
   )
 }
