@@ -28,8 +28,7 @@
   margin-right: 20px;
 }
 
-.phraseEnglish > div > span,
-.phraseEnglish > span {
+.phraseEnglish > div > span {
   color: var(--text-gradient-fallback);
   background: var(--text-gradient);
   background-clip: text;

@@ -66,9 +66,15 @@ export const Module = ({
     if (finished) {
       releaseTheConfetti()
       setModuleComplete(true)
-      successSFX.play().catch((error) => {
-        console.error('Error playing success sound:', error)
-      })
+      const playPromise = successSFX.play()
+      if (
+        playPromise !== undefined &&
+        typeof playPromise.catch === 'function'
+      ) {
+        playPromise.catch((error) => {
+          console.error('Error playing success sound:', error)
+        })
+      }
     } else if (isAnswerCorrect) {
       resetState(false)
       const newProgressPercent = Math.ceil(
@@ -146,7 +152,9 @@ export const Module = ({
               {isSmallScreen ? (
                 <span>{currentPhrase.en}</span>
               ) : (
-                <Fade key={animationKey}>{currentPhrase.en}</Fade>
+                <Fade key={animationKey} cascade duration={100}>
+                  {currentPhrase.en}
+                </Fade>
               )}
 
               <i>{currentPhrase.emoji}</i>

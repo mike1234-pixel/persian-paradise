@@ -1,21 +1,39 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
+/* eslint-disable @typescript-eslint/no-useless-constructor */
+/* eslint-disable @typescript-eslint/space-before-function-paren */
 import '@testing-library/jest-dom'
 
-global.HTMLCanvasElement.prototype.getContext = () => {
-  return {
+// Mocking getContext for HTMLCanvasElement
+global.HTMLCanvasElement.prototype.getContext = () =>
+  ({
     clearRect: jest.fn()
-  } as any
+  }) as any
+
+// Mock HTMLMediaElement play method
+HTMLMediaElement.prototype.play = jest.fn().mockImplementation(async () => {
+  await Promise.resolve()
+})
+
+// Mocking IntersectionObserver
+class IntersectionObserver {
+  constructor() {}
+
+  observe() {}
+  unobserve() {}
+  disconnect() {}
 }
 
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserver
+})
+// Mocking matchMedia
 window.matchMedia =
   window.matchMedia ||
   function () {
     return {
       matches: false,
-      addListener: function () {},
-      removeListener: function () {}
+      addListener: jest.fn(),
+      removeListener: jest.fn()
     }
   }
