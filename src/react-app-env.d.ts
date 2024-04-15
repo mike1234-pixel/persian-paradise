@@ -5,4 +5,3 @@ declare module '*.mp3' {
   export default src
 }
 declare module 'react-confetti'
-declare module 'react-reveal'

@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import { normalize } from '../../../utils/normalize'
 import { CheckCircleTwoTone, QuestionCircleTwoTone } from '@ant-design/icons'
 import { ConfettiAnimationContext } from '../../../context/ConfettiAnimationContext'
-import { Flip } from 'react-reveal'
+import { Fade } from 'react-awesome-reveal'
 import { Complete } from '../Complete/Complete'
 import { useLocation } from 'react-router-dom'
 import { GlossaryModal } from '../../common/GlossaryModal/GlossaryModal'
@@ -146,9 +146,7 @@ export const Module = ({
               {isSmallScreen ? (
                 <span>{currentPhrase.en}</span>
               ) : (
-                <Flip key={animationKey} left cascade>
-                  {currentPhrase.en}
-                </Flip>
+                <Fade key={animationKey}>{currentPhrase.en}</Fade>
               )}
 
               <i>{currentPhrase.emoji}</i>
