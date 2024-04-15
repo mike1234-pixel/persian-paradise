@@ -3,3 +3,9 @@
   max-height: calc(100vh - 48px);
   overflow: auto;
 }
+
+.accordionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

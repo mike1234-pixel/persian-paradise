@@ -57,7 +57,7 @@ Github Actions runs tests after pushing code to `main` branch.
 
 run `yarn test` to run tests.
 
-For coverage reports, run `yarn test:coverage`. Coverage thresholds are set at 80% and can be found in `package.json`.
+For coverage reports, run `yarn test:coverage`. Coverage thresholds are set at 60% and can be found in `package.json`.
 
 ## API
 

@@ -27,11 +27,18 @@ export const Glossary = ({
         expandIcon={({ isActive }) => (
           <CaretRightOutlined rotate={isActive ? 90 : 0} />
         )}
+        expandIconPosition="end"
+        bordered={false}
         accordion
         items={modules?.map((module, index) => {
           return {
             key: index,
-            label: `${module.title} ${module.emoji}`,
+            label: (
+              <span className={styles.accordionLabel}>
+                <i>{module.emoji}</i>
+                {module.title}
+              </span>
+            ),
             children: <GlossaryTable phrases={module.phrases} />
           }
         })}

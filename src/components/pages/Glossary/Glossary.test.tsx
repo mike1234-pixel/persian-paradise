@@ -65,6 +65,6 @@ describe('<Glossary />', () => {
       />
     )
 
-    expect(screen.getByText('Phrases 1 🗣')).toBeInTheDocument()
+    expect(screen.getByText('Phrases 1')).toBeInTheDocument()
   })
 })

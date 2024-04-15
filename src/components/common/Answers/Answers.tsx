@@ -46,6 +46,8 @@ export const Answers = ({
   return (
     <Collapse
       style={{ marginTop: 30, maxWidth: 300 }}
+      expandIconPosition="end"
+      bordered={false}
       expandIcon={({ isActive }) => (
         <CaretRightOutlined rotate={isActive ? 90 : 0} />
       )}
