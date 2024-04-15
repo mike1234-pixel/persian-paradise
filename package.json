@@ -31,7 +31,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker-build": "docker build -t persian-paradise .",
+    "docker-run": "docker run -it -p 3000:3000 -v \"$(pwd)\"/src:/usr/src/app/src persian-paradise"
   },
   "jest": {
     "coverageThreshold": {
