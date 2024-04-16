@@ -1,6 +1,6 @@
 /* global styles and antd modifications here */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
 
 :root {
   --text-gradient: linear-gradient(
@@ -11,7 +11,7 @@
 
   --text-gradient-fallback: rgba(188, 0, 255, 1);
   --font-family: 'Tilt Neon', sans-serif;
-  --font-crazy: 'Tourney', sans-serif;
+  --font-crazy: 'Yatra One', sans-serif;
 }
 
 body {
