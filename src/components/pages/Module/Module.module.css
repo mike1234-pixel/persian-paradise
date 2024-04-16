@@ -46,17 +46,27 @@
 .successInput > input {
   background: #f6ffed;
   color: #52c41a;
+  font-family: var(--font-crazy);
+  font-size: 30px;
+}
+
+.successInput,
+.successInput:hover,
+.successInput:focus,
+.successInput:active {
+  border: none;
+  background: transparent;
 }
 
 .input > input,
 .successInput > input {
   font-weight: 600;
+  transition: all 0.001s linear;
 }
 
 .input,
 .successInput {
-  width: 300px;
-  margin-top: 20px;
+  min-width: 300px;
 }
 
 @media (max-width: 575px) {
@@ -68,7 +78,7 @@
 
 .form {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
 }
 

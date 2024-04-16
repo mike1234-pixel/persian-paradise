@@ -69,7 +69,7 @@ const App = () => {
       <ConfigProvider
         theme={{
           token: {
-            fontFamily: 'Plus Jakarta Sans'
+            fontFamily: 'Tilt Neon'
           }
         }}
       >
