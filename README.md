@@ -55,9 +55,15 @@ Github Actions runs tests after pushing code to `main` branch.
 
 ## Tests
 
+### Unit Tests
+
 run `yarn test` to run tests.
 
 For coverage reports, run `yarn test:coverage`. Coverage thresholds are set at 60% and can be found in `package.json`.
+
+### E2E Tests
+
+To run e2e tests in a real browser, run `npx cypress open` and use the cypress ui.
 
 ## API
 
