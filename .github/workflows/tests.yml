@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Run Unit and E2E Tests
 
 on:
   push:
@@ -23,3 +23,6 @@ jobs:
 
       - name: Run unit tests
         run: yarn test
+
+      - name: Run E2E tests
+        run: yarn test-e2e
