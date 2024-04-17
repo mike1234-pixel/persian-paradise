@@ -55,6 +55,10 @@ Github Actions runs tests after pushing code to `main` branch.
 
 ## Tests
 
+Unit and e2e tests run before each commit, and after every push and pull request.
+
+Pull requests cannot be merged without tests passing.
+
 ### Unit Tests
 
 run `yarn test` to run tests.
