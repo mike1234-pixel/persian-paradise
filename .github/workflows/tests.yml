@@ -3,7 +3,7 @@ name: Run Unit and E2E Tests
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
   test:
