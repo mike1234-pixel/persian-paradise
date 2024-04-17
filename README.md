@@ -63,6 +63,8 @@ For coverage reports, run `yarn test:coverage`. Coverage thresholds are set at 6
 
 ### E2E Tests
 
+To run e2e tests headlessly, run `test-e2e`.
+
 To run e2e tests in a real browser, run `npx cypress open` and use the cypress ui.
 
 ## API

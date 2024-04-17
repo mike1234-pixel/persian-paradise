@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!@codemirror)/'",
     "test:coverage": "yarn test -- --coverage --watchAll",
+    "test-e2e": "cypress run --headless --browser chrome",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
