@@ -107,21 +107,23 @@ export const Module = ({
 
   useEffect(() => {
     const checkAnswer = () => {
-      if (Array.isArray(currentPhrase.fa)) {
-        const anyMatch = currentPhrase.fa.some(
-          (phrase) => normalize(inputValue) === normalize(phrase)
-        )
-        setIsAnswerCorrect(anyMatch)
-      } else {
-        setIsAnswerCorrect(
-          normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
-            normalize(inputValue) === normalize(currentPhrase.fa.informal)
-        )
+      if (currentPhrase?.fa) {
+        if (Array.isArray(currentPhrase.fa)) {
+          const anyMatch = currentPhrase.fa.some(
+            (phrase) => normalize(inputValue) === normalize(phrase)
+          )
+          setIsAnswerCorrect(anyMatch)
+        } else {
+          setIsAnswerCorrect(
+            normalize(inputValue) === normalize(currentPhrase.fa.formal) ||
+              normalize(inputValue) === normalize(currentPhrase.fa.informal)
+          )
+        }
       }
     }
 
     checkAnswer()
-  }, [inputValue, currentPhrase.fa])
+  }, [inputValue, currentPhrase?.fa])
 
   useEffect(() => {
     resetState(true)
