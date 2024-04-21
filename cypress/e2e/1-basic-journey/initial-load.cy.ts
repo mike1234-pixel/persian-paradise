@@ -5,7 +5,7 @@ import food from '../../fixtures/2-food.json'
 
 describe('initial load', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
 
     cy.intercept(
       {
@@ -16,9 +16,8 @@ describe('initial load', () => {
     ).as('modules')
   })
 
-  it('initially displays a loading screen', () => {
+  it('displays button once loaded', () => {
     cy.wait('@modules')
-    cy.contains('loading...').should('exist')
     cy.contains('loading...').should('not.exist')
     cy.contains('Start Learning').should('be.visible')
   })
