@@ -1,13 +1,14 @@
 import phrases from '../../fixtures/1-phrases.json'
 import food from '../../fixtures/2-food.json'
+
 /// <reference types="cypress" />
 
 describe('initial load', () => {
   const baseUrl =
-    process.env.REACT_APP_BASE_UR ??
+    Cypress.env('REACT_APP_BASE_URL') ??
     'https://main.d2maooaw9hc7ck.amplifyapp.com/'
   beforeEach(() => {
-    cy.visit(baseUrl)
+    cy.visit(baseUrl as string)
 
     cy.intercept(
       {
