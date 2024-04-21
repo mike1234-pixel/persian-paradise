@@ -16,6 +16,7 @@ describe('initial load', () => {
   })
 
   it('initially displays a loading screen', () => {
+    cy.wait('@modules')
     cy.contains('loading').should('exist')
     cy.contains('loading').should('not.exist')
     cy.contains('Start Learning').should('be.visible')
