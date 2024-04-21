@@ -4,11 +4,8 @@ import food from '../../fixtures/2-food.json'
 /// <reference types="cypress" />
 
 describe('initial load', () => {
-  const baseUrl =
-    Cypress.env('REACT_APP_BASE_URL') ??
-    'https://main.d2maooaw9hc7ck.amplifyapp.com/'
   beforeEach(() => {
-    cy.visit(baseUrl as string)
+    cy.visit('http://localhost:3000')
 
     cy.intercept(
       {
