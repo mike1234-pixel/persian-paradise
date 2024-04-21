@@ -3,8 +3,11 @@ import food from '../../fixtures/2-food.json'
 /// <reference types="cypress" />
 
 describe('initial load', () => {
+  const baseUrl =
+    process.env.REACT_APP_BASE_UR ??
+    'https://main.d2maooaw9hc7ck.amplifyapp.com/'
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit(baseUrl)
 
     cy.intercept(
       {
@@ -17,8 +20,8 @@ describe('initial load', () => {
 
   it('initially displays a loading screen', () => {
     cy.wait('@modules')
-    cy.contains('loading').should('exist')
-    cy.contains('loading').should('not.exist')
+    cy.contains('loading...').should('exist')
+    cy.contains('loading...').should('not.exist')
     cy.contains('Start Learning').should('be.visible')
   })
 })
