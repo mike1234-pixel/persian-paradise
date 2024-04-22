@@ -3,7 +3,7 @@ import colours from '../../fixtures/mini-module-colours.json'
 
 /// <reference types="cypress" />
 
-describe('Completing a module', () => {
+describe('Module', () => {
   // Setup
   beforeEach(() => {
     cy.visit('/')

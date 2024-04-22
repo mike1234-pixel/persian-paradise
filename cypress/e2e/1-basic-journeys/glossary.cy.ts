@@ -3,7 +3,7 @@ import colours from '../../fixtures/mini-module-colours.json'
 
 /// <reference types="cypress" />
 
-describe('Glossary accordion', () => {
+describe('Glossary Accordion', () => {
   // Setup
   beforeEach(() => {
     cy.visit('/glossary')
