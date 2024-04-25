@@ -1,19 +1,25 @@
 .root {
   padding: 80px 60px 60px;
-  background-image: url('../../../assets/images/complete-bg.jpg');
   background-color: rgba(99, 97, 235, 0.8);
   background-blend-mode: color-dodge;
   background-size: cover;
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.root h1 {
+  text-align: center;
+}
+
+.animation {
+  max-width: 400px;
 }
 
 @media (max-width: 767px) {
   .root {
     padding: 60px 30px 30px;
   }
-}
-
-.emoji {
-  font-size: 100px;
-  font-style: normal;
 }

@@ -7,8 +7,5 @@ describe('Complete Component', () => {
 
     const titleElement = getByText('Module Complete')
     expect(titleElement).toBeInTheDocument()
-
-    const emojiElement = getByText('🥳')
-    expect(emojiElement).toBeInTheDocument()
   })
 })
