@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
+import Lottie from 'lottie-react'
 import { Typography } from 'antd'
 import { Content } from 'antd/es/layout/layout'
 import { Link } from 'react-router-dom'
+import flightAnimation from '../../../assets/animations/flightAnimation.json'
 import styles from './Guide.module.css'
 
 export const Guide = () => {
@@ -60,6 +62,9 @@ export const Guide = () => {
           If you see an unaccented <b>a</b>, prounounce this like the English{' '}
           <b>'ar'</b>
         </p>
+      </div>
+      <div>
+        <Lottie animationData={flightAnimation} loop={true} />
       </div>
     </Content>
   )
