@@ -46,8 +46,7 @@
 .successInput > input {
   background: #f6ffed;
   color: #52c41a;
-  font-family: var(--font-crazy);
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .successInput,

@@ -1,5 +1,7 @@
+import Lottie from 'lottie-react'
 import { Button } from 'antd'
 import { Link } from 'react-router-dom'
+import learningAnimation from '../../../assets/animations/learningAnimation.json'
 import styles from './Home.module.css'
 
 export const Home = () => {
@@ -13,6 +15,9 @@ export const Home = () => {
         <Link to="/guide">
           <Button size="large">Start Learning</Button>
         </Link>
+        <div className={styles.animation}>
+          <Lottie animationData={learningAnimation} loop={true} />
+        </div>
       </div>
     </div>
   )

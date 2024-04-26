@@ -11,14 +11,13 @@ export const useModules = () => {
     isLoading,
     error,
     refetch: refetchModules
-  } = useQuery<ModulesList, Error>('modules', async () => {
-    // extend initial load to view animation
-    await new Promise((resolve) => setTimeout(resolve, 2500))
-
-    return await fetch(`${apiUrl}/api/modules`).then(
-      async (response) => await response.json()
-    )
-  })
+  } = useQuery<ModulesList, Error>(
+    'modules',
+    async () =>
+      await fetch(`${apiUrl}/api/modules`).then(
+        async (response) => await response.json()
+      )
+  )
 
   return { modules, isLoading, error, refetchModules }
 }
