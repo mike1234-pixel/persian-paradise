@@ -3,10 +3,6 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 48px);
-  background-image: url('../../../assets/images/bg-blur.jpg');
-  background-color: rgba(99, 97, 235, 0.8);
-  background-blend-mode: color-dodge;
-  background-size: cover;
   padding: 0 60px;
 }
 
