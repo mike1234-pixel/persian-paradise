@@ -1,3 +1,4 @@
+import Lottie from 'lottie-react'
 import { Typography, Layout, Input, Form, Button, Progress } from 'antd'
 import { type CourseModule } from 'persian-paradise-shared-types'
 import { useContext, useEffect, useState } from 'react'
@@ -12,6 +13,7 @@ import { Loading } from '../Loading/Loading'
 import { Error } from '../Error/Error'
 import { Answers } from '../../common/Answers/Answers'
 import { useScreenResize } from '../../../hooks/useScreenResize'
+import thinkingAnimation from '../../../assets/animations/thinkingAnimation.json'
 import styles from './Module.module.css'
 
 interface ModuleProps {
@@ -44,8 +46,8 @@ export const Module = ({
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState<number>(0)
   const [inputValue, setInputValue] = useState<string>('')
-  const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
-  const [moduleComplete, setModuleComplete] = useState(false)
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<boolean>(false)
+  const [moduleComplete, setModuleComplete] = useState<boolean>(false)
   const [animationKey, setAnimationKey] = useState<number>(0)
   const [progressPercent, setProgressPercent] = useState<number>(0)
   const [activeCollapseKeys, setActiveCollapseKeys] = useState<string[]>([])
@@ -141,75 +143,84 @@ export const Module = ({
 
   return (
     <Content className={styles.root}>
-      {module && (
-        <>
-          <Progress
-            percent={progressPercent}
-            strokeColor={{ '0%': '#108ee9', '100%': '#87d068' }}
-          />
-          <Title>{module.title}</Title>
-          {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
-          <div className={styles.phrase}>
-            <div className={styles.phraseEnglish}>
-              {isSmallScreen ? (
-                <span>{currentPhrase.en}</span>
-              ) : (
-                <Fade key={animationKey} cascade duration={100}>
-                  {currentPhrase.en}
-                </Fade>
+      <Progress
+        percent={progressPercent}
+        strokeColor={{ '0%': '#108ee9', '100%': '#87d068' }}
+      />
+      <div className={styles.module}>
+        <div className={styles.leftContent}>
+          {module && (
+            <>
+              <Title>{module.title}</Title>
+              {module.subtitle && <Title level={3}>{module.subtitle}</Title>}
+              <div className={styles.phrase}>
+                <div className={styles.phraseEnglish}>
+                  {isSmallScreen ? (
+                    <span>{currentPhrase.en}</span>
+                  ) : (
+                    <Fade key={animationKey} cascade duration={100}>
+                      {currentPhrase.en}
+                    </Fade>
+                  )}
+
+                  <i>{currentPhrase.emoji}</i>
+                </div>
+
+                <div>
+                  <Form layout="vertical" className={styles.form}>
+                    <Form.Item style={{ marginBottom: 0 }}>
+                      <Input
+                        type="text"
+                        value={inputValue}
+                        onChange={handleInputChange}
+                        className={
+                          isAnswerCorrect ? styles.successInput : styles.input
+                        }
+                        size="large"
+                        placeholder="Answer in Persian"
+                        spellCheck={false}
+                        suffix={
+                          isAnswerCorrect ? (
+                            <CheckCircleTwoTone twoToneColor="#52c41a" />
+                          ) : (
+                            <QuestionCircleTwoTone twoToneColor="#52c41a" />
+                          )
+                        }
+                      />
+                    </Form.Item>
+                    {isAnswerCorrect && (
+                      <Button
+                        onClick={() => {
+                          handleNextPhrase()
+                        }}
+                        size="large"
+                      >
+                        Next Phrase 👉
+                      </Button>
+                    )}
+                  </Form>
+                </div>
+              </div>
+              <Answers
+                phrase={currentPhrase}
+                activeCollapseKeys={activeCollapseKeys}
+                setActiveCollapseKeys={setActiveCollapseKeys}
+              />
+              {currentPhraseIndex !== 0 && (
+                <Button onClick={goBack} size="large" style={{ marginTop: 30 }}>
+                  Go Back 👈
+                </Button>
               )}
-
-              <i>{currentPhrase.emoji}</i>
-            </div>
-
-            <div>
-              <Form layout="vertical" className={styles.form}>
-                <Form.Item style={{ marginBottom: 0 }}>
-                  <Input
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    className={
-                      isAnswerCorrect ? styles.successInput : styles.input
-                    }
-                    size="large"
-                    placeholder="Answer in Persian"
-                    spellCheck={false}
-                    suffix={
-                      isAnswerCorrect ? (
-                        <CheckCircleTwoTone twoToneColor="#52c41a" />
-                      ) : (
-                        <QuestionCircleTwoTone twoToneColor="#52c41a" />
-                      )
-                    }
-                  />
-                </Form.Item>
-                {isAnswerCorrect && (
-                  <Button
-                    onClick={() => {
-                      handleNextPhrase()
-                    }}
-                    size="large"
-                  >
-                    Next Phrase 👉
-                  </Button>
-                )}
-              </Form>
-            </div>
-          </div>
-          <Answers
-            phrase={currentPhrase}
-            activeCollapseKeys={activeCollapseKeys}
-            setActiveCollapseKeys={setActiveCollapseKeys}
-          />
-          {currentPhraseIndex !== 0 && (
-            <Button onClick={goBack} size="large" style={{ marginTop: 30 }}>
-              Go Back 👈
-            </Button>
+              <GlossaryModal phrases={phrases} />
+            </>
           )}
-          <GlossaryModal phrases={phrases} />
-        </>
-      )}
+        </div>
+        <div className={styles.rightContent}>
+          <div className={styles.animation}>
+            <Lottie animationData={thinkingAnimation} loop={false} />
+          </div>
+        </div>
+      </div>
     </Content>
   )
 }

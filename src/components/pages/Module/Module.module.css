@@ -2,6 +2,11 @@
   padding: 80px 60px 60px;
 }
 
+.module {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 575px) {
   .root {
     padding: 80px 30px 30px;
@@ -87,4 +92,19 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.animation {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.animation > * {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
 }
