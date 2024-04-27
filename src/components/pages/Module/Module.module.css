@@ -87,13 +87,6 @@
   margin-top: 20px;
 }
 
-@media (max-width: 767px) {
-  .form {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .animation {
   max-width: 400px;
   display: flex;
@@ -103,8 +96,22 @@
 }
 
 .animation > * {
+  display: block;
   position: absolute;
   right: 0;
   top: 0;
   width: 400px;
+}
+
+@media (max-width: 767px) {
+  .form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 991px) {
+  .animation > * {
+    display: none;
+  }
 }
