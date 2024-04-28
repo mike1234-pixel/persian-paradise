@@ -1,4 +1,4 @@
-name: Run Unit and E2E Tests
+name: Run Unit Tests, E2E Tests, and Build
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - '*'
 
 jobs:
-  test:
+  test-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,3 +31,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: yarn start
+
+      - name: Build
+        run: yarn build
