@@ -51,7 +51,7 @@
 .successInput > input {
   background: #f6ffed;
   color: #52c41a;
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .successInput,
@@ -66,11 +66,6 @@
 .successInput > input {
   font-weight: 600;
   transition: all 0.001s linear;
-}
-
-.input,
-.successInput {
-  min-width: 300px;
 }
 
 @media (max-width: 575px) {
