@@ -15,6 +15,7 @@ import { Loading } from './components/pages/Loading/Loading'
 import { Error } from './components/pages/Error/Error'
 import { NotFound404 } from './components/pages/NotFound404/NotFound404'
 import { Glossary } from './components/pages/Glossary/Glossary'
+import { CMS } from './components/pages/CMS/CMS'
 
 export const Router = () => {
   const location = useLocation()
@@ -39,6 +40,7 @@ export const Router = () => {
           />
         }
       />
+      <Route path="/cms" element={<CMS />} />
 
       {modules?.map((module) => {
         const path = `/${urlify(module.title)}`
