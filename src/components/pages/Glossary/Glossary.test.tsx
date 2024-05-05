@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Glossary } from './Glossary'
+import { Glossary } from 'components/pages/Glossary'
 
 describe('<Glossary />', () => {
   test('renders error screen', async () => {

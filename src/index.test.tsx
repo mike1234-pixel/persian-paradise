@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
+import App from 'App'
+import reportWebVitals from 'reportWebVitals'
 
-jest.mock('./reportWebVitals', () => jest.fn().mockResolvedValue(undefined))
+jest.mock('reportWebVitals', () => jest.fn().mockResolvedValue(undefined))
 
 test('renders App component in StrictMode', () => {
   const rootElement = document.createElement('div')

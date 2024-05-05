@@ -1,8 +1,8 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-import { Module } from './Module'
-import { ConfettiAnimationContextProvider } from '../../../context/ConfettiAnimationContext'
+import { Module } from 'components/pages/Module'
+import { ConfettiAnimationContextProvider } from 'context/ConfettiAnimationContext'
 
 jest.mock('react-router-dom', () => ({
   useLocation: jest.fn().mockReturnValue({})

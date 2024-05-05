@@ -1,11 +1,11 @@
 import { Typography, Collapse } from 'antd'
 import { Content } from 'antd/es/layout/layout'
 import { type ModulesList } from 'persian-paradise-shared-types'
-import { Loading } from '../Loading/Loading'
-import { Error } from '../Error/Error'
-import { GlossaryTable } from '../../common/GlossaryTable/GlossaryTable'
+import { Loading } from 'components/pages/Loading'
+import { Error } from 'components/pages/Error'
+import { GlossaryTable } from 'components/common/GlossaryTable'
 import { CaretRightOutlined } from '@ant-design/icons'
-import styles from './Glossary.module.css'
+import styles from 'components/pages/Glossary/Glossary.module.css'
 
 interface GlossaryProps {
   modules: ModulesList | undefined

@@ -6,7 +6,7 @@ import {
   useState
 } from 'react'
 
-interface ConfettiAnimationI {
+export interface ConfettiAnimationI {
   renderConfetti: boolean
   releaseTheConfetti: () => void
   confettiPieces: number
@@ -25,8 +25,8 @@ export const ConfettiAnimationContextProvider = ({
 }: {
   children: ReactNode | ReactNode[]
 }) => {
-  const [renderConfetti, setRenderConfetti] = useState(false)
-  const [confettiPieces, setConfettiPieces] = useState(150)
+  const [renderConfetti, setRenderConfetti] = useState<boolean>(false)
+  const [confettiPieces, setConfettiPieces] = useState<number>(150)
 
   const releaseTheConfetti = () => {
     setConfettiPieces(150)

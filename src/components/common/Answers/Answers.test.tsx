@@ -1,6 +1,6 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { Answers } from './Answers'
+import { Answers } from 'components/common/Answers'
 
 describe('Answers component', () => {
   const mockPhrase = {

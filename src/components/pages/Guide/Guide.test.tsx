@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Guide } from './Guide'
+import { Guide } from 'components/pages/Guide'
 import { BrowserRouter } from 'react-router-dom'
 
 describe('<Guide />', () => {

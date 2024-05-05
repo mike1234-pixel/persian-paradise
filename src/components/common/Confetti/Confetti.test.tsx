@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import { ConfettiEffect } from './Confetti'
-import { ConfettiAnimationContext } from '../../../context/ConfettiAnimationContext'
+import { ConfettiEffect } from 'components/common/Confetti'
+import { ConfettiAnimationContext } from 'context/ConfettiAnimationContext'
 
 describe('ConfettiEffect component', () => {
   it('should not render if renderConfetti is false', () => {

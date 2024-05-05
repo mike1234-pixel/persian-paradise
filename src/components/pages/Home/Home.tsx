@@ -1,8 +1,8 @@
 import Lottie from 'lottie-react'
 import { Button } from 'antd'
 import { Link } from 'react-router-dom'
-import learningAnimation from '../../../assets/animations/learningAnimation.json'
-import styles from './Home.module.css'
+import learningAnimation from 'assets/animations/learningAnimation.json'
+import styles from 'components/pages/Home/Home.module.css'
 
 export const Home = () => {
   return (

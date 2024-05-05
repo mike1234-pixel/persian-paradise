@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Menu } from 'antd'
 import { useState, useEffect } from 'react'
-import styles from './TopNav.module.css'
+import styles from 'components/common/TopNav/TopNav.module.css'
 
 const items = [
   {

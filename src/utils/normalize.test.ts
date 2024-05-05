@@ -1,4 +1,4 @@
-import { normalize } from './normalize' // Import the normalize function
+import { normalize } from 'utils/normalize' // Import the normalize function
 
 describe('normalize', () => {
   it('removes diacritics from characters', () => {

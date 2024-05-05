@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { GlossaryModal } from './GlossaryModal'
+import { GlossaryModal } from 'components/common/GlossaryModal'
 
 describe('GlossaryModal', () => {
   test('renders modal closed by default', () => {

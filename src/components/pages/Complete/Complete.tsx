@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react'
 import { Content } from 'antd/es/layout/layout'
-import completeAnimation from '../../../assets/animations/completeAnimation.json'
-import styles from './Complete.module.css'
+import completeAnimation from 'assets/animations/completeAnimation.json'
+import styles from 'components/pages/Complete/Complete.module.css'
 
 export const Complete = () => {
   return (

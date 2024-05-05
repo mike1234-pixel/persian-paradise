@@ -1,4 +1,4 @@
-import { urlify } from './urlify'
+import { urlify } from 'utils/urlify'
 
 describe('urlify', () => {
   it('replaces spaces with dashes', () => {

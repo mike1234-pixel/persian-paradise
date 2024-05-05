@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Loading } from './Loading'
+import { Loading } from 'components/pages/Loading'
 
 describe('<Loading />', () => {
   it('renders the loading text', () => {
