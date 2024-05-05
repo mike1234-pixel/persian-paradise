@@ -1,6 +1,6 @@
 import { Typography } from 'antd'
 import { Content } from 'antd/es/layout/layout'
-import styles from './Error.module.css'
+import styles from 'components/pages/Error/Error.module.css'
 
 interface ErrorProps {
   error: Error

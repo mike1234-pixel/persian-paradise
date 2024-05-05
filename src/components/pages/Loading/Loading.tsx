@@ -1,8 +1,8 @@
 import Lottie from 'lottie-react'
 import { Typography } from 'antd'
 import { Content } from 'antd/es/layout/layout'
-import loadingAnimation from '../../../assets/animations/loadingAnimation.json'
-import styles from './Loading.module.css'
+import loadingAnimation from 'assets/animations/loadingAnimation.json'
+import styles from 'components/pages/Loading/Loading.module.css'
 
 export const Loading = () => {
   return (
