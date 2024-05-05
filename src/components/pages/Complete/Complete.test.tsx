@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Complete } from 'components/pages/Complete/Complete'
+import { Complete } from 'components/pages/Complete'
 
 describe('Complete Component', () => {
   test('renders with correct content and styles', () => {

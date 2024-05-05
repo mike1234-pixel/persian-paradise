@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Error } from 'components/pages/Error/Error'
+import { Error } from 'components/pages/Error'
 
 describe('<Error />', () => {
   test('renders error message correctly', () => {

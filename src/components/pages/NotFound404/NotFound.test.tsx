@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { NotFound404 } from 'components/pages/NotFound404/NotFound404'
+import { NotFound404 } from 'components/pages/NotFound404'
 
 describe('<NotFound404 />', () => {
   it('renders the 404 title correctly', () => {

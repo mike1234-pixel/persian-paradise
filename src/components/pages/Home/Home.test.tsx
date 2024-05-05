@@ -1,6 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import { Home } from 'components/pages/Home/Home'
+import { Home } from 'components/pages/Home'
 
 describe('<Home />', () => {
   it('renders the title and subtext correctly', () => {
