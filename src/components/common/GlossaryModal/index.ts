@@ -1,0 +1,1 @@
+export { GlossaryModal } from './GlossaryModal'

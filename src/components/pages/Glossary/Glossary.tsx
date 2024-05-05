@@ -3,7 +3,7 @@ import { Content } from 'antd/es/layout/layout'
 import { type ModulesList } from 'persian-paradise-shared-types'
 import { Loading } from 'components/pages/Loading/Loading'
 import { Error } from 'components/pages/Error/Error'
-import { GlossaryTable } from 'components/common/GlossaryTable/GlossaryTable'
+import { GlossaryTable } from 'components/common/GlossaryTable'
 import { CaretRightOutlined } from '@ant-design/icons'
 import styles from 'components/pages/Glossary/Glossary.module.css'
 

@@ -1,6 +1,6 @@
 import { render, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { TopNav } from 'components/common/TopNav/TopNav'
+import { TopNav } from 'components/common/TopNav'
 
 const mockUseLocation = jest.fn()
 

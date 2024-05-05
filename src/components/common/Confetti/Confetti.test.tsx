@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { ConfettiEffect } from 'components/common/Confetti/Confetti'
+import { ConfettiEffect } from 'components/common/Confetti'
 import { ConfettiAnimationContext } from 'context/ConfettiAnimationContext'
 
 describe('ConfettiEffect component', () => {

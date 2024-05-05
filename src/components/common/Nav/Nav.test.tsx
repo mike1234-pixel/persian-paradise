@@ -1,7 +1,7 @@
 import { render, fireEvent, act } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect' // for expect(...).toBeInTheDocument()
 import { MemoryRouter } from 'react-router-dom'
-import { Nav } from 'components/common/Nav/Nav'
+import { Nav } from 'components/common/Nav'
 
 jest.mock('../../../hooks/useModules', () => ({
   useModules: () => ({

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect' // For expect(...).toBeInTheDocument()
-import { GlossaryTable } from 'components/common/GlossaryTable/GlossaryTable'
+import { GlossaryTable } from 'components/common/GlossaryTable'
 
 describe('<GlossaryTable />', () => {
   it('renders table with correct data', () => {
