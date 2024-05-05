@@ -11,7 +11,7 @@ export const Nav = () => {
 
   const { Sider } = Layout
 
-  const [collapsed, setCollapsed] = useState(true)
+  const [collapsed, setCollapsed] = useState<boolean>(true)
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed)

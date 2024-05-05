@@ -17,7 +17,7 @@ const items = [
 ]
 
 export const TopNav = () => {
-  const [current, setCurrent] = useState('')
+  const [current, setCurrent] = useState<string>('')
   const location = useLocation()
 
   useEffect(() => {
