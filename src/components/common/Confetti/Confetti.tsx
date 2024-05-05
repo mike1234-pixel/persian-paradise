@@ -1,10 +1,13 @@
 import { useContext } from 'react'
-import { ConfettiAnimationContext } from '../../../context/ConfettiAnimationContext'
+import {
+  ConfettiAnimationContext,
+  type ConfettiAnimationI
+} from 'context/ConfettiAnimationContext'
 import Confetti from 'react-confetti'
-import styles from './Confetti.module.css'
+import styles from 'components/common/Confetti/Confetti.module.css'
 
 export const ConfettiEffect = () => {
-  const { renderConfetti, confettiPieces } = useContext(
+  const { renderConfetti, confettiPieces } = useContext<ConfettiAnimationI>(
     ConfettiAnimationContext
   )
 
