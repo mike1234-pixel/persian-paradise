@@ -118,9 +118,16 @@ export const PhraseCRUD = ({
         )}
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            Save
           </Button>
         </Form.Item>
+        {editMode && (
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Button type="default" danger htmlType="submit">
+              Delete
+            </Button>
+          </Form.Item>
+        )}
       </Form>
     </Drawer>
   )

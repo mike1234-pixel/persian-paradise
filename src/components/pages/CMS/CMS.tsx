@@ -14,11 +14,22 @@ export const CMS = () => {
 
   return (
     <div className={styles.root}>
+      <h1>CMS</h1>
+      <p>Add new modules, phrases and words here.</p>
+      <p>
+        If a word or phrase has formal/informal registers, select &apos;Use
+        Formal/Informal Registers&apos;
+      </p>
+      <p>
+        If a word or phrase has multiple variations in your language, click
+        &apos;Add Variation&apos; to add more.
+      </p>
       <Button
         type="primary"
         onClick={() => {
           handleOpen(false)
         }}
+        className={styles.button}
       >
         Add Phrase
       </Button>
@@ -27,6 +38,7 @@ export const CMS = () => {
         onClick={() => {
           handleOpen(true)
         }}
+        className={styles.button}
       >
         Edit Phrase
       </Button>
