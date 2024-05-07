@@ -94,6 +94,11 @@ export const CMS = () => {
             )}
           </Form.List>
         )}
+        <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
       </Form>
     </div>
   )
