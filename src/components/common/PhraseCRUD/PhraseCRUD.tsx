@@ -3,6 +3,7 @@ import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState } from 'react'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
+import { type PhraseModel } from 'schemas/PhraseCRUD'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -27,6 +28,14 @@ export const PhraseCRUD = ({
         }
       })
     : []
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const initialValues: PhraseModel = {
+    en: '',
+    fa: [''],
+    emoji: '',
+    hint: ''
+  }
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 

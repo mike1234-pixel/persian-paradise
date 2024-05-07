@@ -12,6 +12,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "antd": "^5.15.3",
+    "formik": "^2.4.6",
     "lottie-react": "^2.4.0",
     "persian-paradise-shared-types": "^1.0.0",
     "react": "^18.2.0",
@@ -22,7 +23,8 @@
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "typescript": "^5.4.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zod": "^3.23.6"
   },
   "scripts": {
     "start": "react-scripts start",
