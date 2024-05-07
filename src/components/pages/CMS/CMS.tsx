@@ -78,7 +78,7 @@ export const CMS = () => {
                     </Form.Item>
                   </div>
                 ))}
-                <Form.Item>
+                <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
                   <Button
                     type="dashed"
                     onClick={() => {
@@ -86,7 +86,7 @@ export const CMS = () => {
                     }}
                     icon={<PlusOutlined />}
                   >
-                    Add Farsi Phrase
+                    Add Variation
                   </Button>
                   <Form.ErrorList errors={errors} />
                 </Form.Item>
