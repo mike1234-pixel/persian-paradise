@@ -45,6 +45,23 @@ export const PhraseCRUD = ({
       onClose={handleClose}
       open={open}
       width="50%"
+      destroyOnClose
+      footer={
+        <div className={styles.footerContent}>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Save
+            </Button>
+          </Form.Item>
+          {editMode && (
+            <Form.Item>
+              <Button type="default" danger htmlType="submit">
+                Delete
+              </Button>
+            </Form.Item>
+          )}
+        </div>
+      }
     >
       <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
         <Form.Item label="Module" name="module">
@@ -115,18 +132,6 @@ export const PhraseCRUD = ({
               </>
             )}
           </Form.List>
-        )}
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type="primary" htmlType="submit">
-            Save
-          </Button>
-        </Form.Item>
-        {editMode && (
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="default" danger htmlType="submit">
-              Delete
-            </Button>
-          </Form.Item>
         )}
       </Form>
     </Drawer>

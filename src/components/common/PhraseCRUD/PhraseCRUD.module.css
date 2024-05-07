@@ -9,3 +9,12 @@
   background: #fff;
   border-radius: 50%;
 }
+
+.footerContent {
+  display: flex;
+}
+
+.footerContent > * {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
