@@ -64,24 +64,12 @@ export const CMS = () => {
                       {...field}
                       label="Phrase In Farsi"
                       validateTrigger={['onChange', 'onBlur']}
-                      style={{ position: 'relative' }}
-                      rules={[
-                        {
-                          required: true,
-                          whitespace: true,
-                          message: 'Please input phrase in Farsi...'
-                        }
-                      ]}
+                      className={styles.farsiVariation}
                     >
                       <Input placeholder="Phrase In Farsi..." />
                       {fields.length > 1 && (
                         <MinusCircleOutlined
-                          style={{
-                            position: 'absolute',
-                            top: 9,
-                            right: -5,
-                            background: '#fff'
-                          }}
+                          className={styles.farsiVariationRemove}
                           onClick={() => {
                             remove(field.name)
                           }}
