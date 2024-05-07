@@ -142,6 +142,12 @@ export const PhraseCRUD = ({
             )}
           </Form.List>
         )}
+        <Form.Item label="Emoji" name="emoji">
+          <Input placeholder="Enter An Emoji..." />
+        </Form.Item>
+        <Form.Item label="Hint" name="hint">
+          <Input placeholder="Enter A Hint..." />
+        </Form.Item>
       </Form>
     </Drawer>
   )
