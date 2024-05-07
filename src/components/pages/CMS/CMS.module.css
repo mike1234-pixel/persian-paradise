@@ -1,15 +1,3 @@
 .root {
   padding: 80px 60px 60px;
 }
-
-.farsiVariation {
-  position: relative;
-}
-
-.farsiVariationRemove {
-  position: absolute;
-  top: 9px;
-  right: -5px;
-  background: #fff;
-  border-radius: 50%;
-}
