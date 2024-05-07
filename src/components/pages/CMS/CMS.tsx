@@ -38,6 +38,22 @@ export const CMS = () => {
         <Form.Item label="Use Formal/Informal Registers" name="registers">
           <Switch checked={useRegisters} onChange={handleSwitchRegisters} />
         </Form.Item>
+        {useRegisters && (
+          <>
+            <Form.Item
+              label="Phrase In Farsi (Informal)"
+              name="phraseFarsiInformal"
+            >
+              <Input placeholder="Enter Informal Word Or Phrase In Farsi..." />
+            </Form.Item>
+            <Form.Item
+              label="Phrase In Farsi (Formal)"
+              name="phraseFarsiFormal"
+            >
+              <Input placeholder="Enter Formal Word Or Phrase In Farsi..." />
+            </Form.Item>
+          </>
+        )}
         {!useRegisters && (
           <Form.List name="names">
             {(fields, { add, remove }, { errors }) => (
