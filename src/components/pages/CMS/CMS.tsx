@@ -5,21 +5,36 @@ import { useState } from 'react'
 
 export const CMS = () => {
   const [phraseCRUDOpen, setPhraseCRUDOpen] = useState<boolean>(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
+
+  const handleOpen = (editMode: boolean) => {
+    setPhraseCRUDOpen(true)
+    editMode && setEditMode(true)
+  }
 
   return (
     <div className={styles.root}>
       <Button
         type="primary"
         onClick={() => {
-          setPhraseCRUDOpen(true)
+          handleOpen(false)
         }}
       >
         Add Phrase
       </Button>
+      <Button
+        type="primary"
+        onClick={() => {
+          handleOpen(true)
+        }}
+      >
+        Edit Phrase
+      </Button>
       <PhraseCRUD
-        editMode={false}
         open={phraseCRUDOpen}
+        editMode={editMode}
         setOpen={setPhraseCRUDOpen}
+        setEditMode={setEditMode}
       />
     </div>
   )

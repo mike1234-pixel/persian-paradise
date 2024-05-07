@@ -5,12 +5,18 @@ import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 
 interface PhraseCRUDProps {
-  editMode: boolean
   open: boolean
+  editMode: boolean
   setOpen: Dispatch<SetStateAction<boolean>>
+  setEditMode: Dispatch<SetStateAction<boolean>>
 }
 
-export const PhraseCRUD = ({ editMode, open, setOpen }: PhraseCRUDProps) => {
+export const PhraseCRUD = ({
+  open,
+  editMode,
+  setOpen,
+  setEditMode
+}: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
   const moduleOptions = modules
@@ -28,16 +34,19 @@ export const PhraseCRUD = ({ editMode, open, setOpen }: PhraseCRUDProps) => {
     setUseRegisters(!useRegisters)
   }
 
+  const handleClose = () => {
+    setOpen(false)
+    setEditMode(false)
+  }
+
   return (
     <Drawer
       title={editMode ? 'Edit Phrase' : 'Add Phrase'}
-      onClose={() => {
-        setOpen(false)
-      }}
+      onClose={handleClose}
       open={open}
       width="50%"
     >
-      <Form labelCol={{ span: 4 }} wrapperCol={{ span: 16 }}>
+      <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
         <Form.Item label="Module" name="module">
           <Select
             options={moduleOptions}
@@ -91,7 +100,7 @@ export const PhraseCRUD = ({ editMode, open, setOpen }: PhraseCRUDProps) => {
                     </Form.Item>
                   </div>
                 ))}
-                <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
+                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                   <Button
                     type="dashed"
                     onClick={() => {
@@ -107,7 +116,7 @@ export const PhraseCRUD = ({ editMode, open, setOpen }: PhraseCRUDProps) => {
             )}
           </Form.List>
         )}
-        <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type="primary" htmlType="submit">
             Submit
           </Button>
