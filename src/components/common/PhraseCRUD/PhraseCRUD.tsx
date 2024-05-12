@@ -25,16 +25,32 @@ export const PhraseCRUD = ({
       module: '',
       en: '',
       fa: {
+        // TODO: if no formal field added by user, send phrase to BE in array
         informal: ''
       }
     }
   })
+
+  const selectedModuleTitle = watch('module')
 
   const moduleOptions = modules
     ? modules?.map((module) => {
         return {
           value: module.title,
           label: module.title
+        }
+      })
+    : []
+
+  const selectedModule =
+    selectedModuleTitle &&
+    modules?.filter((module) => module.title === selectedModuleTitle)[0]
+
+  const phraseOptions = selectedModule
+    ? selectedModule?.phrases?.map((phrase) => {
+        return {
+          value: phrase.en,
+          label: phrase.en
         }
       })
     : []
@@ -96,6 +112,38 @@ export const PhraseCRUD = ({
             </Form.Item>
           )}
         />
+
+        {editMode ? (
+          <Controller
+            name="en"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Phrase In English">
+                <Select
+                  {...field}
+                  options={phraseOptions}
+                  placeholder="Select Phrase..."
+                  loading={modulesIsLoading}
+                  showSearch
+                  disabled={!selectedModule}
+                />
+              </Form.Item>
+            )}
+          />
+        ) : (
+          <Controller
+            name="en"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Phrase In English">
+                <Input
+                  {...field}
+                  placeholder="Enter Word Or Phrase In English..."
+                />
+              </Form.Item>
+            )}
+          />
+        )}
 
         <Controller
           name="en"
