@@ -20,7 +20,7 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, watch, unregister } = useForm<PhraseCreateModel>({
+  const { control, watch, unregister, reset } = useForm<PhraseCreateModel>({
     defaultValues: {
       module: '',
       en: '',
@@ -69,6 +69,7 @@ export const PhraseCRUD = ({
   }
 
   const handleClose = () => {
+    reset()
     setOpen(false)
     setEditMode(false)
   }
@@ -112,12 +113,11 @@ export const PhraseCRUD = ({
             </Form.Item>
           )}
         />
-
-        {editMode ? (
-          <Controller
-            name="en"
-            control={control}
-            render={({ field }) => (
+        <Controller
+          name="en"
+          control={control}
+          render={({ field }) => {
+            return editMode ? (
               <Form.Item label="Phrase In English">
                 <Select
                   {...field}
@@ -128,34 +128,15 @@ export const PhraseCRUD = ({
                   disabled={!selectedModule}
                 />
               </Form.Item>
-            )}
-          />
-        ) : (
-          <Controller
-            name="en"
-            control={control}
-            render={({ field }) => (
+            ) : (
               <Form.Item label="Phrase In English">
                 <Input
                   {...field}
                   placeholder="Enter Word Or Phrase In English..."
                 />
               </Form.Item>
-            )}
-          />
-        )}
-
-        <Controller
-          name="en"
-          control={control}
-          render={({ field }) => (
-            <Form.Item label="Phrase In English">
-              <Input
-                {...field}
-                placeholder="Enter Word Or Phrase In English..."
-              />
-            </Form.Item>
-          )}
+            )
+          }}
         />
 
         <Form.Item label="Use Formal/Informal Registers" name="registers">
