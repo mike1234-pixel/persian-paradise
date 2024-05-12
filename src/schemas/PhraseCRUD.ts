@@ -1,27 +1,27 @@
-import * as yup from 'yup'
+import { object, string, array } from 'zod'
 
-export const RegistersSchema = yup.object().shape({
-  informal: yup.string(),
-  formal: yup.string()
+export const RegistersSchema = object({
+  informal: string(),
+  formal: string()
 })
 
-export const PhraseSchema = yup.object().shape({
-  en: yup.string().required(),
-  fa: yup.array().of(yup.string().required()).required(),
-  emoji: yup.string().optional(),
-  hint: yup.string().optional()
+export const PhraseSchema = object({
+  en: string(),
+  fa: array(string()).or(RegistersSchema),
+  emoji: string().optional(),
+  hint: string().optional()
 })
 
-export const CourseModuleSchema = yup.object().shape({
-  title: yup.string(),
-  subtitle: yup.string().optional(),
-  emoji: yup.string().optional(),
-  phrases: yup.array().of(PhraseSchema)
+export const CourseModuleSchema = object({
+  title: string(),
+  subtitle: string().optional(),
+  emoji: string().optional(),
+  phrases: array(PhraseSchema)
 })
 
-export const ModulesListSchema = yup.array().of(CourseModuleSchema)
+export const ModulesListSchema = array(CourseModuleSchema)
 
-export type RegistersModel = yup.InferType<typeof RegistersSchema>
-export type PhraseModel = yup.InferType<typeof PhraseSchema>
-export type CourseModuleModel = yup.InferType<typeof CourseModuleSchema>
-export type ModulesListModel = yup.InferType<typeof ModulesListSchema>
+export type RegistersModel = ReturnType<(typeof RegistersSchema)['parse']>
+export type PhraseModel = ReturnType<(typeof PhraseSchema)['parse']>
+export type CourseModuleModel = ReturnType<(typeof CourseModuleSchema)['parse']>
+export type ModulesListModel = ReturnType<(typeof ModulesListSchema)['parse']>
