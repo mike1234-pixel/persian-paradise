@@ -26,9 +26,7 @@ export const PhraseCRUD = ({
       en: '',
       fa: {
         informal: ''
-      },
-      emoji: '',
-      hint: ''
+      }
     }
   })
 
@@ -144,6 +142,32 @@ export const PhraseCRUD = ({
             )}
           />
         )}
+
+        <Controller
+          name="hint"
+          control={control}
+          render={({ field }) => (
+            <Form.Item label="Add Hint">
+              <Input
+                {...field}
+                placeholder="Enter A Hint To Help The User..."
+              />
+            </Form.Item>
+          )}
+        />
+
+        <Controller
+          name="emoji"
+          control={control}
+          render={({ field }) => (
+            <Form.Item label="Add Emoji">
+              <Input
+                {...field}
+                placeholder="Add A Prompt For Visual Learners..."
+              />
+            </Form.Item>
+          )}
+        />
       </Form>
     </Drawer>
   )
