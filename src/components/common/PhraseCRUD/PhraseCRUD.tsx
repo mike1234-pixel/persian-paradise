@@ -1,8 +1,10 @@
 import { Select, Input, Switch, Button, Form, Drawer } from 'antd'
 import { useModules } from 'hooks/useModules'
-import { type Dispatch, type SetStateAction, useState } from 'react'
+import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
+import { Controller, useForm } from 'react-hook-form'
+import { type PhraseModel } from 'schemas/PhraseCRUD'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -19,6 +21,15 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
+  const { control, watch } = useForm<PhraseModel>({
+    defaultValues: {
+      en: '',
+      fa: [''],
+      emoji: '',
+      hint: ''
+    }
+  })
+
   const moduleOptions = modules
     ? modules?.map((module) => {
         return {
@@ -27,6 +38,12 @@ export const PhraseCRUD = ({
         }
       })
     : []
+
+  const inputValue = watch('en')
+
+  useEffect(() => {
+    console.log(inputValue)
+  }, [inputValue])
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
@@ -71,9 +88,19 @@ export const PhraseCRUD = ({
             loading={modulesIsLoading}
           />
         </Form.Item>
-        <Form.Item label="Phrase In English" name="phraseEnglish">
-          <Input placeholder="Enter Word Or Phrase In English..." />
-        </Form.Item>
+        <Controller
+          name="en"
+          control={control}
+          render={({ field }) => (
+            <Form.Item label="Phrase In English">
+              <Input
+                {...field}
+                placeholder="Enter Word Or Phrase In English..."
+              />
+            </Form.Item>
+          )}
+        />
+
         <Form.Item label="Use Formal/Informal Registers" name="registers">
           <Switch checked={useRegisters} onChange={handleSwitchRegisters} />
         </Form.Item>
