@@ -21,7 +21,7 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, watch } = useForm<PhraseCreateModel>({
+  const { control, watch, setValue } = useForm<PhraseCreateModel>({
     defaultValues: {
       module: '',
       en: '',
@@ -40,17 +40,18 @@ export const PhraseCRUD = ({
       })
     : []
 
-  const enValue = watch('en')
-  const moduleValue = watch('module')
+  const value = watch('fa.formal')
 
   useEffect(() => {
-    console.log(enValue, moduleValue)
-  }, [enValue, moduleValue])
+    console.log(value)
+  }, [value])
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
+    setValue('fa.informal', '')
+    setValue('fa.formal', '')
   }
 
   const handleClose = () => {
@@ -116,18 +117,30 @@ export const PhraseCRUD = ({
         </Form.Item>
         {useRegisters && (
           <>
-            <Form.Item
-              label="Phrase In Farsi (Informal)"
-              name="phraseFarsiInformal"
-            >
-              <Input placeholder="Enter Informal Word Or Phrase In Farsi..." />
-            </Form.Item>
-            <Form.Item
-              label="Phrase In Farsi (Formal)"
-              name="phraseFarsiFormal"
-            >
-              <Input placeholder="Enter Formal Word Or Phrase In Farsi..." />
-            </Form.Item>
+            <Controller
+              name="fa.informal"
+              control={control}
+              render={({ field }) => (
+                <Form.Item label="Phrase In Farsi (Informal)">
+                  <Input
+                    {...field}
+                    placeholder="Enter Informal Word Or Phrase In Farsi..."
+                  />
+                </Form.Item>
+              )}
+            />
+            <Controller
+              name="fa.formal"
+              control={control}
+              render={({ field }) => (
+                <Form.Item label="Phrase In Farsi (Formal)">
+                  <Input
+                    {...field}
+                    placeholder="Enter Formal Word Or Phrase In Farsi..."
+                  />
+                </Form.Item>
+              )}
+            />
           </>
         )}
         {!useRegisters && (
