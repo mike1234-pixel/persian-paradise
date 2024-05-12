@@ -4,7 +4,7 @@ import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 import { Controller, useForm } from 'react-hook-form'
-import { type PhraseModel } from 'schemas/PhraseCRUD'
+import { type PhraseCreateModel } from 'schemas/PhraseCRUD'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -21,8 +21,9 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, watch } = useForm<PhraseModel>({
+  const { control, watch } = useForm<PhraseCreateModel>({
     defaultValues: {
+      module: '',
       en: '',
       fa: [''],
       emoji: '',
@@ -39,11 +40,12 @@ export const PhraseCRUD = ({
       })
     : []
 
-  const inputValue = watch('en')
+  const enValue = watch('en')
+  const moduleValue = watch('module')
 
   useEffect(() => {
-    console.log(inputValue)
-  }, [inputValue])
+    console.log(enValue, moduleValue)
+  }, [enValue, moduleValue])
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
@@ -81,13 +83,21 @@ export const PhraseCRUD = ({
       }
     >
       <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-        <Form.Item label="Module" name="module">
-          <Select
-            options={moduleOptions}
-            placeholder="Select Module"
-            loading={modulesIsLoading}
-          />
-        </Form.Item>
+        <Controller
+          name="module"
+          control={control}
+          render={({ field }) => (
+            <Form.Item label="Module">
+              <Select
+                {...field}
+                options={moduleOptions}
+                placeholder="Select Module"
+                loading={modulesIsLoading}
+              />
+            </Form.Item>
+          )}
+        />
+
         <Controller
           name="en"
           control={control}

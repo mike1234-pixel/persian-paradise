@@ -12,6 +12,10 @@ export const PhraseSchema = object({
   hint: string().optional()
 })
 
+export const PhraseCreateSchema = PhraseSchema.extend({
+  module: string()
+})
+
 export const CourseModuleSchema = object({
   title: string(),
   subtitle: string().optional(),
@@ -23,5 +27,6 @@ export const ModulesListSchema = array(CourseModuleSchema)
 
 export type RegistersModel = ReturnType<(typeof RegistersSchema)['parse']>
 export type PhraseModel = ReturnType<(typeof PhraseSchema)['parse']>
+export type PhraseCreateModel = ReturnType<(typeof PhraseCreateSchema)['parse']>
 export type CourseModuleModel = ReturnType<(typeof CourseModuleSchema)['parse']>
 export type ModulesListModel = ReturnType<(typeof ModulesListSchema)['parse']>
