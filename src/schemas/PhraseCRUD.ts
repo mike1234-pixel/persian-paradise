@@ -2,7 +2,7 @@ import { object, string, array } from 'zod'
 
 export const RegistersSchema = object({
   informal: string(),
-  formal: string()
+  formal: string().optional()
 })
 
 export const PhraseSchema = object({

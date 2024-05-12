@@ -1,7 +1,6 @@
 import { Select, Input, Switch, Button, Form, Drawer } from 'antd'
 import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateModel } from 'schemas/PhraseCRUD'
@@ -21,11 +20,13 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, watch, setValue } = useForm<PhraseCreateModel>({
+  const { control, watch, unregister } = useForm<PhraseCreateModel>({
     defaultValues: {
       module: '',
       en: '',
-      fa: [''],
+      fa: {
+        informal: ''
+      },
       emoji: '',
       hint: ''
     }
@@ -40,18 +41,17 @@ export const PhraseCRUD = ({
       })
     : []
 
-  const value = watch('fa.formal')
+  const formValues = watch()
 
   useEffect(() => {
-    console.log(value)
-  }, [value])
+    console.log(formValues)
+  }, [formValues])
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
-    setValue('fa.informal', '')
-    setValue('fa.formal', '')
+    unregister('fa.formal')
   }
 
   const handleClose = () => {
@@ -115,73 +115,34 @@ export const PhraseCRUD = ({
         <Form.Item label="Use Formal/Informal Registers" name="registers">
           <Switch checked={useRegisters} onChange={handleSwitchRegisters} />
         </Form.Item>
+
+        <Controller
+          name="fa.informal"
+          control={control}
+          render={({ field }) => (
+            <Form.Item
+              label={`Phrase In Farsi ${useRegisters ? '(Informal)' : ''}`}
+            >
+              <Input
+                {...field}
+                placeholder={`Enter ${useRegisters ? 'Informal' : ''} Word Or Phrase In Farsi...`}
+              />
+            </Form.Item>
+          )}
+        />
         {useRegisters && (
-          <>
-            <Controller
-              name="fa.informal"
-              control={control}
-              render={({ field }) => (
-                <Form.Item label="Phrase In Farsi (Informal)">
-                  <Input
-                    {...field}
-                    placeholder="Enter Informal Word Or Phrase In Farsi..."
-                  />
-                </Form.Item>
-              )}
-            />
-            <Controller
-              name="fa.formal"
-              control={control}
-              render={({ field }) => (
-                <Form.Item label="Phrase In Farsi (Formal)">
-                  <Input
-                    {...field}
-                    placeholder="Enter Formal Word Or Phrase In Farsi..."
-                  />
-                </Form.Item>
-              )}
-            />
-          </>
-        )}
-        {!useRegisters && (
-          <Form.List name="names">
-            {(fields, { add, remove }, { errors }) => (
-              <>
-                {fields.map((field, index) => (
-                  <div key={field.key}>
-                    <Form.Item
-                      {...field}
-                      label="Phrase In Farsi"
-                      validateTrigger={['onChange', 'onBlur']}
-                      className={styles.farsiVariation}
-                    >
-                      <Input placeholder="Phrase In Farsi..." />
-                      {fields.length > 1 && (
-                        <MinusCircleOutlined
-                          className={styles.farsiVariationRemove}
-                          onClick={() => {
-                            remove(field.name)
-                          }}
-                        />
-                      )}
-                    </Form.Item>
-                  </div>
-                ))}
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                  <Button
-                    type="dashed"
-                    onClick={() => {
-                      add()
-                    }}
-                    icon={<PlusOutlined />}
-                  >
-                    Add Variation
-                  </Button>
-                  <Form.ErrorList errors={errors} />
-                </Form.Item>
-              </>
+          <Controller
+            name="fa.formal"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Phrase In Farsi (Formal)">
+                <Input
+                  {...field}
+                  placeholder="Enter Formal Word Or Phrase In Farsi..."
+                />
+              </Form.Item>
             )}
-          </Form.List>
+          />
         )}
       </Form>
     </Drawer>
