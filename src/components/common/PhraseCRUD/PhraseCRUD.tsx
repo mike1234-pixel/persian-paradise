@@ -65,7 +65,7 @@ export const PhraseCRUD = ({
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
   const faIsArray = Array.isArray(faValue) && inputValue !== undefined
-  const isPhraseSelected = editMode && !!enValue
+  const phraseNotSelectedInEditMode = editMode && !enValue
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -116,7 +116,7 @@ export const PhraseCRUD = ({
             <Button
               type="primary"
               htmlType="submit"
-              disabled={!isPhraseSelected}
+              disabled={phraseNotSelectedInEditMode}
             >
               Save
             </Button>
@@ -127,7 +127,7 @@ export const PhraseCRUD = ({
                 type="default"
                 danger
                 htmlType="submit"
-                disabled={!isPhraseSelected}
+                disabled={phraseNotSelectedInEditMode}
               >
                 Delete
               </Button>
