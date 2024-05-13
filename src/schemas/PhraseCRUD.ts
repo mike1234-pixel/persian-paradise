@@ -2,7 +2,7 @@ import { object, string, array } from 'zod'
 
 export const RegistersSchema = object({
   informal: string(),
-  formal: string().optional()
+  formal: string()
 })
 
 export const PhraseSchema = object({
@@ -12,8 +12,9 @@ export const PhraseSchema = object({
   hint: string().optional()
 })
 
-export const PhraseCreateSchema = PhraseSchema.extend({
-  module: string()
+export const PhraseCreateEditSchema = PhraseSchema.extend({
+  module: string(),
+  faHoldingValue: string().optional()
 })
 
 export const CourseModuleSchema = object({
@@ -27,6 +28,8 @@ export const ModulesListSchema = array(CourseModuleSchema)
 
 export type RegistersModel = ReturnType<(typeof RegistersSchema)['parse']>
 export type PhraseModel = ReturnType<(typeof PhraseSchema)['parse']>
-export type PhraseCreateModel = ReturnType<(typeof PhraseCreateSchema)['parse']>
+export type PhraseCreateEditModel = ReturnType<
+  (typeof PhraseCreateEditSchema)['parse']
+>
 export type CourseModuleModel = ReturnType<(typeof CourseModuleSchema)['parse']>
 export type ModulesListModel = ReturnType<(typeof ModulesListSchema)['parse']>

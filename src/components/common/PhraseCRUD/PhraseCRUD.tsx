@@ -1,9 +1,9 @@
-import { Select, Input, Switch, Button, Form, Drawer } from 'antd'
+import { Select, Input, Switch, Button, Form, Drawer, Space } from 'antd'
 import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 import { Controller, useForm } from 'react-hook-form'
-import { type PhraseCreateModel } from 'schemas/PhraseCRUD'
+import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -22,14 +22,17 @@ export const PhraseCRUD = ({
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
-  const { control, watch, unregister, reset } = useForm<PhraseCreateModel>({
+  const { control, watch, setValue, reset } = useForm<PhraseCreateEditModel>({
     defaultValues: {
+      faHoldingValue: '',
       module: '',
       en: '',
-      fa: {
-        // TODO: if no formal field added by user, send phrase to BE in array
-        informal: ''
-      }
+      fa: useRegisters
+        ? {
+            informal: '',
+            formal: ''
+          }
+        : []
     }
   })
 
@@ -59,14 +62,23 @@ export const PhraseCRUD = ({
     : []
 
   const formValues = watch()
-
-  useEffect(() => {
-    console.log(formValues)
-  }, [formValues])
+  const faValue = watch('fa')
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
-    unregister('fa.formal')
+    setValue('fa', [])
+  }
+
+  const handleAddToFarsiArray = () => {
+    const inputValue = watch('faHoldingValue')
+
+    const faIsArray = Array.isArray(faValue) && inputValue !== undefined
+
+    if (faIsArray) {
+      setValue('fa', [...faValue, inputValue])
+    }
+
+    setValue('faHoldingValue', '')
   }
 
   const handleClose = () => {
@@ -74,6 +86,16 @@ export const PhraseCRUD = ({
     setOpen(false)
     setEditMode(false)
   }
+
+  useEffect(() => {
+    console.log(formValues)
+  }, [formValues])
+
+  useEffect(() => {
+    useRegisters
+      ? setValue('fa', { formal: '', informal: '' })
+      : setValue('fa', [])
+  }, [useRegisters])
 
   return (
     <Drawer
@@ -144,34 +166,52 @@ export const PhraseCRUD = ({
           <Switch checked={useRegisters} onChange={handleSwitchRegisters} />
         </Form.Item>
 
-        <Controller
-          name="fa.informal"
-          control={control}
-          render={({ field }) => (
-            <Form.Item
-              label={`Phrase In Farsi ${useRegisters ? '(Informal)' : ''}`}
-            >
-              <Input
-                {...field}
-                placeholder={`Enter ${useRegisters ? 'Informal' : ''} Word Or Phrase In Farsi...`}
-              />
-            </Form.Item>
-          )}
-        />
-
         {useRegisters && (
-          <Controller
-            name="fa.formal"
-            control={control}
-            render={({ field }) => (
-              <Form.Item label="Phrase In Farsi (Formal)">
-                <Input
-                  {...field}
-                  placeholder="Enter Formal Word Or Phrase In Farsi..."
-                />
-              </Form.Item>
-            )}
-          />
+          <>
+            <Controller
+              name="fa.informal"
+              control={control}
+              render={({ field }) => (
+                <Form.Item
+                  label={`Phrase In Farsi ${useRegisters ? '(Informal)' : ''}`}
+                >
+                  <Input
+                    {...field}
+                    placeholder={`Enter ${useRegisters ? 'Informal' : ''} Word Or Phrase In Farsi...`}
+                  />
+                </Form.Item>
+              )}
+            />
+            <Controller
+              name="fa.formal"
+              control={control}
+              render={({ field }) => (
+                <Form.Item label="Phrase In Farsi (Formal)">
+                  <Input
+                    {...field}
+                    placeholder="Enter Formal Word Or Phrase In Farsi..."
+                  />
+                </Form.Item>
+              )}
+            />
+          </>
+        )}
+
+        {!useRegisters && (
+          <>
+            <Controller
+              name="faHoldingValue"
+              control={control}
+              render={({ field }) => (
+                <Form.Item label="Phrase In Farsi">
+                  <Space.Compact>
+                    <Input {...field} placeholder="Enter Phrase In Farsi..." />
+                    <Button onClick={handleAddToFarsiArray}>Add</Button>
+                  </Space.Compact>
+                </Form.Item>
+              )}
+            />
+          </>
         )}
 
         <Controller
