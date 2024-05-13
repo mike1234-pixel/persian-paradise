@@ -20,6 +20,8 @@ export const PhraseCRUD = ({
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
+  const [useRegisters, setUseRegisters] = useState<boolean>(false)
+
   const { control, watch, unregister, reset } = useForm<PhraseCreateModel>({
     defaultValues: {
       module: '',
@@ -32,6 +34,7 @@ export const PhraseCRUD = ({
   })
 
   const selectedModuleTitle = watch('module')
+  //  const phraseSelected = !!watch('en') && editMode
 
   const moduleOptions = modules
     ? modules?.map((module) => {
@@ -60,8 +63,6 @@ export const PhraseCRUD = ({
   useEffect(() => {
     console.log(formValues)
   }, [formValues])
-
-  const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -157,6 +158,7 @@ export const PhraseCRUD = ({
             </Form.Item>
           )}
         />
+
         {useRegisters && (
           <Controller
             name="fa.formal"
