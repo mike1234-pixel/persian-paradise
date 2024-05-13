@@ -1,4 +1,4 @@
-import { Select, Input, Switch, Button, Form, Drawer, Space } from 'antd'
+import { Select, Input, Switch, Button, Form, Drawer, Space, List } from 'antd'
 import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
@@ -37,7 +37,6 @@ export const PhraseCRUD = ({
   })
 
   const selectedModuleTitle = watch('module')
-  //  const phraseSelected = !!watch('en') && editMode
 
   const moduleOptions = modules
     ? modules?.map((module) => {
@@ -63,6 +62,8 @@ export const PhraseCRUD = ({
 
   const formValues = watch()
   const faValue = watch('fa')
+  const inputValue = watch('faHoldingValue')
+  const faIsArray = Array.isArray(faValue) && inputValue !== undefined
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -70,10 +71,6 @@ export const PhraseCRUD = ({
   }
 
   const handleAddToFarsiArray = () => {
-    const inputValue = watch('faHoldingValue')
-
-    const faIsArray = Array.isArray(faValue) && inputValue !== undefined
-
     if (faIsArray) {
       setValue('fa', [...faValue, inputValue])
     }
@@ -204,10 +201,20 @@ export const PhraseCRUD = ({
               control={control}
               render={({ field }) => (
                 <Form.Item label="Phrase In Farsi">
-                  <Space.Compact>
+                  <Space.Compact className={styles.farsiInputContainer}>
                     <Input {...field} placeholder="Enter Phrase In Farsi..." />
                     <Button onClick={handleAddToFarsiArray}>Add</Button>
                   </Space.Compact>
+                  {faIsArray && (
+                    <List
+                      size="small"
+                      bordered
+                      dataSource={faValue}
+                      renderItem={(variation) => (
+                        <List.Item>{variation}</List.Item>
+                      )}
+                    />
+                  )}
                 </Form.Item>
               )}
             />
