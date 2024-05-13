@@ -26,7 +26,6 @@ export const CMS = () => {
       </p>
       <Button className={styles.button}>Add Module</Button>
       <Button className={styles.button}>Edit Module</Button>
-      <Button className={styles.button}>Delete Module</Button>
       <Button
         type="primary"
         onClick={() => {

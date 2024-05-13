@@ -61,7 +61,7 @@ export const PhraseCRUD = ({
       })
     : []
 
-  const formValues = watch()
+  // const formValues = watch()
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
@@ -93,27 +93,32 @@ export const PhraseCRUD = ({
     setEditMode(false)
   }
 
-  useEffect(() => {
-    console.log(formValues)
-  }, [formValues])
+  // useEffect(() => {
+  //   console.log(formValues)
+  // }, [formValues])
 
   useEffect(() => {
+    // PREPOPULATE FORM IN EDIT MODE
     if (editMode) {
+      // find existing phrase data for selected phrase option
       const selectedPhrase = selectedModule
         ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
         : null
 
       const selectedPhraseIsArray = Array.isArray(selectedPhrase?.fa)
 
+      // if existing farsi data in phrase is array, toggle form displayed to array form, otherwise use registers form
       selectedPhraseIsArray ? setUseRegisters(false) : setUseRegisters(true)
 
       if (selectedPhrase) {
-        !useRegisters && setValue('fa', selectedPhrase?.fa)
-        useRegisters &&
+        if (useRegisters) {
+          // prepopulate farsi registers form if phrase already uses registers
           setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
-
-        useRegisters &&
           setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
+        } else {
+          // prepopulate farsi array form if phrase already uses array
+          setValue('fa', selectedPhrase?.fa)
+        }
         setValue('hint', selectedPhrase?.hint)
         setValue('emoji', selectedPhrase?.emoji)
       }
@@ -122,6 +127,7 @@ export const PhraseCRUD = ({
 
   useEffect(() => {
     if (!editMode) {
+      // CLEAR FIELDS AND RESET FORM IN ADD MODE, when registers is toggled
       useRegisters
         ? setValue('fa', { formal: '', informal: '' })
         : setValue('fa', [])
