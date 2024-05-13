@@ -22,14 +22,16 @@ export const ModuleCRUD = ({
 }: ModuleCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, reset, watch } = useForm<CourseModuleCreateEditModel>({
-    defaultValues: {
-      title: '',
-      phrases: []
-    }
-  })
+  const { control, reset, watch, setValue } =
+    useForm<CourseModuleCreateEditModel>({
+      defaultValues: {
+        title: '',
+        phrases: []
+      }
+    })
 
   const formValues = watch()
+  const moduleValue = watch('title')
 
   const moduleOptions = modules
     ? getOptions<CourseModule>(modules, 'title', 'title')
@@ -40,6 +42,16 @@ export const ModuleCRUD = ({
     setOpen(false)
     setEditMode(false)
   }
+
+  useEffect(() => {
+    // PREPOPULATE FORM IN EDIT MODE
+    const selectedModule = modules?.filter(
+      (module) => module.title === moduleValue
+    )[0]
+
+    setValue('subtitle', selectedModule?.subtitle)
+    setValue('emoji', selectedModule?.emoji)
+  }, [moduleValue])
 
   useEffect(() => {
     console.log(formValues)
