@@ -4,7 +4,12 @@ import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
-import { type Registers } from 'persian-paradise-shared-types'
+import {
+  type Phrase,
+  type CourseModule,
+  type Registers
+} from 'persian-paradise-shared-types'
+import { getOptions } from 'utils/getOptions'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -40,26 +45,17 @@ export const PhraseCRUD = ({
   const selectedModuleTitle = watch('module')
 
   const moduleOptions = modules
-    ? modules?.map((module) => {
-        return {
-          value: module.title,
-          label: module.title
-        }
-      })
+    ? getOptions<CourseModule>(modules, 'title', 'title')
     : []
 
   const selectedModule =
     selectedModuleTitle &&
     modules?.filter((module) => module.title === selectedModuleTitle)[0]
 
-  const phraseOptions = selectedModule
-    ? selectedModule?.phrases?.map((phrase) => {
-        return {
-          value: phrase.en,
-          label: phrase.en
-        }
-      })
-    : []
+  const phraseOptions =
+    selectedModule && 'phrases' in selectedModule // eslint-disable-next-line
+      ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
+      : []
 
   // const formValues = watch()
   const faValue = watch('fa')

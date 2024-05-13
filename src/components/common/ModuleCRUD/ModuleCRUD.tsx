@@ -4,6 +4,8 @@ import styles from './ModuleCRUD.module.css'
 import { useModules } from 'hooks/useModules'
 import { Controller, useForm } from 'react-hook-form'
 import { type CourseModuleCreateEditModel } from 'schemas/PhraseCRUD'
+import { type CourseModule } from 'persian-paradise-shared-types'
+import { getOptions } from 'utils/getOptions'
 
 interface ModuleCRUDProps {
   open: boolean
@@ -30,12 +32,7 @@ export const ModuleCRUD = ({
   const formValues = watch()
 
   const moduleOptions = modules
-    ? modules?.map((module) => {
-        return {
-          value: module.title,
-          label: module.title
-        }
-      })
+    ? getOptions<CourseModule>(modules, 'title', 'title')
     : []
 
   const handleClose = () => {
