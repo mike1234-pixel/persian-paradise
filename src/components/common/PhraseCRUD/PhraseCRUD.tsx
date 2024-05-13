@@ -1,9 +1,9 @@
 import { Select, Input, Switch, Button, Form, Drawer, Space, List } from 'antd'
 import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
-import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
+import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -98,6 +98,21 @@ export const PhraseCRUD = ({
   }, [formValues])
 
   useEffect(() => {
+    if (editMode) {
+      console.log(enValue)
+      const selectedPhrase = selectedModule
+        ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
+        : null
+      faIsArray ? setUseRegisters(false) : setUseRegisters(true)
+      if (selectedPhrase) {
+        setValue('fa', selectedPhrase?.fa)
+        setValue('hint', selectedPhrase?.hint)
+        setValue('emoji', selectedPhrase?.emoji)
+      }
+    }
+  }, [enValue, editMode])
+
+  useEffect(() => {
     useRegisters
       ? setValue('fa', { formal: '', informal: '' })
       : setValue('fa', [])
@@ -178,7 +193,11 @@ export const PhraseCRUD = ({
         />
 
         <Form.Item label="Use Formal/Informal Registers" name="registers">
-          <Switch checked={useRegisters} onChange={handleSwitchRegisters} />
+          <Switch
+            disabled={editMode}
+            checked={useRegisters}
+            onChange={handleSwitchRegisters}
+          />
         </Form.Item>
 
         {useRegisters && (

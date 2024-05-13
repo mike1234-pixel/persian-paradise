@@ -1,5 +1,5 @@
 import { Button } from 'antd'
-import { PhraseCRUD } from 'components/common/PhraseCRUD/PhraseCRUD'
+import { PhraseCRUD } from 'components/common/PhraseCRUD'
 import styles from 'components/pages/CMS/CMS.module.css'
 import { useState } from 'react'
 
