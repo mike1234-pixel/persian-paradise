@@ -4,6 +4,7 @@ import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
+import { type Registers } from 'persian-paradise-shared-types'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -104,10 +105,16 @@ export const PhraseCRUD = ({
         ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
         : null
       faIsArray ? setUseRegisters(false) : setUseRegisters(true)
+
       if (selectedPhrase) {
         setValue('fa', selectedPhrase?.fa)
         setValue('hint', selectedPhrase?.hint)
         setValue('emoji', selectedPhrase?.emoji)
+      }
+
+      if (!faIsArray) {
+        setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
+        setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
       }
     }
   }, [enValue, editMode])
