@@ -62,7 +62,6 @@ export const PhraseCRUD = ({
     : []
 
   const formValues = watch()
-  const moduleValue = watch('module')
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
@@ -71,7 +70,6 @@ export const PhraseCRUD = ({
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
-    setValue('fa', [])
   }
 
   const handleAddToFarsiArray = () => {
@@ -101,28 +99,33 @@ export const PhraseCRUD = ({
 
   useEffect(() => {
     if (editMode) {
-      faIsArray ? setUseRegisters(false) : setUseRegisters(true)
       const selectedPhrase = selectedModule
         ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
         : null
 
-      if (selectedPhrase) {
-        faIsArray && setValue('fa', selectedPhrase?.fa)
+      const selectedPhraseIsArray = Array.isArray(selectedPhrase?.fa)
 
-        !faIsArray &&
+      selectedPhraseIsArray ? setUseRegisters(false) : setUseRegisters(true)
+
+      if (selectedPhrase) {
+        !useRegisters && setValue('fa', selectedPhrase?.fa)
+        useRegisters &&
           setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
-        !faIsArray &&
+
+        useRegisters &&
           setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
         setValue('hint', selectedPhrase?.hint)
         setValue('emoji', selectedPhrase?.emoji)
       }
     }
-  }, [faIsArray, moduleValue, enValue, editMode])
+  }, [enValue, editMode, useRegisters])
 
   useEffect(() => {
-    useRegisters
-      ? setValue('fa', { formal: '', informal: '' })
-      : setValue('fa', [])
+    if (!editMode) {
+      useRegisters
+        ? setValue('fa', { formal: '', informal: '' })
+        : setValue('fa', [])
+    }
   }, [useRegisters])
 
   return (
