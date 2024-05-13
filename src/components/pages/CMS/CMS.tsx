@@ -1,4 +1,5 @@
 import { Button } from 'antd'
+import { ModuleCRUD } from 'components/common/ModuleCRUD'
 import { PhraseCRUD } from 'components/common/PhraseCRUD'
 import styles from 'components/pages/CMS/CMS.module.css'
 import { useState } from 'react'
@@ -50,6 +51,7 @@ export const CMS = () => {
         setOpen={setPhraseCRUDOpen}
         setEditMode={setEditMode}
       />
+      <ModuleCRUD />
     </div>
   )
 }
