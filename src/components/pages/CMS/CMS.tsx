@@ -6,11 +6,18 @@ import { useState } from 'react'
 
 export const CMS = () => {
   const [phraseCRUDOpen, setPhraseCRUDOpen] = useState<boolean>(false)
-  const [editMode, setEditMode] = useState<boolean>(false)
+  const [moduleCRUDOpen, setModuleCRUDOpen] = useState<boolean>(false)
+  const [phraseCRUDEditMode, setPhraseCRUDEditMode] = useState<boolean>(false)
+  const [moduleCRUDEditMode, setModuleCRUDEditMode] = useState<boolean>(false)
 
-  const handleOpen = (editMode: boolean) => {
+  const handleOpenPhraseCRUD = (editMode: boolean) => {
     setPhraseCRUDOpen(true)
-    editMode && setEditMode(true)
+    setPhraseCRUDEditMode(editMode)
+  }
+
+  const handleOpenModuleCRUD = (editMode: boolean) => {
+    setModuleCRUDOpen(true)
+    setModuleCRUDEditMode(editMode)
   }
 
   return (
@@ -25,12 +32,26 @@ export const CMS = () => {
         If a word or phrase has multiple variations in your language, click
         &apos;Add Variation&apos; to add more.
       </p>
-      <Button className={styles.button}>Add Module</Button>
-      <Button className={styles.button}>Edit Module</Button>
+      <Button
+        className={styles.button}
+        onClick={() => {
+          handleOpenModuleCRUD(false)
+        }}
+      >
+        Add Module
+      </Button>
+      <Button
+        className={styles.button}
+        onClick={() => {
+          handleOpenModuleCRUD(true)
+        }}
+      >
+        Edit Module
+      </Button>
       <Button
         type="primary"
         onClick={() => {
-          handleOpen(false)
+          handleOpenPhraseCRUD(false)
         }}
         className={styles.button}
       >
@@ -39,7 +60,7 @@ export const CMS = () => {
       <Button
         type="primary"
         onClick={() => {
-          handleOpen(true)
+          handleOpenPhraseCRUD(true)
         }}
         className={styles.button}
       >
@@ -47,11 +68,16 @@ export const CMS = () => {
       </Button>
       <PhraseCRUD
         open={phraseCRUDOpen}
-        editMode={editMode}
+        editMode={phraseCRUDEditMode}
         setOpen={setPhraseCRUDOpen}
-        setEditMode={setEditMode}
+        setEditMode={setPhraseCRUDEditMode}
       />
-      <ModuleCRUD />
+      <ModuleCRUD
+        open={moduleCRUDOpen}
+        editMode={moduleCRUDEditMode}
+        setOpen={setModuleCRUDOpen}
+        setEditMode={setModuleCRUDEditMode}
+      />
     </div>
   )
 }
