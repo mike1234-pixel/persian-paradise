@@ -78,6 +78,13 @@ export const PhraseCRUD = ({
     setValue('faHoldingValue', '')
   }
 
+  const handleRemoveFromFarsiArray = (variation: string) => {
+    if (faIsArray) {
+      const updatedItems = faValue.filter((item) => item !== variation)
+      setValue('fa', updatedItems)
+    }
+  }
+
   const handleClose = () => {
     reset()
     setOpen(false)
@@ -210,8 +217,22 @@ export const PhraseCRUD = ({
                       size="small"
                       bordered
                       dataSource={faValue}
-                      renderItem={(variation) => (
-                        <List.Item>{variation}</List.Item>
+                      renderItem={(variation, i) => (
+                        <List.Item
+                          actions={[
+                            <Button
+                              key={i}
+                              onClick={() => {
+                                handleRemoveFromFarsiArray(String(variation))
+                              }}
+                              danger
+                            >
+                              delete
+                            </Button>
+                          ]}
+                        >
+                          {variation}
+                        </List.Item>
                       )}
                     />
                   )}
