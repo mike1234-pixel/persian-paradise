@@ -222,6 +222,7 @@ export const PhraseCRUD = ({
                           actions={[
                             <Button
                               key={i}
+                              size="small"
                               onClick={() => {
                                 handleRemoveFromFarsiArray(String(variation))
                               }}
