@@ -62,6 +62,7 @@ export const PhraseCRUD = ({
     : []
 
   const formValues = watch()
+  const moduleValue = watch('module')
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
@@ -100,24 +101,23 @@ export const PhraseCRUD = ({
 
   useEffect(() => {
     if (editMode) {
-      console.log(enValue)
+      faIsArray ? setUseRegisters(false) : setUseRegisters(true)
       const selectedPhrase = selectedModule
         ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
         : null
-      faIsArray ? setUseRegisters(false) : setUseRegisters(true)
 
       if (selectedPhrase) {
-        setValue('fa', selectedPhrase?.fa)
+        faIsArray && setValue('fa', selectedPhrase?.fa)
+
+        !faIsArray &&
+          setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
+        !faIsArray &&
+          setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
         setValue('hint', selectedPhrase?.hint)
         setValue('emoji', selectedPhrase?.emoji)
       }
-
-      if (!faIsArray) {
-        setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
-        setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
-      }
     }
-  }, [enValue, editMode])
+  }, [faIsArray, moduleValue, enValue, editMode])
 
   useEffect(() => {
     useRegisters
