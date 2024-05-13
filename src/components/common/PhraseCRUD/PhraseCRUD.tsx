@@ -62,8 +62,10 @@ export const PhraseCRUD = ({
 
   const formValues = watch()
   const faValue = watch('fa')
+  const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
   const faIsArray = Array.isArray(faValue) && inputValue !== undefined
+  const isPhraseSelected = editMode && !!enValue
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -111,13 +113,22 @@ export const PhraseCRUD = ({
       footer={
         <div className={styles.footerContent}>
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              disabled={!isPhraseSelected}
+            >
               Save
             </Button>
           </Form.Item>
           {editMode && (
             <Form.Item>
-              <Button type="default" danger htmlType="submit">
+              <Button
+                type="default"
+                danger
+                htmlType="submit"
+                disabled={!isPhraseSelected}
+              >
                 Delete
               </Button>
             </Form.Item>

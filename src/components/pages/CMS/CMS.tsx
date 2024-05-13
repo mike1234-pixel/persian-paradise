@@ -24,6 +24,9 @@ export const CMS = () => {
         If a word or phrase has multiple variations in your language, click
         &apos;Add Variation&apos; to add more.
       </p>
+      <Button className={styles.button}>Add Module</Button>
+      <Button className={styles.button}>Edit Module</Button>
+      <Button className={styles.button}>Delete Module</Button>
       <Button
         type="primary"
         onClick={() => {
