@@ -1,4 +1,4 @@
-import { type Dispatch, type SetStateAction } from 'react'
+import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import { Drawer, Button, Form, Select, Input } from 'antd'
 import styles from './ModuleCRUD.module.css'
 import { useModules } from 'hooks/useModules'
@@ -20,7 +20,14 @@ export const ModuleCRUD = ({
 }: ModuleCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
 
-  const { control, reset } = useForm<CourseModuleCreateEditModel>({})
+  const { control, reset, watch } = useForm<CourseModuleCreateEditModel>({
+    defaultValues: {
+      title: '',
+      phrases: []
+    }
+  })
+
+  const formValues = watch()
 
   const moduleOptions = modules
     ? modules?.map((module) => {
@@ -36,6 +43,10 @@ export const ModuleCRUD = ({
     setOpen(false)
     setEditMode(false)
   }
+
+  useEffect(() => {
+    console.log(formValues)
+  }, [formValues])
 
   return (
     <div className={styles.root}>
@@ -83,6 +94,27 @@ export const ModuleCRUD = ({
                 </Form.Item>
               )
             }}
+          />
+          <Controller
+            name="subtitle"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Module Subtitle">
+                <Input
+                  {...field}
+                  placeholder="Enter Module Subtitle (optional)..."
+                />
+              </Form.Item>
+            )}
+          />
+          <Controller
+            name="emoji"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Module Emoji">
+                <Input {...field} placeholder="Enter Module Emoji..." />
+              </Form.Item>
+            )}
           />
         </Form>
       </Drawer>
