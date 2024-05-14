@@ -9,6 +9,7 @@ import { useAddModule } from 'hooks/useAddModule'
 import { useNotifications } from 'hooks/useNotifications'
 import { useUpdateModule } from 'hooks/useUpdateModule'
 import styles from './ModuleCRUD.module.css'
+import { useDeleteModule } from 'hooks/useDeleteModule'
 
 interface ModuleCRUDProps {
   open: boolean
@@ -28,6 +29,7 @@ export const ModuleCRUD = ({
 
   const { mutate: addModule } = useAddModule(openNotification)
   const { mutate: updateModule } = useUpdateModule(openNotification)
+  const { mutate: deleteModule } = useDeleteModule(openNotification)
 
   const { control, reset, watch, setValue, handleSubmit } =
     useForm<CourseModuleCreateEditModel>({
@@ -47,6 +49,12 @@ export const ModuleCRUD = ({
     reset()
     setOpen(false)
     setEditMode(false)
+  }
+
+  const handleDelete = () => {
+    moduleValue && deleteModule(moduleValue)
+
+    handleClose()
   }
 
   const onSubmit = (data: CourseModuleCreateEditModel) => {
@@ -98,7 +106,12 @@ export const ModuleCRUD = ({
             </Form.Item>
             {editMode && (
               <Form.Item>
-                <Button type="default" danger htmlType="submit">
+                <Button
+                  type="default"
+                  danger
+                  htmlType="submit"
+                  onClick={handleDelete}
+                >
                   Delete
                 </Button>
               </Form.Item>
