@@ -42,12 +42,7 @@ export const PhraseCRUD = ({
         faHoldingValue: '',
         module: '',
         en: '',
-        fa: useRegisters
-          ? {
-              informal: '',
-              formal: ''
-            }
-          : []
+        fa: []
       }
     })
 
@@ -99,6 +94,8 @@ export const PhraseCRUD = ({
 
   const handleClose = () => {
     reset()
+    setValue('fa', [])
+    setUseRegisters(false)
     setOpen(false)
     setEditMode(false)
   }
