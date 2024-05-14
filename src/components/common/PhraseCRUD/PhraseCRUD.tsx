@@ -66,12 +66,17 @@ export const PhraseCRUD = ({
       ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
       : []
 
-  const moduleValue = watch('module')
+  const formValues = watch()
+
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
   const faIsArray = Array.isArray(faValue) && inputValue !== undefined
   const phraseNotSelectedInEditMode = editMode && !enValue
+
+  useEffect(() => {
+    console.log(formValues)
+  }, [formValues])
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -99,9 +104,9 @@ export const PhraseCRUD = ({
   }
 
   const handleDelete = () => {
-    moduleValue &&
+    selectedModuleTitle &&
       enValue &&
-      deletePhrase({ moduleName: moduleValue, phraseName: enValue })
+      deletePhrase({ moduleName: selectedModuleTitle, phraseName: enValue })
 
     handleClose()
   }
@@ -130,25 +135,30 @@ export const PhraseCRUD = ({
         ? selectedModule?.phrases.filter((phrase) => phrase.en === enValue)[0]
         : null
 
-      const selectedPhraseIsArray = Array.isArray(selectedPhrase?.fa)
+      const farsiFieldOnSelectedPhraseIsArray = Array.isArray(
+        selectedPhrase?.fa
+      )
 
       // if existing farsi data in phrase is array, toggle form displayed to array form, otherwise use registers form
-      selectedPhraseIsArray ? setUseRegisters(false) : setUseRegisters(true)
+      farsiFieldOnSelectedPhraseIsArray
+        ? setUseRegisters(false)
+        : setUseRegisters(true)
 
       if (selectedPhrase) {
-        if (useRegisters) {
-          // prepopulate farsi registers form if phrase already uses registers
-          setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
-          setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
-        } else {
+        if (farsiFieldOnSelectedPhraseIsArray) {
           // prepopulate farsi array form if phrase already uses array
           setValue('fa', selectedPhrase?.fa)
+        } else {
+          // prepopulate farsi registers form if phrase already uses registers
+          setValue('fa', { formal: '', informal: '' })
+          setValue('fa.formal', (selectedPhrase?.fa as Registers).formal)
+          setValue('fa.informal', (selectedPhrase?.fa as Registers).informal)
         }
         setValue('hint', selectedPhrase?.hint)
         setValue('emoji', selectedPhrase?.emoji)
       }
     }
-  }, [enValue, editMode, useRegisters])
+  }, [enValue, editMode])
 
   useEffect(() => {
     if (!editMode) {

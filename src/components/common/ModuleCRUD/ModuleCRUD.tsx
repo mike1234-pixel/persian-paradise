@@ -6,6 +6,8 @@ import { Controller, useForm } from 'react-hook-form'
 import { type CourseModuleCreateEditModel } from 'schemas/PhraseCRUD'
 import { type CourseModule } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
+import { useAddModule } from 'hooks/useAddModule'
+import { useNotifications } from 'hooks/useNotifications'
 
 interface ModuleCRUDProps {
   open: boolean
@@ -21,8 +23,11 @@ export const ModuleCRUD = ({
   setEditMode
 }: ModuleCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
+  const { openNotification, contextHolder } = useNotifications()
 
-  const { control, reset, watch, setValue } =
+  const { mutate: addModule } = useAddModule(openNotification)
+
+  const { control, reset, watch, setValue, handleSubmit } =
     useForm<CourseModuleCreateEditModel>({
       defaultValues: {
         title: '',
@@ -30,7 +35,6 @@ export const ModuleCRUD = ({
       }
     })
 
-  const formValues = watch()
   const moduleValue = watch('title')
 
   const moduleOptions = modules
@@ -43,6 +47,20 @@ export const ModuleCRUD = ({
     setEditMode(false)
   }
 
+  const onSubmit = (data: CourseModuleCreateEditModel) => {
+    const { title, subtitle, emoji, phrases } = data
+
+    const module: CourseModule = {
+      title,
+      subtitle,
+      emoji,
+      phrases
+    }
+
+    !editMode && addModule(module)
+    handleClose()
+  }
+
   useEffect(() => {
     // PREPOPULATE FORM IN EDIT MODE
     const selectedModule = modules?.filter(
@@ -53,12 +71,8 @@ export const ModuleCRUD = ({
     setValue('emoji', selectedModule?.emoji)
   }, [moduleValue])
 
-  useEffect(() => {
-    console.log(formValues)
-  }, [formValues])
-
   return (
-    <div className={styles.root}>
+    <>
       <Drawer
         title={editMode ? 'Edit Module' : 'Add Module'}
         onClose={handleClose}
@@ -68,7 +82,15 @@ export const ModuleCRUD = ({
         footer={
           <div className={styles.footerContent}>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                onClick={(e) => {
+                  handleSubmit(onSubmit)(e).catch((error) => {
+                    console.error('Error submitting the form:', error)
+                  })
+                }}
+              >
                 Save
               </Button>
             </Form.Item>
@@ -127,6 +149,7 @@ export const ModuleCRUD = ({
           />
         </Form>
       </Drawer>
-    </div>
+      {contextHolder}
+    </>
   )
 }
