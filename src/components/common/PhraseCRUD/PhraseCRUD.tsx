@@ -3,7 +3,6 @@ import { useModules } from 'hooks/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
-import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 import {
   type Phrase,
   type CourseModule,
@@ -13,6 +12,8 @@ import { getOptions } from 'utils/getOptions'
 import { useAddPhrase } from 'hooks/useAddPhrase'
 import { useNotifications } from 'hooks/useNotifications'
 import { useUpdatePhrase } from 'hooks/useUpdatePhrase'
+import { useDeletePhrase } from 'hooks/useDeletePhrase'
+import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -31,6 +32,7 @@ export const PhraseCRUD = ({
   const { openNotification, contextHolder } = useNotifications()
   const { mutate: addPhrase } = useAddPhrase(openNotification)
   const { mutate: updatePhrase } = useUpdatePhrase(openNotification)
+  const { mutate: deletePhrase } = useDeletePhrase(openNotification)
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
@@ -64,6 +66,7 @@ export const PhraseCRUD = ({
       ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
       : []
 
+  const moduleValue = watch('module')
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
@@ -95,6 +98,14 @@ export const PhraseCRUD = ({
     setEditMode(false)
   }
 
+  const handleDelete = () => {
+    moduleValue &&
+      enValue &&
+      deletePhrase({ moduleName: moduleValue, phraseName: enValue })
+
+    handleClose()
+  }
+
   const onSubmit = (data: PhraseCreateEditModel) => {
     const { en, fa, emoji, hint, module } = data
 
@@ -105,16 +116,11 @@ export const PhraseCRUD = ({
       hint
     }
 
-    console.log('onSubmit triggered', phrase)
     editMode
       ? updatePhrase({ moduleName: module, newPhrase: phrase })
       : addPhrase({ title: module, phrase })
     handleClose()
   }
-
-  // useEffect(() => {
-  //   console.log(formValues)
-  // }, [formValues])
 
   useEffect(() => {
     // PREPOPULATE FORM IN EDIT MODE
@@ -184,6 +190,7 @@ export const PhraseCRUD = ({
                   danger
                   htmlType="submit"
                   disabled={phraseNotSelectedInEditMode}
+                  onClick={handleDelete}
                 >
                   Delete
                 </Button>
