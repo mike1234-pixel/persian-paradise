@@ -11,6 +11,7 @@ import {
 } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
 import { useAddPhrase } from 'hooks/useAddPhrase'
+import { useNotifications } from 'hooks/useNotifications'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -26,7 +27,8 @@ export const PhraseCRUD = ({
   setEditMode
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
-  const { mutate: addPhrase } = useAddPhrase()
+  const { openNotification, contextHolder } = useNotifications()
+  const { mutate: addPhrase } = useAddPhrase(openNotification)
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
@@ -148,191 +150,197 @@ export const PhraseCRUD = ({
   }, [useRegisters])
 
   return (
-    <Drawer
-      title={editMode ? 'Edit Phrase' : 'Add Phrase'}
-      onClose={handleClose}
-      open={open}
-      width="50%"
-      destroyOnClose
-      footer={
-        <div className={styles.footerContent}>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              disabled={phraseNotSelectedInEditMode}
-              onClick={(e) => {
-                handleSubmit(onSubmit)(e).catch((error) => {
-                  console.error('Error submitting the form:', error)
-                })
-              }}
-            >
-              Save
-            </Button>
-          </Form.Item>
-          {editMode && (
+    <>
+      <Drawer
+        title={editMode ? 'Edit Phrase' : 'Add Phrase'}
+        onClose={handleClose}
+        open={open}
+        width="50%"
+        destroyOnClose
+        footer={
+          <div className={styles.footerContent}>
             <Form.Item>
               <Button
-                type="default"
-                danger
+                type="primary"
                 htmlType="submit"
                 disabled={phraseNotSelectedInEditMode}
+                onClick={(e) => {
+                  handleSubmit(onSubmit)(e).catch((error) => {
+                    console.error('Error submitting the form:', error)
+                  })
+                }}
               >
-                Delete
+                Save
               </Button>
             </Form.Item>
-          )}
-        </div>
-      }
-    >
-      <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-        <Controller
-          name="module"
-          control={control}
-          render={({ field }) => (
-            <Form.Item label="Module">
-              <Select
-                {...field}
-                options={moduleOptions}
-                placeholder="Select Module"
-                loading={modulesIsLoading}
-              />
-            </Form.Item>
-          )}
-        />
-        <Controller
-          name="en"
-          control={control}
-          render={({ field }) => {
-            return editMode ? (
-              <Form.Item label="Phrase In English">
+            {editMode && (
+              <Form.Item>
+                <Button
+                  type="default"
+                  danger
+                  htmlType="submit"
+                  disabled={phraseNotSelectedInEditMode}
+                >
+                  Delete
+                </Button>
+              </Form.Item>
+            )}
+          </div>
+        }
+      >
+        <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+          <Controller
+            name="module"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Module">
                 <Select
                   {...field}
-                  options={phraseOptions}
-                  placeholder="Select Phrase..."
+                  options={moduleOptions}
+                  placeholder="Select Module"
                   loading={modulesIsLoading}
-                  showSearch
-                  disabled={!selectedModule}
                 />
               </Form.Item>
-            ) : (
-              <Form.Item label="Phrase In English">
+            )}
+          />
+          <Controller
+            name="en"
+            control={control}
+            render={({ field }) => {
+              return editMode ? (
+                <Form.Item label="Phrase In English">
+                  <Select
+                    {...field}
+                    options={phraseOptions}
+                    placeholder="Select Phrase..."
+                    loading={modulesIsLoading}
+                    showSearch
+                    disabled={!selectedModule}
+                  />
+                </Form.Item>
+              ) : (
+                <Form.Item label="Phrase In English">
+                  <Input
+                    {...field}
+                    placeholder="Enter Word Or Phrase In English..."
+                  />
+                </Form.Item>
+              )
+            }}
+          />
+
+          <Form.Item label="Use Formal/Informal Registers" name="registers">
+            <Switch
+              disabled={editMode}
+              checked={useRegisters}
+              onChange={handleSwitchRegisters}
+            />
+          </Form.Item>
+
+          {useRegisters && (
+            <>
+              <Controller
+                name="fa.informal"
+                control={control}
+                render={({ field }) => (
+                  <Form.Item
+                    label={`Phrase In Farsi ${useRegisters ? '(Informal)' : ''}`}
+                  >
+                    <Input
+                      {...field}
+                      placeholder={`Enter ${useRegisters ? 'Informal' : ''} Word Or Phrase In Farsi...`}
+                    />
+                  </Form.Item>
+                )}
+              />
+              <Controller
+                name="fa.formal"
+                control={control}
+                render={({ field }) => (
+                  <Form.Item label="Phrase In Farsi (Formal)">
+                    <Input
+                      {...field}
+                      placeholder="Enter Formal Word Or Phrase In Farsi..."
+                    />
+                  </Form.Item>
+                )}
+              />
+            </>
+          )}
+
+          {!useRegisters && (
+            <>
+              <Controller
+                name="faHoldingValue"
+                control={control}
+                render={({ field }) => (
+                  <Form.Item label="Phrase In Farsi">
+                    <Space.Compact className={styles.farsiInputContainer}>
+                      <Input
+                        {...field}
+                        placeholder="Enter Phrase In Farsi..."
+                      />
+                      <Button onClick={handleAddToFarsiArray}>Add</Button>
+                    </Space.Compact>
+                    {faIsArray && (
+                      <List
+                        size="small"
+                        bordered
+                        dataSource={faValue}
+                        renderItem={(variation, i) => (
+                          <List.Item
+                            actions={[
+                              <Button
+                                key={i}
+                                size="small"
+                                onClick={() => {
+                                  handleRemoveFromFarsiArray(String(variation))
+                                }}
+                                danger
+                              >
+                                delete
+                              </Button>
+                            ]}
+                          >
+                            {variation}
+                          </List.Item>
+                        )}
+                      />
+                    )}
+                  </Form.Item>
+                )}
+              />
+            </>
+          )}
+
+          <Controller
+            name="hint"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Add Hint">
                 <Input
                   {...field}
-                  placeholder="Enter Word Or Phrase In English..."
+                  placeholder="Enter A Hint To Help The User..."
                 />
               </Form.Item>
-            )
-          }}
-        />
-
-        <Form.Item label="Use Formal/Informal Registers" name="registers">
-          <Switch
-            disabled={editMode}
-            checked={useRegisters}
-            onChange={handleSwitchRegisters}
+            )}
           />
-        </Form.Item>
 
-        {useRegisters && (
-          <>
-            <Controller
-              name="fa.informal"
-              control={control}
-              render={({ field }) => (
-                <Form.Item
-                  label={`Phrase In Farsi ${useRegisters ? '(Informal)' : ''}`}
-                >
-                  <Input
-                    {...field}
-                    placeholder={`Enter ${useRegisters ? 'Informal' : ''} Word Or Phrase In Farsi...`}
-                  />
-                </Form.Item>
-              )}
-            />
-            <Controller
-              name="fa.formal"
-              control={control}
-              render={({ field }) => (
-                <Form.Item label="Phrase In Farsi (Formal)">
-                  <Input
-                    {...field}
-                    placeholder="Enter Formal Word Or Phrase In Farsi..."
-                  />
-                </Form.Item>
-              )}
-            />
-          </>
-        )}
-
-        {!useRegisters && (
-          <>
-            <Controller
-              name="faHoldingValue"
-              control={control}
-              render={({ field }) => (
-                <Form.Item label="Phrase In Farsi">
-                  <Space.Compact className={styles.farsiInputContainer}>
-                    <Input {...field} placeholder="Enter Phrase In Farsi..." />
-                    <Button onClick={handleAddToFarsiArray}>Add</Button>
-                  </Space.Compact>
-                  {faIsArray && (
-                    <List
-                      size="small"
-                      bordered
-                      dataSource={faValue}
-                      renderItem={(variation, i) => (
-                        <List.Item
-                          actions={[
-                            <Button
-                              key={i}
-                              size="small"
-                              onClick={() => {
-                                handleRemoveFromFarsiArray(String(variation))
-                              }}
-                              danger
-                            >
-                              delete
-                            </Button>
-                          ]}
-                        >
-                          {variation}
-                        </List.Item>
-                      )}
-                    />
-                  )}
-                </Form.Item>
-              )}
-            />
-          </>
-        )}
-
-        <Controller
-          name="hint"
-          control={control}
-          render={({ field }) => (
-            <Form.Item label="Add Hint">
-              <Input
-                {...field}
-                placeholder="Enter A Hint To Help The User..."
-              />
-            </Form.Item>
-          )}
-        />
-
-        <Controller
-          name="emoji"
-          control={control}
-          render={({ field }) => (
-            <Form.Item label="Add Emoji">
-              <Input
-                {...field}
-                placeholder="Add A Prompt For Visual Learners..."
-              />
-            </Form.Item>
-          )}
-        />
-      </Form>
-    </Drawer>
+          <Controller
+            name="emoji"
+            control={control}
+            render={({ field }) => (
+              <Form.Item label="Add Emoji">
+                <Input
+                  {...field}
+                  placeholder="Add A Prompt For Visual Learners..."
+                />
+              </Form.Item>
+            )}
+          />
+        </Form>
+      </Drawer>
+      {contextHolder}
+    </>
   )
 }

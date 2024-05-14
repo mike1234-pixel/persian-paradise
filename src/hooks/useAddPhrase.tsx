@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from 'react-query'
 import axios from 'axios'
 import { type Phrase } from 'persian-paradise-shared-types'
+import { type IconType } from 'antd/es/notification/interface'
 
 const apiUrl =
   process.env.REACT_APP_API_URL ??
@@ -20,11 +21,18 @@ const addPhrase = async ({
   return response.data
 }
 
-export const useAddPhrase = () => {
+export const useAddPhrase = (
+  openNotification: (message: string, type: IconType) => void
+) => {
   const queryClient = useQueryClient()
 
   return useMutation(addPhrase, {
     onSuccess: async () => {
+      openNotification('Successfully Added Phrase', 'success')
+      await queryClient.invalidateQueries('modules')
+    },
+    onError: async () => {
+      openNotification('Could Not Add Phrase', 'error')
       await queryClient.invalidateQueries('modules')
     }
   })
