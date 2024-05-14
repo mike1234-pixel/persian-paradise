@@ -10,6 +10,7 @@ import {
   type Registers
 } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
+import { useAddPhrase } from 'hooks/useAddPhrase'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -25,22 +26,24 @@ export const PhraseCRUD = ({
   setEditMode
 }: PhraseCRUDProps) => {
   const { modules, isLoading: modulesIsLoading } = useModules()
+  const { mutate: addPhrase } = useAddPhrase()
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
-  const { control, watch, setValue, reset } = useForm<PhraseCreateEditModel>({
-    defaultValues: {
-      faHoldingValue: '',
-      module: '',
-      en: '',
-      fa: useRegisters
-        ? {
-            informal: '',
-            formal: ''
-          }
-        : []
-    }
-  })
+  const { control, watch, setValue, reset, handleSubmit } =
+    useForm<PhraseCreateEditModel>({
+      defaultValues: {
+        faHoldingValue: '',
+        module: '',
+        en: '',
+        fa: useRegisters
+          ? {
+              informal: '',
+              formal: ''
+            }
+          : []
+      }
+    })
 
   const selectedModuleTitle = watch('module')
 
@@ -57,7 +60,6 @@ export const PhraseCRUD = ({
       ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
       : []
 
-  // const formValues = watch()
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
@@ -87,6 +89,21 @@ export const PhraseCRUD = ({
     reset()
     setOpen(false)
     setEditMode(false)
+  }
+
+  const onSubmit = (data: PhraseCreateEditModel) => {
+    const { en, fa, emoji, hint, module } = data
+
+    const phrase: Phrase = {
+      en,
+      fa,
+      emoji,
+      hint
+    }
+
+    console.log('onSubmit triggered', phrase)
+    addPhrase({ title: module, phrase })
+    handleClose()
   }
 
   // useEffect(() => {
@@ -144,6 +161,11 @@ export const PhraseCRUD = ({
               type="primary"
               htmlType="submit"
               disabled={phraseNotSelectedInEditMode}
+              onClick={(e) => {
+                handleSubmit(onSubmit)(e).catch((error) => {
+                  console.error('Error submitting the form:', error)
+                })
+              }}
             >
               Save
             </Button>
