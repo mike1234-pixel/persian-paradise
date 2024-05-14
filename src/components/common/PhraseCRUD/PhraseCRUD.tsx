@@ -1,5 +1,5 @@
 import { Select, Input, Switch, Button, Form, Drawer, Space, List } from 'antd'
-import { useModules } from 'hooks/useModules'
+import { useModules } from 'hooks/module/useModules'
 import { type Dispatch, type SetStateAction, useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { type PhraseCreateEditModel } from 'schemas/PhraseCRUD'
@@ -9,10 +9,10 @@ import {
   type Registers
 } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
-import { useAddPhrase } from 'hooks/useAddPhrase'
-import { useNotifications } from 'hooks/useNotifications'
-import { useUpdatePhrase } from 'hooks/useUpdatePhrase'
-import { useDeletePhrase } from 'hooks/useDeletePhrase'
+import { useAddPhrase } from 'hooks/phrase/useAddPhrase'
+import { useNotifications } from 'hooks/ui/useNotifications'
+import { useUpdatePhrase } from 'hooks/phrase/useUpdatePhrase'
+import { useDeletePhrase } from 'hooks/phrase/useDeletePhrase'
 import styles from 'components/common/PhraseCRUD/PhraseCRUD.module.css'
 
 interface PhraseCRUDProps {
@@ -46,32 +46,24 @@ export const PhraseCRUD = ({
       }
     })
 
-  const selectedModuleTitle = watch('module')
-
-  const moduleOptions = modules
-    ? getOptions<CourseModule>(modules, 'title', 'title')
-    : []
-
-  const selectedModule =
-    selectedModuleTitle &&
-    modules?.filter((module) => module.title === selectedModuleTitle)[0]
-
-  const phraseOptions =
-    selectedModule && 'phrases' in selectedModule // eslint-disable-next-line
-      ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
-      : []
-
-  const formValues = watch()
-
+  const moduleTitle = watch('module')
   const faValue = watch('fa')
   const enValue = watch('en')
   const inputValue = watch('faHoldingValue')
   const faIsArray = Array.isArray(faValue) && inputValue !== undefined
   const phraseNotSelectedInEditMode = editMode && !enValue
 
-  useEffect(() => {
-    console.log(formValues)
-  }, [formValues])
+  const moduleOptions = modules
+    ? getOptions<CourseModule>(modules, 'title', 'title')
+    : []
+
+  const selectedModule =
+    moduleTitle && modules?.filter((module) => module.title === moduleTitle)[0]
+
+  const phraseOptions =
+    selectedModule && 'phrases' in selectedModule // eslint-disable-next-line
+      ? getOptions<Phrase>(selectedModule.phrases, 'en', 'en')
+      : []
 
   const handleSwitchRegisters = () => {
     setUseRegisters(!useRegisters)
@@ -101,9 +93,9 @@ export const PhraseCRUD = ({
   }
 
   const handleDelete = () => {
-    selectedModuleTitle &&
+    moduleTitle &&
       enValue &&
-      deletePhrase({ moduleName: selectedModuleTitle, phraseName: enValue })
+      deletePhrase({ moduleName: moduleTitle, phraseName: enValue })
 
     handleClose()
   }

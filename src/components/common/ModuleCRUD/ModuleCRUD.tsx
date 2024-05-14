@@ -1,15 +1,15 @@
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import { Drawer, Button, Form, Select, Input } from 'antd'
-import { useModules } from 'hooks/useModules'
+import { useModules } from 'hooks/module/useModules'
 import { Controller, useForm } from 'react-hook-form'
-import { type CourseModuleCreateEditModel } from 'schemas/PhraseCRUD'
 import { type CourseModule } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
-import { useAddModule } from 'hooks/useAddModule'
-import { useNotifications } from 'hooks/useNotifications'
-import { useUpdateModule } from 'hooks/useUpdateModule'
+import { useAddModule } from 'hooks/module/useAddModule'
+import { useNotifications } from 'hooks/ui/useNotifications'
+import { useUpdateModule } from 'hooks/module/useUpdateModule'
+import { useDeleteModule } from 'hooks/module/useDeleteModule'
+import { type CourseModuleCreateEditModel } from 'schemas/ModuleCRUD'
 import styles from './ModuleCRUD.module.css'
-import { useDeleteModule } from 'hooks/useDeleteModule'
 
 interface ModuleCRUDProps {
   open: boolean
@@ -39,7 +39,7 @@ export const ModuleCRUD = ({
       }
     })
 
-  const moduleValue = watch('title')
+  const moduleTitle = watch('title')
 
   const moduleOptions = modules
     ? getOptions<CourseModule>(modules, 'title', 'title')
@@ -52,7 +52,7 @@ export const ModuleCRUD = ({
   }
 
   const handleDelete = () => {
-    moduleValue && deleteModule(moduleValue)
+    moduleTitle && deleteModule(moduleTitle)
 
     handleClose()
   }
@@ -80,12 +80,12 @@ export const ModuleCRUD = ({
   useEffect(() => {
     // PREPOPULATE FORM IN EDIT MODE
     const selectedModule = modules?.filter(
-      (module) => module.title === moduleValue
+      (module) => module.title === moduleTitle
     )[0]
 
     setValue('subtitle', selectedModule?.subtitle)
     setValue('emoji', selectedModule?.emoji)
-  }, [moduleValue])
+  }, [moduleTitle])
 
   return (
     <>

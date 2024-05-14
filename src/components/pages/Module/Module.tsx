@@ -12,7 +12,7 @@ import { GlossaryModal } from 'components/common/GlossaryModal'
 import { Loading } from 'components/pages/Loading'
 import { Error } from 'components/pages/Error'
 import { Answers } from 'components/common/Answers'
-import { useScreenResize } from 'hooks/useScreenResize'
+import { useScreenResize } from 'hooks/ui/useScreenResize'
 import thinkingAnimation from 'assets/animations/thinkingAnimation.json'
 import styles from 'components/pages/Module/Module.module.css'
 

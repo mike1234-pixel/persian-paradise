@@ -17,24 +17,8 @@ export const PhraseCreateEditSchema = PhraseSchema.extend({
   faHoldingValue: string().optional()
 })
 
-export const CourseModuleSchema = object({
-  title: string(),
-  subtitle: string().optional(),
-  emoji: string().optional(),
-  phrases: array(PhraseSchema).optional()
-})
-
-export const CourseModuleCreateEditSchema = CourseModuleSchema
-
-export const ModulesListSchema = array(CourseModuleSchema)
-
 export type RegistersModel = ReturnType<(typeof RegistersSchema)['parse']>
 export type PhraseModel = ReturnType<(typeof PhraseSchema)['parse']>
 export type PhraseCreateEditModel = ReturnType<
   (typeof PhraseCreateEditSchema)['parse']
 >
-export type CourseModuleModel = ReturnType<(typeof CourseModuleSchema)['parse']>
-export type CourseModuleCreateEditModel = ReturnType<
-  (typeof CourseModuleCreateEditSchema)['parse']
->
-export type ModulesListModel = ReturnType<(typeof ModulesListSchema)['parse']>
