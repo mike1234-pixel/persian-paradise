@@ -12,6 +12,7 @@ import {
 import { getOptions } from 'utils/getOptions'
 import { useAddPhrase } from 'hooks/useAddPhrase'
 import { useNotifications } from 'hooks/useNotifications'
+import { useUpdatePhrase } from 'hooks/useUpdatePhrase'
 
 interface PhraseCRUDProps {
   open: boolean
@@ -29,6 +30,7 @@ export const PhraseCRUD = ({
   const { modules, isLoading: modulesIsLoading } = useModules()
   const { openNotification, contextHolder } = useNotifications()
   const { mutate: addPhrase } = useAddPhrase(openNotification)
+  const { mutate: updatePhrase } = useUpdatePhrase(openNotification)
 
   const [useRegisters, setUseRegisters] = useState<boolean>(false)
 
@@ -104,7 +106,9 @@ export const PhraseCRUD = ({
     }
 
     console.log('onSubmit triggered', phrase)
-    addPhrase({ title: module, phrase })
+    editMode
+      ? updatePhrase({ moduleName: module, newPhrase: phrase })
+      : addPhrase({ title: module, phrase })
     handleClose()
   }
 
