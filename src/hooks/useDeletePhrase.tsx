@@ -13,7 +13,7 @@ const deletePhrase = async ({
   moduleName: string
   phraseName: string
 }) => {
-  const response = await axios.delete(`${apiUrl}/api/modules/deletePhrase`, {
+  const response = await axios.delete(`${apiUrl}/api/module/phrase/delete`, {
     data: { moduleName, phraseName }
   })
   return response.data

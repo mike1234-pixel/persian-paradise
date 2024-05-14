@@ -14,7 +14,7 @@ const addPhrase = async ({
   title: string
   phrase: Phrase
 }) => {
-  const response = await axios.post(`${apiUrl}/api/modules/addPhrase`, {
+  const response = await axios.post(`${apiUrl}/api/module/phrase/add`, {
     title,
     phrase
   })

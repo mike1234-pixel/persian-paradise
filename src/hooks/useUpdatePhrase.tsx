@@ -14,7 +14,7 @@ const updatePhrase = async ({
   moduleName: string
   newPhrase: Phrase
 }) => {
-  const response = await axios.put(`${apiUrl}/api/modules/updatePhrase`, {
+  const response = await axios.put(`${apiUrl}/api/module/phrase/update`, {
     moduleName,
     newPhrase
   })
