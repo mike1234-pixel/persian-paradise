@@ -1,6 +1,5 @@
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import { Drawer, Button, Form, Select, Input } from 'antd'
-import styles from './ModuleCRUD.module.css'
 import { useModules } from 'hooks/useModules'
 import { Controller, useForm } from 'react-hook-form'
 import { type CourseModuleCreateEditModel } from 'schemas/PhraseCRUD'
@@ -8,6 +7,8 @@ import { type CourseModule } from 'persian-paradise-shared-types'
 import { getOptions } from 'utils/getOptions'
 import { useAddModule } from 'hooks/useAddModule'
 import { useNotifications } from 'hooks/useNotifications'
+import { useUpdateModule } from 'hooks/useUpdateModule'
+import styles from './ModuleCRUD.module.css'
 
 interface ModuleCRUDProps {
   open: boolean
@@ -26,6 +27,7 @@ export const ModuleCRUD = ({
   const { openNotification, contextHolder } = useNotifications()
 
   const { mutate: addModule } = useAddModule(openNotification)
+  const { mutate: updateModule } = useUpdateModule(openNotification)
 
   const { control, reset, watch, setValue, handleSubmit } =
     useForm<CourseModuleCreateEditModel>({
@@ -57,7 +59,7 @@ export const ModuleCRUD = ({
       phrases
     }
 
-    !editMode && addModule(module)
+    editMode ? updateModule(module) : addModule(module)
     handleClose()
   }
 
