@@ -60,14 +60,20 @@ export const ModuleCRUD = ({
   const onSubmit = (data: CourseModuleCreateEditModel) => {
     const { title, subtitle, emoji, phrases } = data
 
-    const module: CourseModule = {
+    const moduleCreate = {
       title,
       subtitle,
       emoji,
       phrases
     }
 
-    editMode ? updateModule(module) : addModule(module)
+    const moduleUpdate = {
+      title,
+      subtitle,
+      emoji
+    }
+
+    editMode ? updateModule(moduleUpdate) : addModule(moduleCreate)
     handleClose()
   }
 

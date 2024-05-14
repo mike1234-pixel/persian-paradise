@@ -21,7 +21,7 @@ export const CourseModuleSchema = object({
   title: string(),
   subtitle: string().optional(),
   emoji: string().optional(),
-  phrases: array(PhraseSchema)
+  phrases: array(PhraseSchema).optional()
 })
 
 export const CourseModuleCreateEditSchema = CourseModuleSchema
