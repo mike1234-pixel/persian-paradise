@@ -28,6 +28,7 @@ export const GlossaryModal = ({ phrases }: GlossaryModalProps) => {
           </Button>
         }
         className={styles.root}
+        destroyOnClose
       >
         <Typography.Title>Glossary</Typography.Title>
         <GlossaryTable phrases={phrases} />

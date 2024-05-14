@@ -1,0 +1,12 @@
+.root {
+  padding: 80px 60px 60px;
+}
+
+.footerContent {
+  display: flex;
+}
+
+.footerContent > * {
+  margin-bottom: 0;
+  margin-right: 15px;
+}

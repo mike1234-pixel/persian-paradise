@@ -1,0 +1,1 @@
+export { PhraseCRUD } from './PhraseCRUD'

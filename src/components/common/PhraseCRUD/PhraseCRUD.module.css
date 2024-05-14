@@ -1,0 +1,24 @@
+.farsiVariation {
+  position: relative;
+}
+
+.farsiVariationRemove {
+  position: absolute;
+  top: 9px;
+  right: -5px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.footerContent {
+  display: flex;
+}
+
+.footerContent > * {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.farsiInputContainer {
+  margin-bottom: 25px;
+}

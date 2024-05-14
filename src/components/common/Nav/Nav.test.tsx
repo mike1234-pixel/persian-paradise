@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect' // for expect(...).toBeInTheDoc
 import { MemoryRouter } from 'react-router-dom'
 import { Nav } from 'components/common/Nav'
 
-jest.mock('../../../hooks/useModules', () => ({
+jest.mock('../../../hooks/module/useModules', () => ({
   useModules: () => ({
     modules: [
       { title: 'Module 1', emoji: '😊' },

@@ -1,0 +1,1 @@
+export { ModuleCRUD } from './ModuleCRUD'

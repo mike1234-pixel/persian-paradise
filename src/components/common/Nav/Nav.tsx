@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button, Menu, type MenuProps, Layout } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
-import { useModules } from 'hooks/useModules'
+import { useModules } from 'hooks/module/useModules'
 import { urlify } from 'utils/urlify'
 import styles from 'components/common/Nav/Nav.module.css'
 
