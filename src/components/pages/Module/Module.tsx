@@ -15,6 +15,7 @@ import { Answers } from 'components/common/Answers'
 import { useScreenResize } from 'hooks/ui/useScreenResize'
 import thinkingAnimation from 'assets/animations/thinkingAnimation.json'
 import styles from 'components/pages/Module/Module.module.css'
+import { NoContent } from 'components/common/NoContent'
 
 interface ModuleProps {
   module: CourseModule | undefined
@@ -140,6 +141,10 @@ export const Module = ({
   if (errorLoadingModule) return <Error error={errorLoadingModule} />
 
   if (moduleLoading) return <Loading />
+
+  if (!phrases.length) {
+    return <NoContent message="no phrases added yet..." />
+  }
 
   return (
     <Content className={styles.root}>
