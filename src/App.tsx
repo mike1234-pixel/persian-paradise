@@ -16,6 +16,8 @@ import { Error } from 'components/pages/Error'
 import { NotFound404 } from 'components/pages/NotFound404'
 import { Glossary } from 'components/pages/Glossary'
 import { CMS } from 'components/pages/CMS'
+import { Login } from 'components/pages/Login'
+import { Register } from 'components/pages/Register'
 
 export const Router = () => {
   const location = useLocation()
@@ -29,6 +31,8 @@ export const Router = () => {
   return (
     <Routes location={location}>
       <Route path="/" element={<Home />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/guide" element={<Guide />} />
       <Route
         path="/glossary"
